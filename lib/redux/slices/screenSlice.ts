@@ -1,4 +1,4 @@
-import { TableElement, ScreenSlice, Row } from "@/lib/types/slice";
+import { RandomTableElement, ScreenSlice, RandomRow } from "@/lib/types/slice";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ReduxState } from "../store";
 
@@ -12,7 +12,7 @@ export const screenSlice = createSlice({
   name: "screen",
   initialState,
   reducers: {
-    addElement(state, action: PayloadAction<TableElement>) {
+    addElement(state, action: PayloadAction<RandomTableElement>) {
       state.walkingDead.elements.push(action.payload);
     },
     removeElement(state, action: PayloadAction<string>) {
@@ -20,13 +20,13 @@ export const screenSlice = createSlice({
         (element) => element.id !== action.payload
       );
     },
-    updateElement(state, action: PayloadAction<TableElement>) {
+    updateElement(state, action: PayloadAction<RandomTableElement>) {
       const index = state.walkingDead.elements.findIndex(
         (element) => element.id === action.payload.id
       );
       state.walkingDead.elements[index] = action.payload;
     },
-    updateTableRow(state, action: PayloadAction<{ id: string; row: Row }>) {
+    updateTableRow(state, action: PayloadAction<{ id: string; row: RandomRow }>) {
       const index = state.walkingDead.elements.findIndex(
         (element) => element.id === action.payload.id
       );

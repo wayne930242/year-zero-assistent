@@ -1,32 +1,40 @@
 interface ScreenSlice {
   walkingDead: {
-    elements: TableElement[];
+    elements: RandomTableElement[];
   };
 }
 
-export interface GameElement {
+export type GameElement = RandomTableElement;
+
+export interface GameElementBase {
   id: string;
-  order: number;
   name: string;
+  originalName: string;
   description: string;
-  type: TableType | RefType | GenType;
   editable?: boolean;
 }
 
 export type TableType = "example" | "random-table";
 
-export type RefType = "text"
+export type RefType = "text";
 
-export type GenType = 'generator'
+export type GenType = "generator";
 
-export interface TableElement extends GameElement {
-  type: TableType;
-  headers: string[];
-  rows: Row[];
+export interface ExampleTableElement extends GameElementBase {
+  type: "example";
+  headers?: string[];
+  rows: string[][];
 }
 
-export interface Row {
+export interface RandomTableElement extends GameElementBase {
+  type: "random-table";
+  headers: string[];
+  rows: RandomRow[];
+}
+
+export interface RandomRow {
   rowId: string | number;
-  text: string;
-  defaultText: string;
+  weight: number;
+  cols?: (string | string[])[];
+  defaultCols: (string | string[])[];
 }
