@@ -22,5 +22,11 @@ export type GenType = 'generator'
 export interface TableElement extends GameElement {
   type: TableType;
   headers: string[];
-  rows: string[];
+  rows: Row[];
+}
+
+export interface Row {
+  rowId: string | number;
+  text: string;
+  defaultText: string;
 }
