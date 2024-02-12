@@ -10,20 +10,17 @@ const overwhilmingTable: RandomTableElement = {
   rows: [
     {
       rowId: 1,
-      cols: ["1-2", "你失去你的趨力"],
-      defaultCols: ["1-2", "你失去你的趨力"],
+      defaultCols: [["1-2", "你失去你的趨力"]],
       weight: 2,
     },
     {
       rowId: 2,
-      cols: ["3-5", "你變得耗竭"],
-      defaultCols: ["3-5", "你變得耗竭"],
+      defaultCols: [["3-5", "你變得耗竭"]],
       weight: 3,
     },
     {
       rowId: 3,
-      cols: ["6", "你改變或者得到新的議題"],
-      defaultCols: ["6", "你改變或者得到新的議題"],
+      defaultCols: [["6", "你改變或者得到新的議題"]],
       weight: 1,
     },
   ],
@@ -101,6 +98,12 @@ const NpcSurviors: RandomTableElement = {
           "會以任何代價保護他的兒子 Bill，和 Anthony 睡過，治癒不良的斷腿",
           "霰彈槍, 乾草叉, 能栽種的種子",
         ],
+      ],
+    },
+    {
+      rowId: 2,
+      weight: 1,
+      defaultCols: [
         [
           "2",
           "George Lee",
@@ -145,6 +148,12 @@ const NpcSurviors: RandomTableElement = {
           "保護 Elijah Flores 並相信他說的每句話",
           "突擊步槍, 三枚手榴彈, 刺刀, 迷彩服, 生存裝備, 良好地圖, 指南針, 發條收音機",
         ],
+      ],
+    },
+    {
+      rowId: 3,
+      weight: 1,
+      defaultCols: [
         [
           "3",
           "Betty “Anvil” Hall",
@@ -190,6 +199,12 @@ const NpcSurviors: RandomTableElement = {
           "受到創傷，情感敏感且具有同理心",
           "隱藏的左輪手槍",
         ],
+      ],
+    },
+    {
+      rowId: 4,
+      weight: 1,
+      defaultCols: [
         [
           "4",
           "Raymond Green",
@@ -197,7 +212,7 @@ const NpcSurviors: RandomTableElement = {
           "醫學",
           "操縱",
           "憂鬱，悼念他的家人",
-          "高級醫療器材"
+          "高級醫療器材",
         ],
         [
           "",
@@ -206,7 +221,7 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "忍耐, 機動",
           "受傷，敬畏上帝",
-          "弓箭, 帳篷"
+          "弓箭, 帳篷",
         ],
         [
           "",
@@ -215,7 +230,7 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "技術, 生存",
           "沉默寡言，為最壞情況做計劃",
-          "流動家園, 工具包, 步槍"
+          "流動家園, 工具包, 步槍",
         ],
         [
           "",
@@ -224,7 +239,7 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "遠戰",
           "粗心，希望每個人都感覺良好，喧鬧",
-          "左輪手槍, 3瓶烈酒"
+          "左輪手槍, 3瓶烈酒",
         ],
         [
           "",
@@ -233,8 +248,14 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "醫學, 操縱",
           "相信她將拯救人類，解離",
-          "短棍, 聖物, 補夢網, 香, 魔法蘑菇"
+          "短棍, 聖物, 補夢網, 香, 魔法蘑菇",
         ],
+      ],
+    },
+    {
+      rowId: 5,
+      weight: 1,
+      defaultCols: [
         [
           "5",
           "Nicolas White",
@@ -242,7 +263,7 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "近戰, 遠戰",
           "只尊重力量，喜歡戲弄和騷擾他人",
-          "砍刀, 左輪手槍"
+          "砍刀, 左輪手槍",
         ],
         [
           "",
@@ -251,7 +272,7 @@ const NpcSurviors: RandomTableElement = {
           "遠戰",
           "力量",
           "鐵腕統治，大男人主義",
-          "突擊步槍, 爆炸膏, 手槍, 刀, 夜視鏡"
+          "突擊步槍, 爆炸膏, 手槍, 刀, 夜視鏡",
         ],
         [
           "",
@@ -260,7 +281,7 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "技術, 偵查",
           "不想給人帶來麻煩，依賴他人保護，一名詩人",
-          "工具包, 手動電台"
+          "工具包, 手動電台",
         ],
         [
           "",
@@ -269,7 +290,7 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "醫學, 操縱",
           "不擇手段",
-          "基本醫療用品"
+          "基本醫療用品",
         ],
         [
           "",
@@ -278,15 +299,21 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "生存",
           "尋找還能信仰的東西，無法容忍責難",
-          "左輪手槍, 螺絲刀"
+          "左輪手槍, 螺絲刀",
         ],
+      ],
+    },
+    {
+      rowId: 6,
+      weight: 1,
+      defaultCols: [
         [
           "6",
           "Gael Barraza",
           "心理治療師",
           "領導, 操縱",
           "願意做出艱難決定，感情上疲憊",
-          "步槍, 一對銳利的剪刀, 數包香煙"
+          "步槍, 一對銳利的剪刀, 數包香煙",
         ],
         [
           "",
@@ -295,7 +322,7 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "醫學, 技術, 操縱",
           "不分享痛苦和擔憂，照顧她的嬰兒",
-          "基本醫療用品"
+          "基本醫療用品",
         ],
         [
           "",
@@ -304,7 +331,7 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "-",
           "意外的嬰兒, 害怕、餓了、累了或生病時會哭鬧",
-          "-"
+          "-",
         ],
         [
           "",
@@ -313,7 +340,7 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "生存, 忍耐",
           "認為自己對他人負有責任，想讓所有人幸福",
-          "狙擊步槍, 大刀, 吉他, 隱藏的棉花糖"
+          "狙擊步槍, 大刀, 吉他, 隱藏的棉花糖",
         ],
         [
           "",
@@ -322,7 +349,7 @@ const NpcSurviors: RandomTableElement = {
           "-",
           "近戰, 潛行",
           "暗戀 Angela Flores, 想保護其他人免受世界殘酷現實的傷害, 喜歡冒險",
-          "大斧頭, 高跟鞋刀, 左輪手槍, 摩托車"
+          "大斧頭, 高跟鞋刀, 左輪手槍, 摩托車",
         ],
       ],
     },

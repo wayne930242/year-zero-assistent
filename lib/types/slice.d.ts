@@ -35,6 +35,6 @@ export interface RandomTableElement extends GameElementBase {
 export interface RandomRow {
   rowId: string | number;
   weight: number;
-  cols?: (string | string[])[];
-  defaultCols: (string | string[])[];
+  cols?: (string[])[];
+  defaultCols: (string[])[];
 }
