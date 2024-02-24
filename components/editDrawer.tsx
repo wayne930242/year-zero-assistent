@@ -63,10 +63,12 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>勾選加到 GM 屏幕的元素</DrawerTitle>
+          <DrawerTitle className="w-full max-w-2xl mx-auto">
+            勾選加到 GM 屏幕的元素
+          </DrawerTitle>
         </DrawerHeader>
         <DrawerDescription asChild>
-          <div className="w-full flex-col items-center flex sm:flex-row sm:items-start sm:justify-between px-4 gap-4">
+          <div className="w-full max-w-2xl mx-auto flex-col items-center flex sm:flex-row sm:items-start sm:justify-between gap-4 p-4">
             <Popover open={open} onOpenChange={setOpen}>
               <PopoverTrigger asChild>
                 <Button
@@ -116,37 +118,39 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
                 </Command>
               </PopoverContent>
             </Popover>
-            <ScrollArea className="grow flex flex-col items-center gap-y-4 border rounded-md px-6 py-2 max-h-[400px]">
-              {checkedList.length > 0 &&
-                checkedList.map((i) => (
-                  <div className="items-top flex space-x-2" key={i}>
-                    <Checkbox
-                      id="screen"
-                      checked={selected.includes(i)}
-                      onCheckedChange={(b) => {
-                        setSelected((prev) => {
-                          if (prev.includes(i)) {
-                            return prev.filter((v) => v !== i);
-                          }
-                          return [...prev, i];
-                        });
-                      }}
-                    />
-                    <div className="grid gap-1.5 leading-none">
-                      <label
-                        htmlFor="screen"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        {data.find((d) => d.id === i)?.name}
-                      </label>
+            <ScrollArea className="grow border rounded-md px-6 py-2 max-h-[400px]">
+              <div className="flex flex-col gap-y-2 items-baseline w-full">
+                {checkedList.length > 0 &&
+                  checkedList.map((i) => (
+                    <div className="items-top flex space-x-2" key={i}>
+                      <Checkbox
+                        id="screen"
+                        checked={selected.includes(i)}
+                        onCheckedChange={(b) => {
+                          setSelected((prev) => {
+                            if (prev.includes(i)) {
+                              return prev.filter((v) => v !== i);
+                            }
+                            return [...prev, i];
+                          });
+                        }}
+                      />
+                      <div className="grid gap-1.5 leading-none">
+                        <label
+                          htmlFor="screen"
+                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        >
+                          {data.find((d) => d.id === i)?.name}
+                        </label>
+                      </div>
                     </div>
+                  ))}
+                {checkedList.length === 0 && (
+                  <div className="text-muted-foreground text-sm">
+                    你還沒有勾選任何表格。
                   </div>
-                ))}
-              {checkedList.length === 0 && (
-                <div className="text-muted-foreground text-sm">
-                  你還沒有勾選任何表格。
-                </div>
-              )}
+                )}
+              </div>
             </ScrollArea>
           </div>
         </DrawerDescription>
@@ -156,7 +160,10 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
               className="w-full max-w-36"
               onClick={() => {
                 dispatch(
-                  setElements(data.filter((d) => selected.includes(d.id)))
+                  setElements({
+                    key: screenKey,
+                    elements: data.filter((d) => selected.includes(d.id)),
+                  })
                 );
               }}
             >

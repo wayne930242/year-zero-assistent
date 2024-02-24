@@ -13,6 +13,7 @@ export interface GameElementBase {
   originalName: string;
   description: string;
   editable?: boolean;
+  order?: number;
 }
 
 export type TableType = "example" | "random-table";

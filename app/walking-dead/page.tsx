@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { WalkingDeadData } from "./data";
+import { TableDnd } from "@/components/screenDnd";
 
 const Page = () => {
   return (
@@ -15,7 +16,7 @@ const Page = () => {
             src="/images/cover/walking-dead.jpeg"
             alt="walking-dead-cover"
             fill
-            sizes="width:100%, height: 192px"
+            sizes="100%; 192px;"
             priority
           />
           <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 p-4 flex justify-start items-end">
@@ -35,7 +36,9 @@ const Page = () => {
             The Walking Dead
           </h1>
         </div>
-        <div></div>
+        <div>
+          <TableDnd screenKey="walkingDead" />
+        </div>
       </div>
     </main>
   );
