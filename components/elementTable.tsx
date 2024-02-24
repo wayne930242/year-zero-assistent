@@ -31,20 +31,22 @@ export function ElementTable({ element }: Props) {
           <Button
             size="icon"
             onClick={() => {
-              const totalWeight = element.rows.reduce(
-                (acc, row) => acc + row.weight,
-                0
-              );
-              const random = Math.random() * totalWeight;
-              let resultIndex = 0;
-              let currentWeight = 0;
-              while (currentWeight < random) {
-                currentWeight += element.rows[resultIndex].weight;
-                resultIndex++;
+              if (element.type === "random-table") {
+                const totalWeight = element.rows.reduce(
+                  (acc, row) => acc + row.weight,
+                  0
+                );
+                const random = Math.random() * totalWeight;
+                let resultIndex = 0;
+                let currentWeight = 0;
+                while (currentWeight < random) {
+                  currentWeight += element.rows[resultIndex].weight;
+                  resultIndex++;
+                }
+                resultIndex = Math.max(0, resultIndex - 1);
+                const result = element.rows[resultIndex].rowId;
+                setDiceResult(result);
               }
-              resultIndex = Math.max(0, resultIndex - 1);
-              const result = element.rows[resultIndex].rowId;
-              setDiceResult(result);
             }}
           >
             <Dices />
