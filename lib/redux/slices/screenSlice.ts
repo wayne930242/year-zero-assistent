@@ -1,4 +1,4 @@
-import { RandomTableElement, ScreenSlice, RandomRow } from "@/lib/types/slice";
+import { RandomTableElement, ScreenSlice, RandomRow } from "@/lib/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ReduxState } from "../store";
 
@@ -26,7 +26,10 @@ export const screenSlice = createSlice({
       );
       state.walkingDead.elements[index] = action.payload;
     },
-    updateTableRow(state, action: PayloadAction<{ id: string; row: RandomRow }>) {
+    updateTableRow(
+      state,
+      action: PayloadAction<{ id: string; row: RandomRow }>
+    ) {
       const index = state.walkingDead.elements.findIndex(
         (element) => element.id === action.payload.id
       );
@@ -47,3 +50,4 @@ export default screenSlice;
 
 export const selectWalkingDead = (state: ReduxState) =>
   state.screen.walkingDead;
+export const selectScreen = (state: ReduxState) => state.screen;

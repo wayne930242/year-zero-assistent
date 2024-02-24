@@ -1,8 +1,12 @@
-import { ExampleTableElement, RandomTableElement } from "@/lib/types/slice";
+import {
+  ExampleTableElement,
+  RandomTableElement,
+  TableData,
+} from "@/lib/types";
 
-const overwhilmingTable: RandomTableElement = {
-  id: "overwhilming-table",
-  originalName: "Overwhilming Table",
+const overwhilmedTable: RandomTableElement = {
+  id: "overwhelmed-table",
+  originalName: "Overwhelmed Table",
   name: "擊垮表",
   description: "若你無法處理好你的恐懼，擲擊垮表",
   type: "random-table",
@@ -10,17 +14,17 @@ const overwhilmingTable: RandomTableElement = {
   rows: [
     {
       rowId: 1,
-      defaultCols: [["1-2", "你失去你的趨力"]],
+      defaultRows: [["1-2", "你失去你的原動力"]],
       weight: 2,
     },
     {
       rowId: 2,
-      defaultCols: [["3-5", "你變得耗竭"]],
+      defaultRows: [["3-5", "你變得耗竭"]],
       weight: 3,
     },
     {
       rowId: 3,
-      defaultCols: [["6", "你改變或者得到新的議題"]],
+      defaultRows: [["6", "改變議題或得到新議題"]],
       weight: 1,
     },
   ],
@@ -33,12 +37,30 @@ const QuestionForXP: ExampleTableElement = {
   description: "每有一個問題是「是」，獲得 XP。",
   type: "example",
   rows: [
-    ["1", "你是否有參與這次聚會（你至少可以得到 1 點 XP）？"],
-    ["2", "你是否達成重要的成果？是什麼？"],
-    ["3", "你是否學到新東西？是什麼？"],
-    ["4", "你是否有探索旅行地圖上的新分區？"],
-    ["5", "你的趨力、議題或任何關係是否有被衝擊？"],
-    ["6", "你是否有進行摯愛悼辭？（擲雙低看你獲得多少 XP）"],
+    {
+      rowId: "1",
+      defaultRows: [["1", "你是否有參與這次聚會（你至少可以得到 1 點 XP）？"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [["2", "你是否達成重要的成果？是什麼？"]],
+    },
+    {
+      rowId: "3",
+      defaultRows: [["3", "你是否學到新東西？是什麼？"]],
+    },
+    {
+      rowId: "4",
+      defaultRows: [["4", "你是否有探索旅行地圖上的新分區？"]],
+    },
+    {
+      rowId: "5",
+      defaultRows: [["5", "你的趨力、議題或任何關係是否有被衝擊？"]],
+    },
+    {
+      rowId: "6",
+      defaultRows: [["6", "你是否有進行摯愛悼辭？（擲雙低看你獲得多少 XP）"]],
+    },
   ],
 };
 
@@ -53,7 +75,7 @@ const NpcSurviors: RandomTableElement = {
     {
       rowId: 1,
       weight: 1,
-      defaultCols: [
+      defaultRows: [
         [
           "1",
           "Anthony Brooks",
@@ -103,7 +125,7 @@ const NpcSurviors: RandomTableElement = {
     {
       rowId: 2,
       weight: 1,
-      defaultCols: [
+      defaultRows: [
         [
           "2",
           "George Lee",
@@ -153,7 +175,7 @@ const NpcSurviors: RandomTableElement = {
     {
       rowId: 3,
       weight: 1,
-      defaultCols: [
+      defaultRows: [
         [
           "3",
           "Betty “Anvil” Hall",
@@ -204,7 +226,7 @@ const NpcSurviors: RandomTableElement = {
     {
       rowId: 4,
       weight: 1,
-      defaultCols: [
+      defaultRows: [
         [
           "4",
           "Raymond Green",
@@ -255,7 +277,7 @@ const NpcSurviors: RandomTableElement = {
     {
       rowId: 5,
       weight: 1,
-      defaultCols: [
+      defaultRows: [
         [
           "5",
           "Nicolas White",
@@ -306,7 +328,7 @@ const NpcSurviors: RandomTableElement = {
     {
       rowId: 6,
       weight: 1,
-      defaultCols: [
+      defaultRows: [
         [
           "6",
           "Gael Barraza",
@@ -355,3 +377,9 @@ const NpcSurviors: RandomTableElement = {
     },
   ],
 };
+
+export const WalkingDeadData: TableData = [
+  overwhilmedTable,
+  QuestionForXP,
+  NpcSurviors,
+];

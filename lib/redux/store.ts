@@ -33,7 +33,7 @@ const storage = typeof window !== 'undefined' ? createWebStorage('local') : crea
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: [],
+  whitelist: ['screen'],
   blacklist: ['next-router', 'app', 'user'],
 };
 
