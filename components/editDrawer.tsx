@@ -28,16 +28,23 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useSelector } from "@/lib/redux/store";
-import { selectScreen } from "@/lib/redux/slices/screenSlice";
+import { useDispatch, useSelector } from "@/lib/redux/store";
+import { selectScreen, setElements } from "@/lib/redux/slices/screenSlice";
 import { cn } from "@/lib/utils";
 
 export const EditDrawer = ({ data, screenKey }: Props) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
   const [checkedList, setCheckedList] = useState<string[]>([]);
+
+  const dispatch = useDispatch();
   const screen = useSelector(selectScreen);
   const globalData = screen[screenKey];
+
+  useEffect(() => {
+    // Update globalData.elements to selected elements
+    setSelected(globalData.elements.map((element) => element.id));
+  }, [globalData.elements]);
 
   useEffect(() => {
     // Add elements to checkedList when selected new elements,
@@ -112,7 +119,7 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
             <ScrollArea className="grow flex flex-col items-center gap-y-4 border rounded-md px-6 py-2 max-h-[400px]">
               {checkedList.length > 0 &&
                 checkedList.map((i) => (
-                  <div className="items-top flex space-x-2">
+                  <div className="items-top flex space-x-2" key={i}>
                     <Checkbox
                       id="screen"
                       checked={selected.includes(i)}
@@ -144,7 +151,18 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
           </div>
         </DrawerDescription>
         <DrawerFooter className="flex items-center justify-center sm:flex-row">
-          <Button className="w-full max-w-36">套用</Button>
+          <DrawerClose asChild>
+            <Button
+              className="w-full max-w-36"
+              onClick={() => {
+                dispatch(
+                  setElements(data.filter((d) => selected.includes(d.id)))
+                );
+              }}
+            >
+              套用
+            </Button>
+          </DrawerClose>
           <DrawerClose asChild>
             <Button className="w-full max-w-36" variant="outline">
               取消
