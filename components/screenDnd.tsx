@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useState } from "react";
+import { X } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -17,18 +18,18 @@ import {
 } from "@/lib/redux/slices/screenSlice";
 import { ScreenSlice } from "@/lib/types";
 import { ElementTable } from "./elementTable";
-import { X } from "lucide-react";
+import { Button } from "./ui/button";
 
 export const TableDnd = ({ screenKey }: Props) => {
   const screen = useSelector(selectScreen);
   const globalData = screen[screenKey];
+  const [collapsed, setCollapsed] = useState<string[]>([]);
 
   const dispatch = useDispatch();
 
   return (
     <DragDropContext
       onDragEnd={(result) => {
-        console.log(result);
         if (!result.destination) return;
         dispatch(
           moveElement({
@@ -56,26 +57,48 @@ export const TableDnd = ({ screenKey }: Props) => {
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                     >
-                      <CardHeader className="relative">
+                      <CardHeader
+                        className="relative hover:bg-gray-100"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setCollapsed((prev) =>
+                            prev.includes(element.id)
+                              ? prev.filter((id) => id !== element.id)
+                              : [...prev, element.id]
+                          );
+                        }}
+                      >
                         <CardTitle>{element.name}</CardTitle>
                         <CardDescription>{element.description}</CardDescription>
-                        <X
+                        <Button
                           className="absolute top-2 right-2 cursor-pointer"
-                          onClick={() => {
-                            dispatch(
-                              removeElement({ key: screenKey, id: element.id })
-                            );
-                          }}
-                        />
+                          size="icon"
+                          variant="ghost"
+                        >
+                          <X
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              dispatch(
+                                removeElement({
+                                  key: screenKey,
+                                  id: element.id,
+                                })
+                              );
+                            }}
+                          />
+                        </Button>
                       </CardHeader>
-                      <CardContent>
-                        <ElementTable element={element} />
-                      </CardContent>
+                      {collapsed.includes(element.id) ? null : (
+                        <CardContent>
+                          <ElementTable element={element} />
+                        </CardContent>
+                      )}
                     </Card>
                   )}
                 </Draggable>
               );
             })}
+            {provided.placeholder}
           </div>
         )}
       </Droppable>
