@@ -12,6 +12,7 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { useDispatch, useSelector } from "@/lib/redux/store";
 import { moveElement, selectScreen } from "@/lib/redux/slices/screenSlice";
 import { ScreenSlice } from "@/lib/types";
+import { ElementTable } from "./elementTable";
 
 export const TableDnd = ({ screenKey }: Props) => {
   const screen = useSelector(selectScreen);
@@ -54,7 +55,9 @@ export const TableDnd = ({ screenKey }: Props) => {
                         <CardTitle>{element.name}</CardTitle>
                         <CardDescription>{element.description}</CardDescription>
                       </CardHeader>
-                      <CardContent></CardContent>
+                      <CardContent>
+                        <ElementTable element={element} />
+                      </CardContent>
                     </Card>
                   )}
                 </Draggable>

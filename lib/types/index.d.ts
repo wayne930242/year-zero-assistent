@@ -32,7 +32,7 @@ export interface RandomTableElement extends GameElementBase {
 
 export interface Row {
   rowId: string | number;
-  rows?: string[][];
+  editedRows?: string[][];
   defaultRows: string[][];
 }
 

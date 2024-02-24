@@ -70,7 +70,7 @@ const NpcSurviors: RandomTableElement = {
   name: "NPC 倖存者",
   description: "擲 D6 決定遊戲開始時有哪群 NPC 倖存者跟你們在一起",
   type: "random-table",
-  headers: ["D6", "NPC 倖存者", "背景", "專家", "受訓", "議題", "專被"],
+  headers: ["D6", "NPC 倖存者", "背景", "專家", "受訓", "議題", "裝備"],
   rows: [
     {
       rowId: 1,
@@ -95,6 +95,7 @@ const NpcSurviors: RandomTableElement = {
           "廚刀, 大手電筒, 電擊槍",
         ],
         [
+          "",
           "Robert Young",
           "孩子",
           "-",
