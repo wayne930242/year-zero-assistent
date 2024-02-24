@@ -10,9 +10,14 @@ import {
 } from "@/components/ui/card";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { useDispatch, useSelector } from "@/lib/redux/store";
-import { moveElement, selectScreen } from "@/lib/redux/slices/screenSlice";
+import {
+  moveElement,
+  removeElement,
+  selectScreen,
+} from "@/lib/redux/slices/screenSlice";
 import { ScreenSlice } from "@/lib/types";
 import { ElementTable } from "./elementTable";
+import { X } from "lucide-react";
 
 export const TableDnd = ({ screenKey }: Props) => {
   const screen = useSelector(selectScreen);
@@ -51,9 +56,17 @@ export const TableDnd = ({ screenKey }: Props) => {
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                     >
-                      <CardHeader>
+                      <CardHeader className="relative">
                         <CardTitle>{element.name}</CardTitle>
                         <CardDescription>{element.description}</CardDescription>
+                        <X
+                          className="absolute top-2 right-2 cursor-pointer"
+                          onClick={() => {
+                            dispatch(
+                              removeElement({ key: screenKey, id: element.id })
+                            );
+                          }}
+                        />
                       </CardHeader>
                       <CardContent>
                         <ElementTable element={element} />
