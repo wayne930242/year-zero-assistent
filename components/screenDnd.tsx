@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useCallback } from "react";
-import { DragDropContext } from "@hello-pangea/dnd";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { useDispatch, useSelector } from "@/lib/redux/store";
 import { moveElement, selectScreen } from "@/lib/redux/slices/screenSlice";
 import { ScreenSlice } from "@/lib/types";
@@ -26,7 +33,36 @@ export const TableDnd = ({ screenKey }: Props) => {
         );
       }}
     >
-      <div>Hello world</div>
+      <Droppable droppableId="screen">
+        {(provided) => (
+          <div {...provided.droppableProps} ref={provided.innerRef}>
+            {globalData.elements.map((element, index) => {
+              return (
+                <Draggable
+                  key={element.id}
+                  draggableId={element.id}
+                  index={index}
+                >
+                  {(provided) => (
+                    <Card
+                      className="mb-4"
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                    >
+                      <CardHeader>
+                        <CardTitle>{element.name}</CardTitle>
+                        <CardDescription>{element.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent></CardContent>
+                    </Card>
+                  )}
+                </Draggable>
+              );
+            })}
+          </div>
+        )}
+      </Droppable>
     </DragDropContext>
   );
 };

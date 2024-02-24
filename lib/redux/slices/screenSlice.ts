@@ -6,7 +6,7 @@ const initialState: ScreenSlice = {
   walkingDead: {
     elements: [],
   },
-};
+}
 interface AddElementPayload {
   key: keyof ScreenSlice;
   element: GameElement;

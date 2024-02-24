@@ -36,7 +36,7 @@ const Page = () => {
             The Walking Dead
           </h1>
         </div>
-        <div>
+        <div className="px-0 py-4 sm:px-6">
           <TableDnd screenKey="walkingDead" />
         </div>
       </div>
