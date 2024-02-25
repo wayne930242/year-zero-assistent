@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Dices, Eraser, WrapText } from "lucide-react";
+import { animated, useSpring } from "@react-spring/web";
+
 import {
   Table,
   TableBody,
@@ -14,8 +16,18 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 export function ElementTable({ element }: Props) {
+  const [isRolling, setIsRolling] = useState<boolean>(false);
   const [diceResult, setDiceResult] = useState<number | string>();
   const [nowrap, setNowrap] = useState<boolean>(true);
+
+  const animation = useSpring({
+    to: { transform: "rotate(360deg)" },
+    from: { transform: "rotate(0deg)" },
+    reset: isRolling,
+    reverse: false,
+    onRest: () => setIsRolling(false),
+    config: { duration: 300 },
+  });
 
   return (
     <div className="my-2">
@@ -40,7 +52,10 @@ export function ElementTable({ element }: Props) {
             </Button>
             <Button
               size="icon"
+              disabled={isRolling}
               onClick={() => {
+                if (isRolling) return;
+                setIsRolling(true);
                 if (element.type === "random-table") {
                   const totalWeight = element.rows.reduce(
                     (acc, row) => acc + (row.weight ?? 1),
@@ -59,7 +74,9 @@ export function ElementTable({ element }: Props) {
                 }
               }}
             >
-              <Dices />
+              <animated.div style={animation}>
+                <Dices />
+              </animated.div>
             </Button>
           </>
         )}
