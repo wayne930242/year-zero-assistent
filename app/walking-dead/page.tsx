@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
-import { WalkingDeadData } from "./data";
+import * as WalkingDeadData from "./data";
 import { TableDnd } from "@/components/screenDnd";
 
 const Page = () => {
@@ -20,19 +20,19 @@ const Page = () => {
             priority
           />
           <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 p-4 flex justify-start items-end">
-            <EditDrawer data={WalkingDeadData} screenKey="walkingDead" />
+            <EditDrawer data={Object.values(WalkingDeadData)} screenKey="walkingDead" />
           </div>
           <div className="absolute top-0 left-0 p-4">
             <Link href="/">
               <Button
                 variant="secondary"
-                className="w-10 h-10 p-2 rounded-full"
+                className="w-10 h-10 p-2 rounded-full -bottom-8"
               >
                 <ArrowLeftIcon className="w-6 h-6" />
               </Button>
             </Link>
           </div>
-          <h1 className="absolute text-2xl font-bold text-white p-4 right-0 bottom-0 drop-shadow-xl">
+          <h1 className="absolute text-2xl font-bold text-white p-4 right-0 bottom-0 drop-shadow-xl pointer-events-none">
             The Walking Dead
           </h1>
         </div>

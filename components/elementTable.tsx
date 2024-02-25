@@ -1,58 +1,69 @@
 import { useState } from "react";
-import { Dices, Eraser } from "lucide-react";
+import { Dices, Eraser, WrapText } from "lucide-react";
 import {
   Table,
   TableBody,
   TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { GameElement } from "@/lib/types";
 import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 export function ElementTable({ element }: Props) {
   const [diceResult, setDiceResult] = useState<number | string>();
+  const [nowrap, setNowrap] = useState<boolean>(true);
 
   return (
     <div className="my-2">
-      {element.type === "random-table" && (
-        <div className="flex gap-4 justify-end">
-          <Button
-            size="icon"
-            variant="outline"
-            onClick={() => setDiceResult(undefined)}
-            disabled={diceResult === undefined}
-          >
-            <Eraser />
-          </Button>
-          <Button
-            size="icon"
-            onClick={() => {
-              if (element.type === "random-table") {
-                const totalWeight = element.rows.reduce(
-                  (acc, row) => acc + row.weight,
-                  0
-                );
-                const random = Math.random() * totalWeight;
-                let resultIndex = 0;
-                let currentWeight = 0;
-                while (currentWeight < random) {
-                  currentWeight += element.rows[resultIndex].weight;
-                  resultIndex++;
+      <div className="flex gap-4 justify-end pb-2">
+        <Button
+          size="icon"
+          variant={nowrap ? "outline" : "default"}
+          onClick={() => setNowrap(!nowrap)}
+        >
+          <WrapText />
+        </Button>
+
+        {element.type === "random-table" && (
+          <>
+            <Button
+              size="icon"
+              variant="outline"
+              onClick={() => setDiceResult(undefined)}
+              disabled={diceResult === undefined}
+            >
+              <Eraser />
+            </Button>
+            <Button
+              size="icon"
+              onClick={() => {
+                if (element.type === "random-table") {
+                  const totalWeight = element.rows.reduce(
+                    (acc, row) => acc + (row.weight ?? 1),
+                    0
+                  );
+                  const random = Math.random() * totalWeight;
+                  let resultIndex = 0;
+                  let currentWeight = 0;
+                  while (currentWeight < random) {
+                    currentWeight += element.rows[resultIndex].weight ?? 1;
+                    resultIndex++;
+                  }
+                  resultIndex = Math.max(0, resultIndex - 1);
+                  const result = element.rows[resultIndex].rowId;
+                  setDiceResult(result);
                 }
-                resultIndex = Math.max(0, resultIndex - 1);
-                const result = element.rows[resultIndex].rowId;
-                setDiceResult(result);
-              }
-            }}
-          >
-            <Dices />
-          </Button>
-        </div>
-      )}
+              }}
+            >
+              <Dices />
+            </Button>
+          </>
+        )}
+      </div>
       <Table>
         <TableCaption className="text-xs">{element.originalName}</TableCaption>
         {element.headers && (
@@ -92,7 +103,10 @@ export function ElementTable({ element }: Props) {
                   if (rowSpans[rowIndex][cellIndex] === 0) return null;
                   return (
                     <TableCell
-                      className="align-top"
+                      className={cn(
+                        "align-top",
+                        nowrap ? "whitespace-nowrap" : "whitespace-normal"
+                      )}
                       key={`${rowOuterIndex}-${rowIndex}-${cellIndex}`}
                       rowSpan={rowSpans[rowIndex][cellIndex]}
                     >
@@ -104,7 +118,6 @@ export function ElementTable({ element }: Props) {
             ));
           })}
         </TableBody>
-        <TableFooter></TableFooter>
       </Table>
     </div>
   );

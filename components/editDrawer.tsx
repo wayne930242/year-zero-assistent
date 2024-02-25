@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ScreenSlice, TableData } from "@/lib/types";
+import { GameElement, ScreenSlice } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+
 import {
   Drawer,
   DrawerClose,
@@ -110,7 +111,8 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
                         />
                         {d.name}
                         <span className="opacity-0 h-0 w-0">
-                          ;{d.description};{d.originalName}
+                          ;{d.description};{d.originalName};
+                          {d.keywords?.join(";")}
                         </span>
                       </CommandItem>
                     ))}
@@ -118,7 +120,7 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
                 </Command>
               </PopoverContent>
             </Popover>
-            <ScrollArea className="grow border rounded-md px-6 py-2 max-h-[400px]">
+            <ScrollArea className="grow border rounded-md px-6 py-2 max-h-[400px] w-[200px]">
               <div className="flex flex-col gap-y-2 items-baseline w-full">
                 {checkedList.length > 0 &&
                   checkedList.map((i) => (
@@ -182,6 +184,6 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
 };
 
 interface Props {
-  data: TableData;
+  data: GameElement[];
   screenKey: keyof ScreenSlice;
 }

@@ -1,10 +1,10 @@
-import {
-  ExampleTableElement,
-  RandomTableElement,
-  TableData,
-} from "@/lib/types";
+import { ExampleTableElement, RandomTableElement } from "@/lib/types";
 
-const overwhilmedTable: RandomTableElement = {
+/*
+Every export modules should be a named export, and types should be GameElement.
+*/
+
+export const overwhilmedTable: RandomTableElement = {
   id: "overwhelmed-table",
   originalName: "Overwhelmed Table",
   name: "擊垮表",
@@ -30,7 +30,7 @@ const overwhilmedTable: RandomTableElement = {
   ],
 };
 
-const QuestionForXP: ExampleTableElement = {
+export const QuestionForXP: ExampleTableElement = {
   id: "question-for-xp",
   originalName: "Question for XP",
   name: "經驗問題",
@@ -64,7 +64,7 @@ const QuestionForXP: ExampleTableElement = {
   ],
 };
 
-const NpcSurviors: RandomTableElement = {
+export const NpcSurviors: RandomTableElement = {
   id: "npc-surviors",
   originalName: "NPC Surviors",
   name: "NPC 倖存者",
@@ -334,6 +334,7 @@ const NpcSurviors: RandomTableElement = {
           "6",
           "Gael Barraza",
           "心理治療師",
+          "-",
           "領導, 操縱",
           "願意做出艱難決定，感情上疲憊",
           "步槍, 一對銳利的剪刀, 數包香煙",
@@ -379,8 +380,399 @@ const NpcSurviors: RandomTableElement = {
   ],
 };
 
-export const WalkingDeadData: TableData = [
-  overwhilmedTable,
-  QuestionForXP,
-  NpcSurviors,
-];
+export const MessingUpInCombat: RandomTableElement = {
+  id: "messing-up-in-combat",
+  originalName: "Messing up in Combat",
+  name: "戰鬥失誤",
+  description: "在壓力骰擲出 1 時，若在戰鬥中，擲一次 D6 決定失誤效果。",
+  type: "random-table",
+  headers: ["D6", "效果"],
+  rows: [
+    {
+      rowId: 1,
+      defaultRows: [["1", "彈藥用盡 / 武器損壞。"]],
+      weight: 1,
+    },
+    {
+      rowId: 2,
+      defaultRows: [["2", "傷到自己：意外墜落、被劃傷、被擊中（1 點傷害）。"]],
+      weight: 1,
+    },
+    {
+      rowId: 3,
+      defaultRows: [["3", "友軍開火。武器擊中了隊友，擲隨機骰來決定是誰。"]],
+      weight: 1,
+    },
+    {
+      rowId: 4,
+      defaultRows: [["4", "吸引行屍（威脅提升 1 級，或是吸引一次行屍攻擊）。"]],
+      weight: 1,
+    },
+    {
+      rowId: 5,
+      defaultRows: [["5", "整體的狀況變得更糟（房屋倒塌、摔出窗戶、滑倒）。"]],
+      weight: 1,
+    },
+    {
+      rowId: 6,
+      defaultRows: [["6", "站位不佳，對手在下一次擲骰中獲得額外的成功。"]],
+      weight: 1,
+    },
+  ],
+};
+
+export const BrawlPhases: ExampleTableElement = {
+  id: "brawl-phases",
+  originalName: "Brawl Phases",
+  name: "爭鬥階段",
+  description: "爭鬥按照下述回合進行。",
+  type: "example",
+  rows: [
+    {
+      rowId: "1",
+      defaultRows: [["1", "尋找掩護"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [["2", "遠距攻擊"]],
+    },
+    {
+      rowId: "3",
+      defaultRows: [["3", "近戰攻擊"]],
+    },
+    {
+      rowId: "4",
+      defaultRows: [["4", "移動"]],
+    },
+    {
+      rowId: "5",
+      defaultRows: [["5", "急救"]],
+    },
+    {
+      rowId: "6",
+      defaultRows: [["6", "其他"]],
+    },
+  ],
+};
+
+export const ArmorTypes: ExampleTableElement = {
+  id: "armor-types",
+  originalName: "Types of Armor",
+  name: "護甲類型",
+  description: "根據護甲，可在此查詢護甲等級和懲罰。",
+  type: "example",
+  headers: ["護甲類型", "護甲等級", "懲罰"],
+  rows: [
+    {
+      rowId: "1",
+      defaultRows: [["軟質背心", "4", "–1"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [["身體護甲", "6", "–2"]],
+    },
+    {
+      rowId: "3",
+      defaultRows: [["金屬板甲", "8", "–3"]],
+    },
+  ],
+};
+
+export const CriticalInjuries: RandomTableElement = {
+  id: "critical-injuries",
+  originalName: "Critical Injuries",
+  name: "嚴重傷害",
+  description:
+    "在戰鬥和治療過程中可能遭受的嚴重傷害。B 表示只需要使用基本醫療器材，A 表示需要使用高級醫療器材。",
+  type: "random-table",
+  headers: ["D66", "嚴重傷害", "致命", "時限", "懲罰", "恢復時間"],
+  rows: [
+    {
+      rowId: "11",
+      defaultRows: [["11", "喘不過氣", "否", "-", "-1", "數小時"]],
+    },
+    {
+      rowId: "12",
+      defaultRows: [["12", "手指骨折", "否", "-", "-1", "數小時"]],
+    },
+    {
+      rowId: "13",
+      defaultRows: [["13", "肌腱撕裂", "否", "-", "-1", "數小時"]],
+    },
+    {
+      rowId: "14",
+      defaultRows: [["14", "皮膚病變", "否", "-", "-1", "數小時"]],
+    },
+    {
+      rowId: "15",
+      defaultRows: [["15", "肩膀割傷", "否", "-", "-1", "數小時"]],
+    },
+    {
+      rowId: "16",
+      defaultRows: [["16", "肩部割傷", "否", "-", "-1", "數小時"]],
+    },
+    {
+      rowId: "21",
+      defaultRows: [["21", "膝蓋損傷", "否", "-", "-1", "數天"]],
+    },
+    {
+      rowId: "22",
+      defaultRows: [["22", "敲掉牙齒", "否", "-", "-1", "數天"]],
+    },
+    {
+      rowId: "23",
+      defaultRows: [["23", "耳朵分離", "否", "-", "-1", "數天"]],
+    },
+    {
+      rowId: "24",
+      defaultRows: [["24", "鼻梁骨折", "否", "-", "-1", "數天"]],
+    },
+    {
+      rowId: "25",
+      defaultRows: [["25", "肋骨斷裂", "否", "-", "-1", "數天"]],
+    },
+    {
+      rowId: "26",
+      defaultRows: [["26", "腳部壓碎", "否", "-", "-1", "數天"]],
+    },
+    {
+      rowId: "31",
+      defaultRows: [["31", "喉嚨受傷", "是", "B 天", "-2", "數天"]],
+    },
+    {
+      rowId: "32",
+      defaultRows: [["32", "腿部割開", "是", "B 天", "-2", "數天"]],
+    },
+    {
+      rowId: "33",
+      defaultRows: [["33", "深層肌肉傷害", "是", "B 天", "-2", "數天"]],
+    },
+    {
+      rowId: "34",
+      defaultRows: [["34", "骨碎並鬆動", "是", "B 天", "-2", "數天"]],
+    },
+    {
+      rowId: "35",
+      defaultRows: [["35", "腦震盪", "是", "B 天", "-2", "數周"]],
+    },
+    {
+      rowId: "36",
+      defaultRows: [["36", "肺部穿孔", "是", "B 天", "-2", "數周"]],
+    },
+    {
+      rowId: "41",
+      defaultRows: [["41", "內出血", "是", "B 小時", "-2", "數天"]],
+    },
+    {
+      rowId: "42",
+      defaultRows: [["42", "嚴重內出血", "是", "B 小時", "-2", "數天"]],
+    },
+    {
+      rowId: "43",
+      defaultRows: [["43", "髒傷口", "是", "B 小時", "-2", "數天"]],
+    },
+    {
+      rowId: "44",
+      defaultRows: [["44", "腿部壓碎", "是", "B 小時", "-2", "數天"]],
+    },
+    {
+      rowId: "45",
+      defaultRows: [["45", "腸道壓碎", "是", "B 小時", "-3", "數周"]],
+    },
+    {
+      rowId: "46",
+      defaultRows: [["46", "嚴重出血", "是", "A 小時", "-3", "數周"]],
+    },
+    {
+      rowId: "51",
+      defaultRows: [["51", "眼睛壞死", "是", "A 天", "-3", "數周"]],
+    },
+    {
+      rowId: "52",
+      defaultRows: [["52", "腸破裂", "是", "A 天", "-3", "數周"]],
+    },
+    {
+      rowId: "53",
+      defaultRows: [["53", "腎臟破裂", "是", "A 天", "-3", "數周"]],
+    },
+    {
+      rowId: "54",
+      defaultRows: [["54", "額頭凹陷", "是", "A 天", "-3", "數周"]],
+    },
+    {
+      rowId: "55",
+      defaultRows: [["55", "脊髓損傷", "是", "A 小時", "-4", "數月"]],
+    },
+    {
+      rowId: "56",
+      defaultRows: [["56", "昏迷", "是", "A 分鐘", "無法行動", "數月"]],
+    },
+    {
+      rowId: "61",
+      defaultRows: [["61", "休克", "是", "A 天", "無法行動", "數月"]],
+    },
+    {
+      rowId: "62",
+      defaultRows: [["62", "主動脈破裂", "是", "A 分鐘", "-5", "數周"]],
+    },
+    {
+      rowId: "63",
+      defaultRows: [["63", "身體壓碎", "是", "-", "你死了", "-"]],
+    },
+    {
+      rowId: "64",
+      defaultRows: [["64", "開膛", "是", "-", "你死了", "-"]],
+    },
+    {
+      rowId: "65",
+      defaultRows: [["65", "頭部穿刺", "是", "-", "你死了", "-"]],
+    },
+    {
+      rowId: "66",
+      defaultRows: [["66", "心臟穿刺", "是", "-", "你死了", "-"]],
+    },
+  ],
+};
+
+export const StabilizingIssuesTable: RandomTableElement = {
+  id: "stabilizing-issues-table",
+  originalName: "Stabilizing Issues Table",
+  name: "穩定傷勢失誤表",
+  description: "在擲醫藥以穩定傷勢時失誤的後果",
+  type: "random-table",
+  keywords: ["戰鬥"],
+  headers: ["D6", "醫藥擲骰成功", "醫藥擲骰失敗"],
+  rows: [
+    {
+      rowId: 1,
+      weight: 4,
+      defaultRows: [["1-4", "醫藥器材耗盡/損壞", "醫藥器材耗盡/損壞"]],
+    },
+    {
+      rowId: 2,
+      weight: 1,
+      defaultRows: [["5", "恢復時間加倍", "時限減半"]],
+    },
+    {
+      rowId: 3,
+      weight: 1,
+      defaultRows: [["6", "下次擲骰懲罰 -1", "（某個技能）永久懲罰 -1"]],
+    },
+  ],
+};
+
+export const ExplosiveWeaponTable: ExampleTableElement = {
+  id: "explosive-weapon-table",
+  originalName: "Explosive Weapon Table",
+  name: "爆炸武器表",
+  description: "不同爆炸武器的爆炸力（BP）對應範例",
+  type: "example",
+  keywords: ["危害", "hazard"],
+  headers: ["爆炸與火焰源", "爆炸力（BP）"],
+  rows: [
+    {
+      rowId: "molotov-cocktail",
+      defaultRows: [["汽油彈", "6"]],
+    },
+    {
+      rowId: "hand-grenade",
+      defaultRows: [["手榴彈", "8"]],
+    },
+    {
+      rowId: "rocket-launcher",
+      defaultRows: [["火箭發射器", "10"]],
+    },
+    {
+      rowId: "mortar",
+      defaultRows: [["迫擊砲", "12"]],
+    },
+    {
+      rowId: "howitzer",
+      defaultRows: [["榴彈砲", "14"]],
+    },
+  ],
+};
+
+export const FireTable: ExampleTableElement = {
+  id: "fire-table",
+  originalName: "Fire Table",
+  name: "火焰表",
+  description: "火源與強度的對應範例",
+  type: "example",
+  headers: ["火焰源", "強度"],
+  keywords: ["危害", "hazard"],
+  rows: [
+    {
+      rowId: "torch",
+      defaultRows: [["火把", "4"]],
+    },
+    {
+      rowId: "burning-forniture",
+      defaultRows: [["燃燒家具", "6"]],
+    },
+    {
+      rowId: "burning-room",
+      defaultRows: [["燃燒房間", "8"]],
+    },
+  ],
+};
+
+export const DeseaseTable: ExampleTableElement = {
+  id: "desease-table",
+  originalName: "Desease Table",
+  name: "疾病表",
+  description: "疾病與嚴重性的對應範例",
+  type: "example",
+  headers: ["疾病", "嚴重性"],
+  keywords: ["危害", "hazard"],
+  rows: [
+    {
+      rowId: "flu",
+      defaultRows: [["流感", "4"]],
+    },
+    {
+      rowId: 'Pneumonia',
+      defaultRows: [["肺炎", "6"]],
+    },
+    {
+      rowId: "sars",
+      defaultRows: [["SARS", "8"]],
+    },
+    {
+      rowId: "mrsa",
+      defaultRows: [["MRSA", "10"]],
+    }
+  ],
+};
+
+export const TrapTable: ExampleTableElement = {
+  id: "trap-table",
+  originalName: "Trap Table",
+  name: "陷阱表",
+  description: "陷阱與效果的對應範例",
+  type: "example",
+  headers: ["陷阱", "效果"],
+  keywords: ["危害", "hazard"],
+  rows: [
+    {
+      rowId: 'Shotgun-behind-door',
+      defaultRows: [["門後的霰彈槍", "攻擊 4，傷害 2"]],
+    },
+    {
+      rowId: 'pit-trap',
+      defaultRows: [["陷阱坑", "陷在坑裡，掉落傷害 2（4 公尺）"]],
+    },
+    {
+      rowId: 'Poisoned arrow',
+      defaultRows: [["毒箭", "攻擊 2，毒性 6 的毒"]],
+    },
+    {
+      rowId: 'Tripwire-with-grenade',
+      defaultRows: [["繩索與手榴彈", "爆炸力 8"]],
+    },
+    {
+      rowId: 'walker-trap',
+      defaultRows: [["行屍陷阱", "集群大小 2，威脅等級 4"]],
+    }
+  ],
+};

@@ -13,6 +13,7 @@ export interface GameElementBase {
   originalName: string;
   description: string;
   editable?: boolean;
+  keywords?: string[];
   order?: number;
 }
 
@@ -37,7 +38,7 @@ export interface Row {
 }
 
 export interface RandomRow extends Row {
-  weight: number;
+  weight?: number;
 }
 
 export type TableData = GameElement[];
