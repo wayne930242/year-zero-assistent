@@ -33,6 +33,48 @@ import { useDispatch, useSelector } from "@/lib/redux/store";
 import { selectScreen, setElements } from "@/lib/redux/slices/screenSlice";
 import { cn } from "@/lib/utils";
 
+function calculateRelevance(search: string, dataItem: GameElement): number {
+  const weights = {
+    name: 4,
+    originalName: 3,
+    description: 2,
+    keywords: 1,
+  };
+
+  let score = 0;
+
+  const searchLower = search.toLowerCase();
+
+  if (dataItem.name.toLowerCase().includes(searchLower)) {
+    score += weights.name;
+  }
+
+  if (
+    dataItem.originalName &&
+    dataItem.originalName.toLowerCase().includes(searchLower)
+  ) {
+    score += weights.originalName;
+  }
+
+  if (
+    dataItem.description &&
+    dataItem.description.toLowerCase().includes(searchLower)
+  ) {
+    score += weights.description;
+  }
+
+  if (
+    dataItem.keywords &&
+    dataItem.keywords.some((keyword) =>
+      keyword.toLowerCase().includes(searchLower)
+    )
+  ) {
+    score += weights.keywords;
+  }
+
+  return score;
+}
+
 export const EditDrawer = ({ data, screenKey }: Props) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
@@ -83,7 +125,13 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-[200px] p-0">
-                <Command>
+                <Command
+                  filter={(value, search) => {
+                    const dataMitValue = data.find((d) => d.id === value);
+                    if (!dataMitValue) return 0;
+                    return calculateRelevance(search, dataMitValue);
+                  }}
+                >
                   <CommandInput placeholder="搜尋..." />
                   <CommandEmpty>找不到表格。</CommandEmpty>
                   <CommandGroup>
@@ -110,10 +158,6 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
                           )}
                         />
                         {d.name}
-                        <span className="opacity-0 h-0 w-0">
-                          ;{d.description};{d.originalName};
-                          {d.keywords?.join(";")}
-                        </span>
                       </CommandItem>
                     ))}
                   </CommandGroup>

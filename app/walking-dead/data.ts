@@ -731,7 +731,7 @@ export const DeseaseTable: ExampleTableElement = {
       defaultRows: [["流感", "4"]],
     },
     {
-      rowId: 'Pneumonia',
+      rowId: "Pneumonia",
       defaultRows: [["肺炎", "6"]],
     },
     {
@@ -741,7 +741,7 @@ export const DeseaseTable: ExampleTableElement = {
     {
       rowId: "mrsa",
       defaultRows: [["MRSA", "10"]],
-    }
+    },
   ],
 };
 
@@ -755,24 +755,115 @@ export const TrapTable: ExampleTableElement = {
   keywords: ["危害", "hazard"],
   rows: [
     {
-      rowId: 'Shotgun-behind-door',
+      rowId: "Shotgun-behind-door",
       defaultRows: [["門後的霰彈槍", "攻擊 4，傷害 2"]],
     },
     {
-      rowId: 'pit-trap',
+      rowId: "pit-trap",
       defaultRows: [["陷阱坑", "陷在坑裡，掉落傷害 2（4 公尺）"]],
     },
     {
-      rowId: 'Poisoned arrow',
+      rowId: "Poisoned arrow",
       defaultRows: [["毒箭", "攻擊 2，毒性 6 的毒"]],
     },
     {
-      rowId: 'Tripwire-with-grenade',
+      rowId: "Tripwire-with-grenade",
       defaultRows: [["繩索與手榴彈", "爆炸力 8"]],
     },
     {
-      rowId: 'walker-trap',
+      rowId: "walker-trap",
       defaultRows: [["行屍陷阱", "集群大小 2，威脅等級 4"]],
-    }
+    },
+  ],
+};
+
+export const GerneralGearTable: ExampleTableElement = {
+  id: "general-gear-table",
+  originalName: "General Gear Table",
+  name: "一般裝備表",
+  description: "一般裝備的數值對應",
+  type: "example",
+  headers: ["道具", "佔位", "加成"],
+  rows: [
+    {
+      rowId: "advanced-medical-gear",
+      defaultRows: [["高級醫療裝備", "看情況", "醫藥 +2"]],
+    },
+    {
+      rowId: "basic-medical-gear",
+      defaultRows: [["基本醫療裝備", "看情況", "醫藥 +1"]],
+    },
+    {
+      rowId: "binoculars",
+      defaultRows: [["望遠鏡", "1/2", "偵查 +2"]],
+    },
+    {
+      rowId: "book-of-maps",
+      defaultRows: [["地圖書", "1/2", "偵查 +1"]],
+    },
+    {
+      rowId: "bottle-of-liquor",
+      defaultRows: [["一瓶酒", "1/2", "操縱 +2"]],
+    },
+    {
+      rowId: "camera",
+      defaultRows: [["相機", "1/2", "-"]],
+    },
+    {
+      rowId: "compass",
+      defaultRows: [["羅盤", "1/2", "生存 +2"]],
+    },
+    {
+      rowId: "crowbar",
+      defaultRows: [["撬棍", "1", "力量 +2"]],
+    },
+    {
+      rowId: "dog",
+      defaultRows: [["狗", "-", "近戰 +1"]],
+    },
+    {
+      rowId: "field-kitchen",
+      defaultRows: [["野戰廚房", "1", "-"]],
+    },
+    {
+      rowId: "horse",
+      defaultRows: [["馬", "-", "-"]],
+    },
+    {
+      rowId: "guitar",
+      defaultRows: [["吉他", "1", "領導 +1"]],
+    },
+    {
+      rowId: "lockpicks",
+      defaultRows: [["開鎖工具", "-", "隱匿 +2"]],
+    },
+    {
+      rowId: "pack-of-gum/cigarettes",
+      defaultRows: [["一包口香糖/香菸", "-", "操縱 +1"]],
+    },
+    {
+      rowId: "ration-of-food",
+      defaultRows: [["一份食物", "1/2", "-"]],
+    },
+    {
+      rowId: "rope(10meters)",
+      defaultRows: [["繩索（10公尺）", "1", "機動 +2"]],
+    },
+    {
+      rowId: "sleeping-bag",
+      defaultRows: [["睡袋", "1", "生存 +1"]],
+    },
+    {
+      rowId: "tent",
+      defaultRows: [["帳篷", "2", "生存 +2"]],
+    },
+    {
+      rowId: "toolbox",
+      defaultRows: [["工具箱", "1", "科技"]],
+    },
+    {
+      rowId: "walkie-talkie",
+      defaultRows: [["對講機", "1/2", "領導 +1"]],
+    },
   ],
 };
