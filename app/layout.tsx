@@ -8,7 +8,7 @@ const notoSansTC = Noto_Sans_TC({
 });
 
 export const metadata: Metadata = {
-  title: "元年引擎小助手",
+  title: "洪偉的元年引擎小助手",
   description: "協助你進行元年引擎遊戲的 APP。",
 };
 

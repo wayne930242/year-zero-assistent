@@ -777,9 +777,39 @@ export const TrapTable: ExampleTableElement = {
   ],
 };
 
+export const QualityOfItemsTable: RandomTableElement = {
+  id: "quality-of-items-table",
+  originalName: "Item Quality",
+  name: "物品品質",
+  description: "物品品質",
+  type: "random-table",
+  headers: ["D6", "品質"],
+  rows: [
+    {
+      rowId: 1,
+      defaultRows: [["1", "破損/無用"]],
+    },
+    {
+      rowId: 2,
+      defaultRows: [["2-4", "不良"]],
+      weight: 3,
+    },
+    {
+      rowId: 3,
+      defaultRows: [["5", "還行"]],
+    },
+    {
+      rowId: 6,
+      defaultRows: [
+        ["6", "還行，並再擲一次，若依然是 6，則該物品的品質極佳。"],
+      ],
+    },
+  ],
+};
+
 export const GerneralGearTable: ExampleTableElement = {
   id: "general-gear-table",
-  originalName: "General Gear Table",
+  originalName: "General Gear",
   name: "一般裝備表",
   description: "一般裝備的數值對應",
   type: "example",
@@ -864,6 +894,286 @@ export const GerneralGearTable: ExampleTableElement = {
     {
       rowId: "walkie-talkie",
       defaultRows: [["對講機", "1/2", "領導 +1"]],
+    },
+  ],
+};
+
+export const CloseCombatWeaponTable: ExampleTableElement = {
+  id: "close-combat-weapon-table",
+  originalName: "Close Combat Weapon",
+  name: "近戰武器",
+  description: "近戰武器的數值對應",
+  type: "example",
+  headers: ["武器", "傷害", "加成", "佔位"],
+  rows: [
+    {
+      rowId: "foot-or-fist",
+      defaultRows: [["腳/拳", "1", "0", "-"]],
+    },
+    {
+      rowId: "improvised-weapon",
+      defaultRows: [["即興武器", "1", "+1", "1/2"]],
+    },
+    {
+      rowId: "knuckle-duster",
+      defaultRows: [["手指虎", "1", "+1", "1/2"]],
+    },
+    {
+      rowId: "rifle-butt",
+      defaultRows: [["槍托撞擊", "1", "+1", "1"]],
+    },
+    {
+      rowId: "knife",
+      defaultRows: [["小刀", "1", "+2", "1/2"]],
+    },
+    {
+      rowId: "small-axe",
+      defaultRows: [["小斧", "1", "+2", "1/2"]],
+    },
+    {
+      rowId: "quarterstaff",
+      defaultRows: [["鐵頭木棒", "1", "+3", "1"]],
+    },
+    {
+      rowId: "crowbar",
+      defaultRows: [["撬棍", "2", "+1", "1"]],
+    },
+    {
+      rowId: "baseball-bat",
+      defaultRows: [["球棒", "2", "+1", "1"]],
+    },
+    {
+      rowId: "spear",
+      defaultRows: [["短矛", "2", "+2", "1"]],
+    },
+    {
+      rowId: "big-axe",
+      defaultRows: [["大斧", "2", "+2", "1"]],
+    },
+    {
+      rowId: "siedgehammer",
+      defaultRows: [["長柄大錘", "3", "0", "2"]],
+    },
+  ],
+};
+
+export const RangedWeaponTable: ExampleTableElement = {
+  id: "ranged-weapon-table",
+  originalName: "Ranged Weapon",
+  name: "遠程武器",
+  description: "遠程武器的數值對應",
+  type: "example",
+  headers: ["武器", "傷害", "加成", "距離", "佔位"],
+  rows: [
+    {
+      rowId: "throwing-knife",
+      defaultRows: [["投擲刀", "1", "+1", "短", "1/2"]],
+    },
+    {
+      rowId: "bow",
+      defaultRows: [["弓", "1", "+2", "長", "1"]],
+    },
+    {
+      rowId: "crossbow",
+      defaultRows: [["弩", "2", "+2", "長", "1"]],
+    },
+    {
+      rowId: "pistol-or-revolver",
+      defaultRows: [["手槍/左輪", "2", "+2", "短", "1"]],
+    },
+    {
+      rowId: "pipe-gun",
+      defaultRows: [["土砲霰彈槍", "2", "+1", "短", "1"]],
+    },
+    {
+      rowId: "shotgun",
+      defaultRows: [["霰彈槍", "2", "+3", "短", "1"]],
+    },
+    {
+      rowId: "rifle",
+      defaultRows: [["步槍", "2", "+2", "長", "1"]],
+    },
+    {
+      rowId: "sniper-rifle",
+      defaultRows: [["狙擊步槍", "2", "+2", "極限", "1"]],
+    },
+    {
+      rowId: "submachine-gun",
+      defaultRows: [["衝鋒槍", "2", "+3", "短", "1"]],
+    },
+    {
+      rowId: "assault-rifle",
+      defaultRows: [["突擊步槍", "2", "+3", "長", "1"]],
+    },
+    {
+      rowId: "heavy-machine-gun",
+      defaultRows: [["重機槍", "3", "+3", "極限", "3"]],
+    },
+    {
+      rowId: "molotov-cocktail",
+      defaultRows: [["汽油彈", "BP 6", "0", "短", "1/2"]],
+    },
+    {
+      rowId: "hand-grenade",
+      defaultRows: [["手榴彈", "BP 8", "+1", "短", "1/2"]],
+    },
+    {
+      rowId: "rocket-launcher",
+      defaultRows: [["火箭發射器", "BP 10", "+2", "長", "2"]],
+    },
+    {
+      rowId: "tank-cannon",
+      defaultRows: [["坦克炮", "BP 12", "+3", "極限", "X"]],
+    },
+  ],
+};
+
+export const VechicleConditionTable: RandomTableElement = {
+  id: "vehicle-condition-table",
+  originalName: "Vehicle Condition",
+  name: "載具狀況",
+  description: "載具狀況隨機表",
+  type: "random-table",
+  headers: ["D6", "狀況", "燃料"],
+  rows: [
+    {
+      rowId: 1,
+      defaultRows: [["1", "損壞並無法修復", "空"]],
+    },
+    {
+      rowId: 2,
+      defaultRows: [["2", "損壞並需要大規模維修", "空"]],
+    },
+    {
+      rowId: 3,
+      defaultRows: [["3", "損壞並需要維修", "空"]],
+    },
+    {
+      rowId: 4,
+      defaultRows: [
+        ["4", "功能正常但若未維修，會在行駛 D6 區域後損壞", "冒煙"],
+      ],
+    },
+    {
+      rowId: 5,
+      defaultRows: [["5", "功能正常但若未維修，會在行駛 D6 天後損壞", "半滿"]],
+    },
+    {
+      rowId: 6,
+      defaultRows: [["6", "功能正常", "滿"]],
+    },
+  ],
+};
+
+export const VehicleTypeTable: ExampleTableElement = {
+  id: "vehicle-type-table",
+  originalName: "Vehicle Type",
+  name: "載具類型",
+  description: "載具類型隨機表",
+  type: "example",
+  headers: ["載具", "操控性", "傷害", "殼體", "護甲", "問題"],
+  rows: [
+    {
+      rowId: "car",
+      defaultRows: [["車", "+2", "2", "4", "4", "汽油可能用完"]],
+    },
+    {
+      rowId: "bicycle",
+      defaultRows: [["自行車", "+2", "0", "2", "0", "容易爆胎"]],
+    },
+    {
+      rowId: "horse",
+      defaultRows: [["馬", "+2", "1", "4", "0", "需要餵食，容易受驚"]],
+    },
+    {
+      rowId: "motorcycle",
+      defaultRows: [["機車", "+3", "2", "3", "2", "汽油可能用完"]],
+    },
+    {
+      rowId: "battle-tank",
+      defaultRows: [
+        ["戰車", "+1", "4（不含武器）", "10", "8", "汽油可能用完，吵鬧"],
+      ],
+    },
+  ],
+};
+
+export const CrashObjectsTable: RandomTableElement = {
+  id: "crash-objects-table",
+  originalName: "Crash Objects",
+  name: "撞擊物",
+  description: "撞擊物隨機表",
+  type: "random-table",
+  headers: ["D6", "撞上", "撞擊骰", "耐久度"],
+  rows: [
+    {
+      rowId: "soft-material(haystack)",
+      defaultRows: [["1", "軟物質（乾草堆）", "2", "1"]],
+    },
+    {
+      rowId: "fragile-construction",
+      defaultRows: [["2", "脆弱構造物", "3", "2"]],
+    },
+    {
+      rowId: "another-car",
+      defaultRows: [["3", "另一輛車", "4", "車輛殼體"]],
+    },
+    {
+      rowId: "wooden-house",
+      defaultRows: [["4", "木屋", "6", "3"]],
+    },
+    {
+      rowId: "brick-wall",
+      defaultRows: [["5", "磚牆", "8", "4"]],
+    },
+    {
+      rowId: "enhanced-concrete-wall",
+      defaultRows: [["6", "強化水泥牆", "10", "5"]],
+    },
+  ],
+};
+
+export const criticalVehicleDamageTable: RandomTableElement = {
+  id: "critical-vehicle-damage-table",
+  originalName: "Critical Vehicle Damage",
+  name: "嚴重載具傷害",
+  description: "嚴重載具傷害隨機表",
+  type: "random-table",
+  headers: ["D6", "結果"],
+  rows: [
+    {
+      rowId: 1,
+      defaultRows: [["1", "在載具中的隨機一人受傷，並受到 3 點傷害"]],
+    },
+    {
+      rowId: 2,
+      defaultRows: [["2", "駕駛受傷，並受到 2 點傷害"]],
+    },
+    {
+      rowId: 3,
+      defaultRows: [["3", "油箱損壞，燃料開始洩漏"]],
+    },
+    {
+      rowId: 4,
+      defaultRows: [["4", "擋風玻璃和幾扇窗戶被破壞"]],
+    },
+    {
+      rowId: 5,
+      defaultRows: [
+        [
+          "5",
+          "駕駛失去控制，車輛撞上了某物。以「重擊物」表擲骰，但碰撞造成是對駕駛的傷害而非車輛。",
+        ],
+      ],
+    },
+    {
+      rowId: 6,
+      defaultRows: [
+        [
+          "6",
+          "車輛開始燃燒。車內的每個人都受到強度 6 的火焰傷害。擲骰子確定車還有幾分鐘爆炸（爆炸力 8）。",
+        ],
+      ],
     },
   ],
 };

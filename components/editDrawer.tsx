@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -84,6 +84,14 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
   const screen = useSelector(selectScreen);
   const globalData = screen[screenKey];
 
+  const memoDataRecord = useMemo<Record<string, GameElement>>(() => {
+    const dataRecord: Record<string, GameElement> = {};
+    data.forEach((d) => {
+      dataRecord[d.id] = d;
+    });
+    return dataRecord;
+  }, [data]);
+
   useEffect(() => {
     // Update globalData.elements to selected elements
     setSelected(globalData.elements.map((element) => element.id));
@@ -127,9 +135,7 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
               <PopoverContent className="w-[200px] p-0">
                 <Command
                   filter={(value, search) => {
-                    const dataMitValue = data.find((d) => d.id === value);
-                    if (!dataMitValue) return 0;
-                    return calculateRelevance(search, dataMitValue);
+                    return calculateRelevance(search, memoDataRecord[value]);
                   }}
                 >
                   <CommandInput placeholder="搜尋..." />

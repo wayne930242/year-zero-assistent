@@ -5,6 +5,11 @@ import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import * as WalkingDeadData from "./data";
 import { TableDnd } from "@/components/screenDnd";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "陰屍路宇宙——洪偉的元年引擎小助手",
+};
 
 const Page = () => {
   return (
@@ -20,7 +25,10 @@ const Page = () => {
             priority
           />
           <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 p-4 flex justify-start items-end">
-            <EditDrawer data={Object.values(WalkingDeadData)} screenKey="walkingDead" />
+            <EditDrawer
+              data={Object.values(WalkingDeadData)}
+              screenKey="walkingDead"
+            />
           </div>
           <div className="absolute top-0 left-0 p-4">
             <Link href="/">
