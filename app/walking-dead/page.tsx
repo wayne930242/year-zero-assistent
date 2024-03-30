@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
-import * as WalkingDeadData from "./data";
+import * as tableData from "./table-data";
 import { TableDnd } from "@/components/screenDnd";
 import { Metadata } from "next";
 
@@ -26,7 +26,7 @@ const Page = () => {
           />
           <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 p-4 flex justify-start items-end">
             <EditDrawer
-              data={Object.values(WalkingDeadData)}
+              data={Object.values(tableData)}
               screenKey="walkingDead"
             />
           </div>

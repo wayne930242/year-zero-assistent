@@ -640,7 +640,6 @@ export const StabilizingIssuesTable: RandomTableElement = {
   name: "穩定傷勢失誤表",
   description: "在擲醫藥以穩定傷勢時失誤的後果",
   type: "random-table",
-  keywords: ["戰鬥"],
   headers: ["D6", "醫藥擲骰成功", "醫藥擲骰失敗"],
   rows: [
     {
@@ -667,7 +666,6 @@ export const ExplosiveWeaponTable: ExampleTableElement = {
   name: "爆炸武器表",
   description: "不同爆炸武器的爆炸力（BP）對應範例",
   type: "example",
-  keywords: ["危害", "hazard"],
   headers: ["爆炸與火焰源", "爆炸力（BP）"],
   rows: [
     {
@@ -700,7 +698,6 @@ export const FireTable: ExampleTableElement = {
   description: "火源與強度的對應範例",
   type: "example",
   headers: ["火焰源", "強度"],
-  keywords: ["危害", "hazard"],
   rows: [
     {
       rowId: "torch",
@@ -724,7 +721,6 @@ export const DeseaseTable: ExampleTableElement = {
   description: "疾病與嚴重性的對應範例",
   type: "example",
   headers: ["疾病", "嚴重性"],
-  keywords: ["危害", "hazard"],
   rows: [
     {
       rowId: "flu",
@@ -752,7 +748,6 @@ export const TrapTable: ExampleTableElement = {
   description: "陷阱與效果的對應範例",
   type: "example",
   headers: ["陷阱", "效果"],
-  keywords: ["危害", "hazard"],
   rows: [
     {
       rowId: "Shotgun-behind-door",
@@ -889,7 +884,7 @@ export const GerneralGearTable: ExampleTableElement = {
     },
     {
       rowId: "toolbox",
-      defaultRows: [["工具箱", "1", "科技"]],
+      defaultRows: [["工具箱", "1", "技術"]],
     },
     {
       rowId: "walkie-talkie",
@@ -983,7 +978,7 @@ export const RangedWeaponTable: ExampleTableElement = {
     },
     {
       rowId: "pipe-gun",
-      defaultRows: [["土砲霰彈槍", "2", "+1", "短", "1"]],
+      defaultRows: [["管製霰彈槍", "2", "+1", "短", "1"]],
     },
     {
       rowId: "shotgun",
@@ -1570,19 +1565,503 @@ export const SwarmAttackTable: ExampleTableElement = {
   rows: [
     {
       rowId: "1",
-      defaultRows: [["3", "忍受, 力量, 機動, 遠戰, 隱匿", "單攻擊, 阻隔"]],
+      defaultRows: [["3", "忍受, 力量, 機動, 遠戰, 隱匿", "單一攻擊, 阻隔"]],
     },
     {
       rowId: "2",
-      defaultRows: [["4", "力量, 機動, 遠戰", "單攻擊, 阻隔"]],
+      defaultRows: [["4", "力量, 機動, 遠戰", "單一攻擊, 阻隔"]],
     },
     {
       rowId: "3",
-      defaultRows: [["5", "力量, 近戰, 遠戰", "單攻擊, 阻隔"]],
+      defaultRows: [["5", "力量, 近戰, 遠戰", "單一攻擊, 阻隔"]],
     },
     {
       rowId: "4",
       defaultRows: [["6", "力量, 近戰", "大量攻擊"]],
+    },
+  ],
+};
+
+export const HavenCapacityTable: ExampleTableElement = {
+  id: "haven-capacity-table",
+  originalName: "Haven Capacity",
+  name: "避難港容量",
+  description: "避難港容量對照表",
+  type: "example",
+  headers: ["D6", "居民數", "描述"],
+  rows: [
+    {
+      rowId: "0",
+      defaultRows: [["0", "0", "不斷需要尋找其他食物來源"]],
+    },
+    {
+      rowId: "1",
+      defaultRows: [
+        ["1", "10", "有供狩獵用的步槍、一些罐頭食品，並且附近有新鮮水源"],
+      ],
+    },
+    {
+      rowId: "2",
+      defaultRows: [["2", "20", "一些牲畜和良好的漁獵設備"]],
+    },
+    {
+      rowId: "3",
+      defaultRows: [["3", "50", "小農場，有牲畜和農作物"]],
+    },
+    {
+      rowId: "4",
+      defaultRows: [["4", "80", "大型農場，有牲畜和農作物"]],
+    },
+    {
+      rowId: "5",
+      defaultRows: [["5", "200", "與其他社區有良好的貿易協議"]],
+    },
+    {
+      rowId: "6",
+      defaultRows: [
+        ["6", "500", "一系列農場和建立良好的貿易路線、工作坊和初步的工業"],
+      ],
+    },
+  ],
+};
+
+export const HavenDefenseTable: ExampleTableElement = {
+  id: "haven-defense-table",
+  originalName: "Haven Defense",
+  name: "防禦",
+  description: "不同防禦等級的描述與防禦加成。",
+  type: "example",
+  headers: ["防禦等級", "防禦加成", "示例"],
+  rows: [
+    {
+      rowId: "0",
+      defaultRows: [["0", "+0", "一棟前門損壞的房子"]],
+    },
+    {
+      rowId: "1",
+      defaultRows: [["1", "+1", "帳篷周圍有由繩子和鈴鐺組成的警報系統"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [["2", "+2", "農場周圍有木籬笆，屋頂上有瞭望員"]],
+    },
+    {
+      rowId: "3",
+      defaultRows: [
+        ["3", "+3", "一棟有加固堅固門、封鎖窗戶、圍欄和加固門的房子"],
+      ],
+    },
+    {
+      rowId: "4",
+      defaultRows: [
+        [
+          "4",
+          "+4",
+          "有石頭高牆和金屬門的圍欄監獄，塔樓上有斥候，並有全天候檢查安全系統",
+        ],
+      ],
+    },
+    {
+      rowId: "5",
+      defaultRows: [["5", "+5", "有高牆和金屬門的圍欄監獄"]],
+    },
+    {
+      rowId: "6",
+      defaultRows: [
+        [
+          "6",
+          "+6",
+          "一個有電子監控、守衛塔樓、混凝土牆和電子鎖金屬門的軍事基地",
+        ],
+      ],
+    },
+  ],
+};
+
+export const HavenOverrunTable: RandomTableElement = {
+  id: "haven-overrun-table",
+  originalName: "Haven Overrun",
+  name: "避難港淹沒表",
+  description: "不同防禦等級和群體大小下，直到避難所被淹沒的時間。",
+  type: "random-table",
+  headers: ["防禦等級", "群體大小", "直到被淹沒的時間"],
+  rows: [
+    {
+      rowId: "0",
+      defaultRows: [["0", "單一攻擊", "0"]],
+    },
+    {
+      rowId: "1",
+      defaultRows: [["1", "1 (5–10)", "數秒"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [["2", "2 (11–20)", "數分鐘"]],
+    },
+    {
+      rowId: "3",
+      defaultRows: [["3", "3 (21–50)", "數小時"]],
+    },
+    {
+      rowId: "4",
+      defaultRows: [["4", "4 (51-100)", "數小時（兩倍）"]],
+    },
+    {
+      rowId: "5",
+      defaultRows: [["5", "5 (100+)", "數日"]],
+    },
+    {
+      rowId: "6",
+      defaultRows: [["6", "6 (1,000+)", "數週"]],
+    },
+  ],
+};
+
+export const HavenIssueTable: RandomTableElement = {
+  id: "haven-issue-table",
+  originalName: "HavenIssue",
+  name: "避難港問題",
+  description: "避難所可能面臨的問題。",
+  type: "random-table",
+  headers: ["D66", "問題"],
+  rows: [
+    {
+      rowId: "11",
+      defaultRows: [["11", "依賴即將耗盡的食物來源"]],
+    },
+    {
+      rowId: "12",
+      defaultRows: [["12", "依賴子彈和火器"]],
+    },
+    {
+      rowId: "13",
+      defaultRows: [["13", "冬季極度寒冷"]],
+    },
+    {
+      rowId: "14",
+      defaultRows: [["14", "部分食物或水可能被污染"]],
+    },
+    {
+      rowId: "15",
+      defaultRows: [["15", "可以從遠處輕易被發現"]],
+    },
+    {
+      rowId: "16",
+      defaultRows: [["16", "難以加固防禦"]],
+    },
+    {
+      rowId: "21",
+      defaultRows: [["21", "靠近大群行屍"]],
+    },
+    {
+      rowId: "22",
+      defaultRows: [["22", "另一群體認為這是他們的領土"]],
+    },
+    {
+      rowId: "23",
+      defaultRows: [["23", "擁擠，導致群體內部衝突"]],
+    },
+    {
+      rowId: "24",
+      defaultRows: [["24", "避難所的部分區域尚未被確保"]],
+    },
+    {
+      rowId: "25",
+      defaultRows: [["25", "到處都是老鼠"]],
+    },
+    {
+      rowId: "26",
+      defaultRows: [["26", "對其他人來說是個眾所周知的地點"]],
+    },
+    {
+      rowId: "31",
+      defaultRows: [["31", "附近有一群狼在狩獵"]],
+    },
+    {
+      rowId: "32",
+      defaultRows: [["32", "你與另一個群體共享這個地方"]],
+    },
+    {
+      rowId: "33",
+      defaultRows: [["33", "經常有事情吸引行屍到這個位置"]],
+    },
+    {
+      rowId: "34",
+      defaultRows: [["34", "入口不安全"]],
+    },
+    {
+      rowId: "35",
+      defaultRows: [["35", "有個NPC在這個地方稱王"]],
+    },
+    {
+      rowId: "36",
+      defaultRows: [["36", "這裡的人變得軟弱和粗心"]],
+    },
+    {
+      rowId: "41",
+      defaultRows: [["41", "NPC倖存者中有幾名成癮者"]],
+    },
+    {
+      rowId: "42",
+      defaultRows: [["42", "有許多入口需要留意"]],
+    },
+    {
+      rowId: "43",
+      defaultRows: [["43", "沒有人談論那個黑暗的秘密"]],
+    },
+    {
+      rowId: "44",
+      defaultRows: [["44", "許多入口需要保持警惕"]],
+    },
+    {
+      rowId: "45",
+      defaultRows: [["45", "需要照顧和保護的幾個嬰兒"]],
+    },
+    {
+      rowId: "46",
+      defaultRows: [["46", "有幾個需要照顧和保護的嬰兒"]],
+    },
+    {
+      rowId: "51",
+      defaultRows: [["51", "沒有足夠的衣服、床墊和毯子"]],
+    },
+    {
+      rowId: "52",
+      defaultRows: [["52", "沒有適當的人類廢物處理系統 — 易於散發惡臭和疾病"]],
+    },
+    {
+      rowId: "53",
+      defaultRows: [["53", "沒有建造或修理任何東西的工具"]],
+    },
+    {
+      rowId: "54",
+      defaultRows: [["54", "這個地方又老又破舊"]],
+    },
+    {
+      rowId: "55",
+      defaultRows: [["55", "建築物是一個火災隱患"]],
+    },
+    {
+      rowId: "56",
+      defaultRows: [["56", "某些部分被水淹沒"]],
+    },
+    {
+      rowId: "61",
+      defaultRows: [["61", "沒有適當的方式烹飪食物"]],
+    },
+    {
+      rowId: "62",
+      defaultRows: [["62", "入口難以加固和守衛"]],
+    },
+    {
+      rowId: "63",
+      defaultRows: [["63", "土地不適合耕種 — 作物不容易生長"]],
+    },
+    {
+      rowId: "64",
+      defaultRows: [["64", "地面布滿了未爆炸的地雷"]],
+    },
+    {
+      rowId: "65",
+      defaultRows: [["65", "需要從不安全的地方取來新鮮水"]],
+    },
+    {
+      rowId: "66",
+      defaultRows: [["66", "群體中未解決的衝突"]],
+    },
+  ],
+};
+
+export const TeachingSurvivorsTable: ExampleTableElement = {
+  id: "teaching-survivors-table",
+  originalName: "Teaching Survivors",
+  name: "教導倖存者",
+  description: "不同級別的教學需求和條件。",
+  type: "example",
+  headers: ["級別", "技能等級", "學生數量", "時間", "教師技能"],
+  rows: [
+    {
+      rowId: "trained",
+      defaultRows: [["訓練有素", "+2", "1–5", "一個月", "2+"]],
+    },
+    {
+      rowId: "expert",
+      defaultRows: [["專家", "+3", "6", "六個月", "4+"]],
+    },
+  ],
+};
+
+export const ProjectExamplesTable: ExampleTableElement = {
+  id: "project-examples-table",
+  originalName: "Project Examples",
+  name: "項目示例",
+  description: "避難所可以進行的項目示例及其效果、所需時間和條件。",
+  type: "example",
+  headers: ["項目", "效果", "時間", "勞動力", "要求"],
+  rows: [
+    {
+      rowId: "beehives",
+      defaultRows: [["蜂箱", "容量 2", "數月", "3-4", "裝備、野蜂、技術 3"]],
+    },
+    {
+      rowId: "potato-field",
+      defaultRows: [
+        ["馬鈴薯田", "容量 3", "數月", "3-4", "馬鈴薯、一塊安全的田地、技術 2"],
+      ],
+    },
+    {
+      rowId: "pigsty",
+      defaultRows: [["豬圈", "容量 3", "數月", "10", "豬、飼料、圍籬、技術3"]],
+    },
+    {
+      rowId: "trade-route",
+      defaultRows: [
+        [
+          "貿易路線",
+          "容量 5",
+          "數週",
+          "20-30",
+          "有價值的交易物品、與其他避難所的聯繫、技術 1",
+        ],
+      ],
+    },
+    {
+      rowId: "simple-alarm-system",
+      defaultRows: [
+        ["簡易警報系統", "容量 1", "1 天", "2-3", "繩子、鐵罐、技術 1"],
+      ],
+    },
+    {
+      rowId: "defense-barriers",
+      defaultRows: [["防禦障礙", "防禦 2", "2 天", "5", "工具、裝備、技術 1"]],
+    },
+    {
+      rowId: "reinforced-stone-walls",
+      defaultRows: [["強化石牆", "防禦 4", "1 個月", "50", "工具、技術 4"]],
+    },
+    {
+      rowId: "bullet-production",
+      defaultRows: [
+        ["子彈生產", "防禦 4", "1 個月", "5", "工具、工作坊、技術5"],
+      ],
+    },
+  ],
+};
+
+export const GearProjectsTable: ExampleTableElement = {
+  id: "gear-projects-table",
+  originalName: "Gear Projects",
+  name: "裝備項目",
+  description: "製作或修理裝備的項目示例及其所需時間、工作力和要求。",
+  type: "example",
+  headers: ["裝備", "時間", "勞動力", "要求"],
+  rows: [
+    {
+      rowId: "simple-body-armor",
+      defaultRows: [["簡易身體護甲", "數週", "1", "鍛造、材料、技術 2"]],
+    },
+    {
+      rowId: "pipe-gun",
+      defaultRows: [["管製霰彈槍", "數日", "1", "廢料、霰彈藥殼、技術 3"]],
+    },
+    {
+      rowId: "repair-clothes",
+      defaultRows: [["修理衣物", "數小時", "1", "縫紉設備、材料、技術 1"]],
+    },
+    {
+      rowId: "molotov-cocktails",
+      defaultRows: [["汽油彈", "數分鐘", "1", "瓶子、汽油、技術 1"]],
+    },
+    {
+      rowId: "repair-radio-transmitter",
+      defaultRows: [["修理無線電發射器", "數日", "1", "工具、電力、技術 4"]],
+    },
+    {
+      rowId: "repair-rifle",
+      defaultRows: [["修理步槍", "幾日", "1", "工具、技術 3"]],
+    },
+  ],
+};
+
+export const VehicleMovementTable: ExampleTableElement = {
+  id: "vehicle-movement-table",
+  originalName: "Vehicle Movement",
+  name: "車輛移動",
+  description: "不同車輛每天能夠移動的區域數及其它相關信息。",
+  type: "example",
+  headers: ["車輛", "每天區域數"],
+  rows: [
+    {
+      rowId: "car",
+      defaultRows: [["汽車", "5"]],
+    },
+    {
+      rowId: "motorcycle",
+      defaultRows: [["摩托車", "5"]],
+    },
+    {
+      rowId: "scooter",
+      defaultRows: [["滑板車", "4"]],
+    },
+    {
+      rowId: "horse",
+      defaultRows: [["馬", "2"]],
+    },
+    {
+      rowId: "bicycle",
+      defaultRows: [["自行車", "2"]],
+    },
+    {
+      rowId: "horse-drawn-carriage",
+      defaultRows: [["馬車", "1"]],
+    },
+    {
+      rowId: "on-foot",
+      defaultRows: [["步行", "1"]],
+    },
+  ],
+};
+
+export const RandomResultTable: RandomTableElement = {
+  id: "npcs-run-result-table",
+  originalName: "NPCs Run Result",
+  name: "NPCs 任務結果",
+  description: "NPCs 出去探索或執行任務後的可能結果。",
+  type: "random-table",
+  headers: ["D6", "結果"],
+  rows: [
+    {
+      rowId: "1",
+      defaultRows: [["1", "所有 NPC 都再也沒有消息。"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [
+        ["2", "一個或幾個 NPC 活著回來了，但沒有找到任何有用的東西。"],
+      ],
+    },
+    {
+      rowId: "3",
+      defaultRows: [["3", "幾個 NPC 回來了，他們帶回了一些有價值的東西。"]],
+    },
+    {
+      rowId: "4",
+      defaultRows: [
+        ["4", "所有 NPC 都疲憊、受傷且害怕地返回，但帶著一些有價值的東西。"],
+      ],
+    },
+    {
+      rowId: "5",
+      defaultRows: [["5", "所有 NPC 都帶著他們出去尋找的東西回來了。"]],
+    },
+    {
+      rowId: "6",
+      defaultRows: [
+        [
+          "6",
+          "所有 NPC 都帶著他們出去尋找的東西回來了，而且他們還發現了一些有價值且意料之外的東西。",
+        ],
+      ],
     },
   ],
 };

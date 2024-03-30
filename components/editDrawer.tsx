@@ -64,8 +64,8 @@ function calculateRelevance(search: string, dataItem: GameElement): number {
   }
 
   if (
-    dataItem.keywords &&
-    dataItem.keywords.some((keyword) =>
+    dataItem.tags &&
+    dataItem.tags.some((keyword) =>
       keyword.toLowerCase().includes(searchLower)
     )
   ) {
@@ -140,7 +140,7 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
                 >
                   <CommandInput placeholder="搜尋..." />
                   <CommandEmpty>找不到表格。</CommandEmpty>
-                  <CommandGroup>
+                  <CommandGroup className="h-[200px] overflow-auto">
                     {data.map((d) => (
                       <CommandItem
                         key={d.id}
