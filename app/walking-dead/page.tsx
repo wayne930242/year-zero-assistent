@@ -1,11 +1,17 @@
-import { EditDrawer } from "@/components/editDrawer";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import * as tableData from "./table-data";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { TableDnd } from "@/components/screenDnd";
 import { Metadata } from "next";
+import { EditContent } from "@/components/editContent";
 
 export const metadata: Metadata = {
   title: "陰屍路宇宙——洪偉的元年引擎小助手",
@@ -23,9 +29,6 @@ const Page = () => {
           sizes="100%; 192px;"
           priority
         />
-        <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 p-4 flex justify-start items-end">
-          <EditDrawer data={Object.values(tableData)} screenKey="walkingDead" />
-        </div>
         <div className="absolute top-0 left-0 p-4">
           <Link href="/">
             <Button
@@ -41,6 +44,19 @@ const Page = () => {
         </h1>
       </div>
       <div className="lg:container lg:mx-auto bg-background">
+        <div className="w-full px-8">
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item">
+              <AccordionTrigger>編輯屏幕</AccordionTrigger>
+              <AccordionContent>
+                <EditContent
+                  data={Object.values(tableData)}
+                  screenKey="walkingDead"
+                />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
         <div className="px-0 py-4 sm:px-6">
           <TableDnd screenKey="walkingDead" />
         </div>

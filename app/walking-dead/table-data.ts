@@ -1,10 +1,10 @@
-import { ExampleTableElement, RandomTableElement } from "@/lib/types";
+import { GameElement } from "@/lib/types";
 
 /*
 Every export modules should be a named export, and types should be GameElement.
 */
 
-export const overwhilmedTable: RandomTableElement = {
+export const overwhilmedTable = {
   id: "overwhelmed-table",
   originalName: "Overwhelmed Table",
   name: "擊垮表",
@@ -28,9 +28,9 @@ export const overwhilmedTable: RandomTableElement = {
       weight: 1,
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const QuestionForXP: ExampleTableElement = {
+export const QuestionForXP = {
   id: "question-for-xp",
   originalName: "Question for XP",
   name: "經驗問題",
@@ -62,9 +62,9 @@ export const QuestionForXP: ExampleTableElement = {
       defaultRows: [["6", "你是否有進行摯愛悼辭？（擲雙低看你獲得多少 XP）"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const NpcSurviors: RandomTableElement = {
+export const NpcSurviors = {
   id: "npc-surviors",
   originalName: "NPC Surviors",
   name: "NPC 倖存者",
@@ -378,9 +378,9 @@ export const NpcSurviors: RandomTableElement = {
       ],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const MessingUpInCombat: RandomTableElement = {
+export const MessingUpInCombat = {
   id: "messing-up-in-combat",
   originalName: "Messing up in Combat",
   name: "戰鬥失誤",
@@ -419,9 +419,9 @@ export const MessingUpInCombat: RandomTableElement = {
       weight: 1,
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const BrawlPhases: ExampleTableElement = {
+export const BrawlPhases = {
   id: "brawl-phases",
   originalName: "Brawl Phases",
   name: "爭鬥階段",
@@ -453,9 +453,9 @@ export const BrawlPhases: ExampleTableElement = {
       defaultRows: [["6", "其他"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const ArmorTypes: ExampleTableElement = {
+export const ArmorTypes = {
   id: "armor-types",
   originalName: "Types of Armor",
   name: "護甲類型",
@@ -476,9 +476,9 @@ export const ArmorTypes: ExampleTableElement = {
       defaultRows: [["金屬板甲", "8", "–3"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const CriticalInjuries: RandomTableElement = {
+export const CriticalInjuries = {
   id: "critical-injuries",
   originalName: "Critical Injuries",
   name: "嚴重傷害",
@@ -632,9 +632,9 @@ export const CriticalInjuries: RandomTableElement = {
       defaultRows: [["66", "心臟穿刺", "是", "-", "你死了", "-"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const StabilizingIssuesTable: RandomTableElement = {
+export const StabilizingIssuesTable = {
   id: "stabilizing-issues-table",
   originalName: "Stabilizing Issues Table",
   name: "穩定傷勢失誤表",
@@ -658,9 +658,9 @@ export const StabilizingIssuesTable: RandomTableElement = {
       defaultRows: [["6", "下次擲骰懲罰 -1", "（某個技能）永久懲罰 -1"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const ExplosiveWeaponTable: ExampleTableElement = {
+export const ExplosiveWeaponTable = {
   id: "explosive-weapon-table",
   originalName: "Explosive Weapon Table",
   name: "爆炸武器表",
@@ -689,9 +689,9 @@ export const ExplosiveWeaponTable: ExampleTableElement = {
       defaultRows: [["榴彈砲", "14"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const FireTable: ExampleTableElement = {
+export const FireTable = {
   id: "fire-table",
   originalName: "Fire Table",
   name: "火焰表",
@@ -712,9 +712,9 @@ export const FireTable: ExampleTableElement = {
       defaultRows: [["燃燒房間", "8"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const DeseaseTable: ExampleTableElement = {
+export const DeseaseTable = {
   id: "desease-table",
   originalName: "Desease Table",
   name: "疾病表",
@@ -739,9 +739,9 @@ export const DeseaseTable: ExampleTableElement = {
       defaultRows: [["MRSA", "10"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const TrapTable: ExampleTableElement = {
+export const TrapTable = {
   id: "trap-table",
   originalName: "Trap Table",
   name: "陷阱表",
@@ -770,9 +770,9 @@ export const TrapTable: ExampleTableElement = {
       defaultRows: [["行屍陷阱", "集群大小 2，威脅等級 4"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const QualityOfItemsTable: RandomTableElement = {
+export const QualityOfItemsTable = {
   id: "quality-of-items-table",
   originalName: "Item Quality",
   name: "物品品質",
@@ -800,9 +800,9 @@ export const QualityOfItemsTable: RandomTableElement = {
       ],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const GerneralGearTable: ExampleTableElement = {
+export const GerneralGearTable = {
   id: "general-gear-table",
   originalName: "General Gear",
   name: "一般裝備表",
@@ -891,9 +891,9 @@ export const GerneralGearTable: ExampleTableElement = {
       defaultRows: [["對講機", "1/2", "領導 +1"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const CloseCombatWeaponTable: ExampleTableElement = {
+export const CloseCombatWeaponTable = {
   id: "close-combat-weapon-table",
   originalName: "Close Combat Weapon",
   name: "近戰武器",
@@ -950,9 +950,9 @@ export const CloseCombatWeaponTable: ExampleTableElement = {
       defaultRows: [["長柄大錘", "3", "0", "2"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const RangedWeaponTable: ExampleTableElement = {
+export const RangedWeaponTable = {
   id: "ranged-weapon-table",
   originalName: "Ranged Weapon",
   name: "遠程武器",
@@ -1021,9 +1021,9 @@ export const RangedWeaponTable: ExampleTableElement = {
       defaultRows: [["坦克炮", "BP 12", "+3", "極限", "X"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const VechicleConditionTable: RandomTableElement = {
+export const VechicleConditionTable = {
   id: "vehicle-condition-table",
   originalName: "Vehicle Condition",
   name: "載具狀況",
@@ -1058,9 +1058,9 @@ export const VechicleConditionTable: RandomTableElement = {
       defaultRows: [["6", "功能正常", "滿"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const VehicleTypeTable: ExampleTableElement = {
+export const VehicleTypeTable = {
   id: "vehicle-type-table",
   originalName: "Vehicle Type",
   name: "載具類型",
@@ -1091,9 +1091,9 @@ export const VehicleTypeTable: ExampleTableElement = {
       ],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const CrashObjectsTable: RandomTableElement = {
+export const CrashObjectsTable = {
   id: "crash-objects-table",
   originalName: "Crash Objects",
   name: "撞擊物",
@@ -1126,9 +1126,9 @@ export const CrashObjectsTable: RandomTableElement = {
       defaultRows: [["6", "強化水泥牆", "10", "5"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const criticalVehicleDamageTable: RandomTableElement = {
+export const criticalVehicleDamageTable = {
   id: "critical-vehicle-damage-table",
   originalName: "Critical Vehicle Damage",
   name: "嚴重載具傷害",
@@ -1171,9 +1171,9 @@ export const criticalVehicleDamageTable: RandomTableElement = {
       ],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const SwarmSizeTable: RandomTableElement = {
+export const SwarmSizeTable = {
   id: "swarm-size-table",
   originalName: "Swarm Size",
   name: "群體大小",
@@ -1206,9 +1206,9 @@ export const SwarmSizeTable: RandomTableElement = {
       defaultRows: [["1000+", "6"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const ThreatLevelsTable: RandomTableElement = {
+export const ThreatLevelsTable = {
   id: "threat-levels-table",
   originalName: "The Threat Levels",
   name: "威脅等級",
@@ -1260,9 +1260,9 @@ export const ThreatLevelsTable: RandomTableElement = {
       defaultRows: [["6", "殭屍正面對著你，包圍了你。"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const WalkerAttackTable: RandomTableElement = {
+export const WalkerAttackTable = {
   id: "walker-attack-table",
   originalName: "Walker Attack",
   name: "行屍攻擊",
@@ -1553,9 +1553,9 @@ export const WalkerAttackTable: RandomTableElement = {
       ],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const SwarmAttackTable: ExampleTableElement = {
+export const SwarmAttackTable = {
   id: "swarm-attack-table",
   originalName: "Swarm Attack",
   name: "群體攻擊",
@@ -1580,9 +1580,9 @@ export const SwarmAttackTable: ExampleTableElement = {
       defaultRows: [["6", "力量, 近戰", "大量攻擊"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const HavenCapacityTable: ExampleTableElement = {
+export const HavenCapacityTable = {
   id: "haven-capacity-table",
   originalName: "Haven Capacity",
   name: "避難港容量",
@@ -1623,9 +1623,9 @@ export const HavenCapacityTable: ExampleTableElement = {
       ],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const HavenDefenseTable: ExampleTableElement = {
+export const HavenDefenseTable = {
   id: "haven-defense-table",
   originalName: "Haven Defense",
   name: "防禦",
@@ -1676,9 +1676,9 @@ export const HavenDefenseTable: ExampleTableElement = {
       ],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const HavenOverrunTable: RandomTableElement = {
+export const HavenOverrunTable = {
   id: "haven-overrun-table",
   originalName: "Haven Overrun",
   name: "避難港淹沒表",
@@ -1715,9 +1715,9 @@ export const HavenOverrunTable: RandomTableElement = {
       defaultRows: [["6", "6 (1,000+)", "數週"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const HavenIssueTable: RandomTableElement = {
+export const HavenIssueTable = {
   id: "haven-issue-table",
   originalName: "HavenIssue",
   name: "避難港問題",
@@ -1870,9 +1870,9 @@ export const HavenIssueTable: RandomTableElement = {
       defaultRows: [["66", "群體中未解決的衝突"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const TeachingSurvivorsTable: ExampleTableElement = {
+export const TeachingSurvivorsTable = {
   id: "teaching-survivors-table",
   originalName: "Teaching Survivors",
   name: "教導倖存者",
@@ -1889,9 +1889,9 @@ export const TeachingSurvivorsTable: ExampleTableElement = {
       defaultRows: [["專家", "+3", "6", "六個月", "4+"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const ProjectExamplesTable: ExampleTableElement = {
+export const ProjectExamplesTable = {
   id: "project-examples-table",
   originalName: "Project Examples",
   name: "項目示例",
@@ -1946,9 +1946,9 @@ export const ProjectExamplesTable: ExampleTableElement = {
       ],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const GearProjectsTable: ExampleTableElement = {
+export const GearProjectsTable = {
   id: "gear-projects-table",
   originalName: "Gear Projects",
   name: "裝備項目",
@@ -1981,9 +1981,9 @@ export const GearProjectsTable: ExampleTableElement = {
       defaultRows: [["修理步槍", "幾日", "1", "工具、技術 3"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const VehicleMovementTable: ExampleTableElement = {
+export const VehicleMovementTable = {
   id: "vehicle-movement-table",
   originalName: "Vehicle Movement",
   name: "車輛移動",
@@ -2020,9 +2020,9 @@ export const VehicleMovementTable: ExampleTableElement = {
       defaultRows: [["步行", "1"]],
     },
   ],
-};
+} as const satisfies GameElement;
 
-export const RandomResultTable: RandomTableElement = {
+export const RandomResultTable = {
   id: "npcs-run-result-table",
   originalName: "NPCs Run Result",
   name: "NPCs 任務結果",
@@ -2064,4 +2064,4 @@ export const RandomResultTable: RandomTableElement = {
       ],
     },
   ],
-};
+} as const satisfies GameElement;
