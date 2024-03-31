@@ -140,7 +140,7 @@ export const EditDrawer = ({ data, screenKey }: Props) => {
                 >
                   <CommandInput placeholder="搜尋..." />
                   <CommandEmpty>找不到表格。</CommandEmpty>
-                  <CommandGroup className="h-[200px] overflow-auto">
+                  <CommandGroup>
                     {data.map((d) => (
                       <CommandItem
                         key={d.id}
