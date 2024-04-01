@@ -1,3 +1,5 @@
+import { ElementCategories } from "@/app/walking-dead/schema-data";
+
 /* ScreenSlice */
 interface ScreenSlice {
   walkingDead: {
@@ -15,6 +17,7 @@ export interface GameElementBase {
   description: string;
   editable?: boolean;
   order?: number;
+  category: keyof typeof ElementCategories;
 }
 
 export type TableType = "example" | "random-table" | "generator";
@@ -51,3 +54,12 @@ export interface GeneratorRow extends Row {
 }
 
 export type TableData = GameElement[];
+
+/* Schema Element */
+export interface Categorys {
+  [path: string]: {
+    name: string;
+    description: string;
+    gmOnly?: boolean;
+  };
+}

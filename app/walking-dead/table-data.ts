@@ -10,6 +10,7 @@ export const overwhilmedTable = {
   name: "擊垮表",
   description: "若你無法處理好你的恐懼，擲擊垮表",
   type: "random-table",
+  category: "core/pc",
   headers: ["D6", "效果"],
   rows: [
     {
@@ -35,6 +36,7 @@ export const QuestionForXP = {
   originalName: "Question for XP",
   name: "經驗問題",
   description: "每有一個問題是「是」，獲得 XP。",
+  category: "core/pc",
   type: "example",
   rows: [
     {
@@ -70,6 +72,7 @@ export const NpcSurviors = {
   name: "NPC 倖存者",
   description: "擲 D6 決定遊戲開始時有哪群 NPC 倖存者跟你們在一起",
   type: "random-table",
+  category: "core/haven",
   headers: ["D6", "NPC 倖存者", "背景", "專家", "受訓", "議題", "裝備"],
   rows: [
     {
@@ -285,7 +288,7 @@ export const NpcSurviors = {
           "罪犯",
           "-",
           "近戰, 遠戰",
-          "只尊重力量，喜歡戲弄和騷擾他人",
+          "只尊重蠻力，喜歡戲弄和騷擾他人",
           "砍刀, 左輪手槍",
         ],
         [
@@ -293,7 +296,7 @@ export const NpcSurviors = {
           "Amy Hall",
           "士兵",
           "遠戰",
-          "力量",
+          "蠻力",
           "鐵腕統治，大男人主義",
           "突擊步槍, 爆炸膏, 手槍, 刀, 夜視鏡",
         ],
@@ -384,6 +387,7 @@ export const MessingUpInCombat = {
   id: "messing-up-in-combat",
   originalName: "Messing up in Combat",
   name: "戰鬥失誤",
+  category: "core/combat",
   description: "在壓力骰擲出 1 時，若在戰鬥中，擲一次 D6 決定失誤效果。",
   type: "random-table",
   headers: ["D6", "效果"],
@@ -426,6 +430,7 @@ export const BrawlPhases = {
   originalName: "Brawl Phases",
   name: "爭鬥階段",
   description: "爭鬥按照下述回合進行。",
+  category: "core/combat",
   type: "example",
   rows: [
     {
@@ -461,6 +466,7 @@ export const ArmorTypes = {
   name: "護甲類型",
   description: "根據護甲，可在此查詢護甲等級和懲罰。",
   type: "example",
+  category: "core/health_and_armor",
   headers: ["護甲類型", "護甲等級", "懲罰"],
   rows: [
     {
@@ -485,6 +491,7 @@ export const CriticalInjuries = {
   description:
     "在戰鬥和治療過程中可能遭受的嚴重傷害。B 表示只需要使用基本醫療器材，A 表示需要使用高級醫療器材。",
   type: "random-table",
+  category: "core/health_and_armor",
   headers: ["D66", "嚴重傷害", "致命", "時限", "懲罰", "恢復時間"],
   rows: [
     {
@@ -640,6 +647,7 @@ export const StabilizingIssuesTable = {
   name: "穩定傷勢失誤表",
   description: "在擲醫藥以穩定傷勢時失誤的後果",
   type: "random-table",
+  category: "core/health_and_armor",
   headers: ["D6", "醫藥擲骰成功", "醫藥擲骰失敗"],
   rows: [
     {
@@ -666,6 +674,7 @@ export const ExplosiveWeaponTable = {
   name: "爆炸武器表",
   description: "不同爆炸武器的爆炸力（BP）對應範例",
   type: "example",
+  category: "core/hazard",
   headers: ["爆炸與火焰源", "爆炸力（BP）"],
   rows: [
     {
@@ -697,6 +706,7 @@ export const FireTable = {
   name: "火焰表",
   description: "火源與強度的對應範例",
   type: "example",
+  category: "core/hazard",
   headers: ["火焰源", "強度"],
   rows: [
     {
@@ -720,6 +730,7 @@ export const DeseaseTable = {
   name: "疾病表",
   description: "疾病與嚴重性的對應範例",
   type: "example",
+  category: "core/hazard",
   headers: ["疾病", "嚴重性"],
   rows: [
     {
@@ -747,6 +758,7 @@ export const TrapTable = {
   name: "陷阱表",
   description: "陷阱與效果的對應範例",
   type: "example",
+  category: "core/hazard",
   headers: ["陷阱", "效果"],
   rows: [
     {
@@ -778,6 +790,7 @@ export const QualityOfItemsTable = {
   name: "物品品質",
   description: "物品品質",
   type: "random-table",
+  category: "core/item",
   headers: ["D6", "品質"],
   rows: [
     {
@@ -808,6 +821,7 @@ export const GerneralGearTable = {
   name: "一般裝備表",
   description: "一般裝備的數值對應",
   type: "example",
+  category: "core/item",
   headers: ["道具", "佔位", "加成"],
   rows: [
     {
@@ -840,7 +854,7 @@ export const GerneralGearTable = {
     },
     {
       rowId: "crowbar",
-      defaultRows: [["撬棍", "1", "力量 +2"]],
+      defaultRows: [["撬棍", "1", "蠻力 +2"]],
     },
     {
       rowId: "dog",
@@ -899,6 +913,7 @@ export const CloseCombatWeaponTable = {
   name: "近戰武器",
   description: "近戰武器的數值對應",
   type: "example",
+  category: "core/item",
   headers: ["武器", "傷害", "加成", "佔位"],
   rows: [
     {
@@ -958,6 +973,7 @@ export const RangedWeaponTable = {
   name: "遠程武器",
   description: "遠程武器的數值對應",
   type: "example",
+  category: "core/item",
   headers: ["武器", "傷害", "加成", "距離", "佔位"],
   rows: [
     {
@@ -1029,6 +1045,7 @@ export const VechicleConditionTable = {
   name: "載具狀況",
   description: "載具狀況隨機表",
   type: "random-table",
+  category: "core/vehicle",
   headers: ["D6", "狀況", "燃料"],
   rows: [
     {
@@ -1064,6 +1081,7 @@ export const VehicleTypeTable = {
   id: "vehicle-type-table",
   originalName: "Vehicle Type",
   name: "載具類型",
+  category: "core/vehicle",
   description: "載具類型隨機表",
   type: "example",
   headers: ["載具", "操控性", "傷害", "殼體", "護甲", "問題"],
@@ -1099,6 +1117,7 @@ export const CrashObjectsTable = {
   name: "撞擊物",
   description: "撞擊物隨機表",
   type: "random-table",
+  category: "core/vehicle",
   headers: ["D6", "撞上", "撞擊骰", "耐久度"],
   rows: [
     {
@@ -1134,6 +1153,7 @@ export const criticalVehicleDamageTable = {
   name: "嚴重載具傷害",
   description: "嚴重載具傷害隨機表",
   type: "random-table",
+  category: "core/vehicle",
   headers: ["D6", "結果"],
   rows: [
     {
@@ -1179,6 +1199,7 @@ export const SwarmSizeTable = {
   name: "群體大小",
   description: "群體大小對照表",
   type: "random-table",
+  category: "core/walker",
   headers: ["行屍數量", "群體大小"],
   rows: [
     {
@@ -1214,6 +1235,7 @@ export const ThreatLevelsTable = {
   name: "威脅等級",
   description: "不同情境下的威脅等級對照表",
   type: "random-table",
+  category: "core/walker",
   headers: ["威脅等級", "情境"],
   rows: [
     {
@@ -1268,6 +1290,7 @@ export const WalkerAttackTable = {
   name: "行屍攻擊",
   description: "遭遇行屍攻擊時可能發生的效果。",
   type: "random-table",
+  category: "core/walker",
   headers: ["D66", "效果"],
   rows: [
     {
@@ -1349,7 +1372,7 @@ export const WalkerAttackTable = {
       defaultRows: [
         [
           "25",
-          "它們壓在你身上，但你設法殺死了它們且避免被咬。你必須進行一次力量擲骰來推開它們。如果你失敗，你被屍體壓制並在D6分鐘內失去意識。",
+          "它們壓在你身上，但你設法殺死了它們且避免被咬。你必須進行一次蠻力擲骰來推開它們。如果你失敗，你被屍體壓制並在D6分鐘內失去意識。",
         ],
       ],
     },
@@ -1561,23 +1584,24 @@ export const SwarmAttackTable = {
   name: "群體攻擊",
   description: "群體攻擊對照表",
   type: "example",
+  category: "core/walker",
   headers: ["威脅等級", "技能", "攻擊"],
   rows: [
     {
       rowId: "1",
-      defaultRows: [["3", "忍受, 力量, 機動, 遠戰, 隱匿", "單一攻擊, 阻隔"]],
+      defaultRows: [["3", "忍受, 蠻力, 機動, 遠戰, 隱匿", "單一攻擊, 阻隔"]],
     },
     {
       rowId: "2",
-      defaultRows: [["4", "力量, 機動, 遠戰", "單一攻擊, 阻隔"]],
+      defaultRows: [["4", "蠻力, 機動, 遠戰", "單一攻擊, 阻隔"]],
     },
     {
       rowId: "3",
-      defaultRows: [["5", "力量, 近戰, 遠戰", "單一攻擊, 阻隔"]],
+      defaultRows: [["5", "蠻力, 近戰, 遠戰", "單一攻擊, 阻隔"]],
     },
     {
       rowId: "4",
-      defaultRows: [["6", "力量, 近戰", "大量攻擊"]],
+      defaultRows: [["6", "蠻力, 近戰", "大量攻擊"]],
     },
   ],
 } as const satisfies GameElement;
@@ -1588,6 +1612,7 @@ export const HavenCapacityTable = {
   name: "避難港容量",
   description: "避難港容量對照表",
   type: "example",
+  category: "core/haven",
   headers: ["D6", "居民數", "描述"],
   rows: [
     {
@@ -1631,6 +1656,7 @@ export const HavenDefenseTable = {
   name: "防禦",
   description: "不同防禦等級的描述與防禦加成。",
   type: "example",
+  category: "core/haven",
   headers: ["防禦等級", "防禦加成", "示例"],
   rows: [
     {
@@ -1684,6 +1710,7 @@ export const HavenOverrunTable = {
   name: "避難港淹沒表",
   description: "不同防禦等級和群體大小下，直到避難所被淹沒的時間。",
   type: "random-table",
+  category: "core/haven",
   headers: ["防禦等級", "群體大小", "直到被淹沒的時間"],
   rows: [
     {
@@ -1724,6 +1751,7 @@ export const HavenIssueTable = {
   description: "避難所可能面臨的問題。",
   type: "random-table",
   headers: ["D66", "問題"],
+  category: "core/haven",
   rows: [
     {
       rowId: "11",
@@ -1878,6 +1906,7 @@ export const TeachingSurvivorsTable = {
   name: "教導倖存者",
   description: "不同級別的教學需求和條件。",
   type: "example",
+  category: "core/haven",
   headers: ["級別", "技能等級", "學生數量", "時間", "教師技能"],
   rows: [
     {
@@ -1897,6 +1926,7 @@ export const ProjectExamplesTable = {
   name: "項目示例",
   description: "避難所可以進行的項目示例及其效果、所需時間和條件。",
   type: "example",
+  category: "core/haven",
   headers: ["項目", "效果", "時間", "勞動力", "要求"],
   rows: [
     {
@@ -1954,6 +1984,7 @@ export const GearProjectsTable = {
   name: "裝備項目",
   description: "製作或修理裝備的項目示例及其所需時間、工作力和要求。",
   type: "example",
+  category: "core/haven",
   headers: ["裝備", "時間", "勞動力", "要求"],
   rows: [
     {
@@ -1989,6 +2020,7 @@ export const VehicleMovementTable = {
   name: "車輛移動",
   description: "不同車輛每天能夠移動的區域數及其它相關信息。",
   type: "example",
+  category: "core/travel",
   headers: ["車輛", "每天區域數"],
   rows: [
     {
@@ -2028,6 +2060,7 @@ export const RandomResultTable = {
   name: "NPCs 任務結果",
   description: "NPCs 出去探索或執行任務後的可能結果。",
   type: "random-table",
+  category: "core/haven",
   headers: ["D6", "結果"],
   rows: [
     {
