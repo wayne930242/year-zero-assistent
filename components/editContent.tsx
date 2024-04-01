@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check } from "lucide-react";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { GameElement, ScreenSlice } from "@/lib/types";
@@ -59,7 +59,6 @@ function calculateRelevance(search: string, dataItem: GameElement): number {
 }
 
 export const EditContent = ({ data, screenKey }: Props) => {
-  const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
   const [checkedList, setCheckedList] = useState<string[]>([]);
 
@@ -101,7 +100,7 @@ export const EditContent = ({ data, screenKey }: Props) => {
         >
           <CommandInput placeholder="搜尋..." />
           <CommandEmpty>找不到表格。</CommandEmpty>
-          <CommandGroup>
+          <CommandGroup className="overflow-y-auto h-[200px]">
             {data.map((d) => (
               <CommandItem
                 key={d.id}
@@ -113,7 +112,6 @@ export const EditContent = ({ data, screenKey }: Props) => {
                     }
                     return [...prev, currentValue];
                   });
-                  setOpen(false);
                 }}
               >
                 <Check
@@ -127,13 +125,13 @@ export const EditContent = ({ data, screenKey }: Props) => {
             ))}
           </CommandGroup>
         </Command>
-        <ScrollArea className="grow border rounded-md px-6 py-2 max-h-[400px] w-full">
+        <ScrollArea className="grow border rounded-md px-6 py-2 max-h-[200px] w-full">
           <div className="flex flex-col gap-y-2 items-baseline w-full">
             {checkedList.length > 0 &&
               checkedList.map((i) => (
                 <div className="items-top flex space-x-2" key={i}>
                   <Checkbox
-                    id="screen"
+                    id={i}
                     checked={selected.includes(i)}
                     onCheckedChange={(b) => {
                       setSelected((prev) => {
@@ -146,7 +144,7 @@ export const EditContent = ({ data, screenKey }: Props) => {
                   />
                   <div className="grid gap-1.5 leading-none">
                     <label
-                      htmlFor="screen"
+                      htmlFor={i}
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       {data.find((d) => d.id === i)?.name}

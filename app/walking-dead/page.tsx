@@ -44,10 +44,10 @@ const Page = () => {
         </h1>
       </div>
       <div className="lg:container lg:mx-auto bg-background">
-        <div className="w-full px-8">
+        <div className="w-full">
           <Accordion type="single" collapsible>
             <AccordionItem value="item">
-              <AccordionTrigger>編輯屏幕</AccordionTrigger>
+              <AccordionTrigger className="px-4">編輯屏幕</AccordionTrigger>
               <AccordionContent>
                 <EditContent
                   data={Object.values(tableData)}
