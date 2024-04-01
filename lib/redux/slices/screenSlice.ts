@@ -5,8 +5,12 @@ import { ReduxState } from "../store";
 const initialState: ScreenSlice = {
   walkingDead: {
     elements: [],
+    searchs: {
+      categories: [],
+      gmOnly: false,
+    },
   },
-}
+};
 interface AddElementPayload {
   key: keyof ScreenSlice;
   element: GameElement;
@@ -117,6 +121,16 @@ export const screenSlice = createSlice({
       );
       state[key].elements[elementIndex].rows[rowIndex] = { ...row };
     },
+    setCategories(
+      state,
+      action: PayloadAction<{
+        key: keyof ScreenSlice;
+        searchs: string[];
+      }>
+    ) {
+      const { key, searchs } = action.payload;
+      state[key].searchs.categories = searchs;
+    },
   },
 });
 
@@ -127,6 +141,7 @@ export const {
   updateElement,
   setElements,
   updateTableRow,
+  setCategories,
 } = screenSlice.actions;
 export default screenSlice;
 

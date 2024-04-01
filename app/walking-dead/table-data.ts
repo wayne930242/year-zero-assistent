@@ -428,8 +428,8 @@ export const MessingUpInCombat = {
 export const BrawlPhases = {
   id: "brawl-phases",
   originalName: "Brawl Phases",
-  name: "爭鬥階段",
-  description: "爭鬥按照下述回合進行。",
+  name: "戰鬥階段",
+  description: "戰鬥按照下述回合進行。",
   category: "core/combat",
   type: "example",
   rows: [

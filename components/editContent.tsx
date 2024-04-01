@@ -1,12 +1,18 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { Check } from "lucide-react";
+import { Check, Library } from "lucide-react";
 
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { GameElement, ScreenSlice } from "@/lib/types";
+import { Categories, GameElement, ScreenSlice } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 
+import {
+  DropdownMenuSeparator,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Command,
   CommandEmpty,
@@ -15,8 +21,13 @@ import {
   CommandItem,
 } from "@/components/ui/command";
 import { useDispatch, useSelector } from "@/lib/redux/store";
-import { selectScreen, setElements } from "@/lib/redux/slices/screenSlice";
+import {
+  selectScreen,
+  setElements,
+  setCategories,
+} from "@/lib/redux/slices/screenSlice";
 import { cn } from "@/lib/utils";
+import { Label } from "./ui/label";
 
 function calculateRelevance(search: string, dataItem: GameElement): number {
   const weights = {
@@ -58,7 +69,7 @@ function calculateRelevance(search: string, dataItem: GameElement): number {
   return score;
 }
 
-export const EditContent = ({ data, screenKey }: Props) => {
+export const EditContent = ({ data, screenKey, searchData }: Props) => {
   const [selected, setSelected] = useState<string[]>([]);
   const [checkedList, setCheckedList] = useState<string[]>([]);
 
@@ -91,45 +102,118 @@ export const EditContent = ({ data, screenKey }: Props) => {
 
   return (
     <>
+      {searchData && (
+        <div className="w-full flex justify-end items-center gap-2 mb-4">
+          {searchData.categories && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Library className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem
+                  className="items-top px-3 py-2"
+                  onClick={() => {
+                    dispatch(
+                      setCategories({
+                        key: screenKey,
+                        searchs: [],
+                      })
+                    );
+                  }}
+                >
+                  清除
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                {Object.keys(searchData.categories).map((category) => (
+                  <div
+                    key={category}
+                    className="items-top flex space-x-2 px-3 py-2"
+                  >
+                    <Checkbox
+                      id={category}
+                      checked={globalData.searchs?.categories?.includes(
+                        category
+                      )}
+                      onCheckedChange={(b) => {
+                        dispatch(
+                          setCategories({
+                            key: screenKey,
+                            searchs: b
+                              ? [
+                                  ...(globalData.searchs?.categories ?? []),
+                                  category,
+                                ]
+                              : globalData.searchs?.categories?.filter(
+                                  (c) => c !== category
+                                ) ?? [],
+                          })
+                        );
+                      }}
+                    />
+                    <Label htmlFor={category}>
+                      {searchData.categories[category].name}
+                      {searchData.categories[category].gmOnly && (
+                        <span className="text-xs ml-1 text-destructive">
+                          GM
+                        </span>
+                      )}
+                    </Label>
+                  </div>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
+        </div>
+      )}
       <div className="w-full mx-auto flex-col-reverse items-center flex sm:flex-row sm:items-start sm:justify-between gap-4">
         <Command
-          className="w-full sm:w-[200px] justify-between"
+          className="w-full sm:w-[300px] justify-between"
           filter={(value, search) => {
             return calculateRelevance(search, memoDataRecord[value]);
           }}
         >
           <CommandInput placeholder="搜尋..." />
           <CommandEmpty>找不到表格。</CommandEmpty>
-          <CommandGroup className="overflow-y-auto h-[200px]">
-            {data.map((d) => (
-              <CommandItem
-                key={d.id}
-                value={d.id}
-                onSelect={(currentValue) => {
-                  setSelected((prev) => {
-                    if (prev.includes(currentValue)) {
-                      return prev.filter((v) => v !== currentValue);
-                    }
-                    return [...prev, currentValue];
-                  });
-                }}
-              >
-                <Check
-                  className={cn(
-                    "mr-2 h-4 w-4",
-                    selected.includes(d.id) ? "opacity-100" : "opacity-0"
-                  )}
-                />
-                {d.name}
-              </CommandItem>
-            ))}
+          <CommandGroup className="overflow-y-auto h-[160px]">
+            {data
+              .filter((d) => {
+                if (!searchData) return true;
+                return (
+                  !globalData.searchs?.categories?.length ||
+                  globalData.searchs?.categories?.includes(d.category)
+                );
+              })
+              .map((d) => (
+                <CommandItem
+                  key={d.id}
+                  value={d.id}
+                  onSelect={(currentValue) => {
+                    setSelected((prev) => {
+                      if (prev.includes(currentValue)) {
+                        return prev.filter((v) => v !== currentValue);
+                      }
+                      return [...prev, currentValue];
+                    });
+                  }}
+                >
+                  <Check
+                    className={cn(
+                      "mr-2 h-4 w-4",
+                      selected.includes(d.id) ? "opacity-100" : "opacity-0"
+                    )}
+                  />
+                  {d.name}
+                </CommandItem>
+              ))}
           </CommandGroup>
         </Command>
-        <ScrollArea className="grow border rounded-md px-6 py-2 max-h-[200px] w-full">
-          <div className="flex flex-col gap-y-2 items-baseline w-full">
+        <div className="grow border rounded-md px-6 py-2 max-h-[200px] w-full overflow-y-auto">
+          <div className="flex flex-wrap gap-y-1 gap-x-2 items-center w-full">
             {checkedList.length > 0 &&
               checkedList.map((i) => (
-                <div className="items-top flex space-x-2" key={i}>
+                <div className="items-top flex space-x-2 px-3 py-2" key={i}>
                   <Checkbox
                     id={i}
                     checked={selected.includes(i)}
@@ -143,12 +227,12 @@ export const EditContent = ({ data, screenKey }: Props) => {
                     }}
                   />
                   <div className="grid gap-1.5 leading-none">
-                    <label
+                    <Label
                       htmlFor={i}
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       {data.find((d) => d.id === i)?.name}
-                    </label>
+                    </Label>
                   </div>
                 </div>
               ))}
@@ -158,7 +242,7 @@ export const EditContent = ({ data, screenKey }: Props) => {
               </div>
             )}
           </div>
-        </ScrollArea>
+        </div>
       </div>
 
       <div className="w-full flex justify-center sm:justify-end my-6 sm:my-2">
@@ -182,5 +266,8 @@ export const EditContent = ({ data, screenKey }: Props) => {
 
 interface Props {
   data: GameElement[];
+  searchData?: {
+    categories: Categories;
+  };
   screenKey: keyof ScreenSlice;
 }

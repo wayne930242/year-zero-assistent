@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import * as tableData from "./table-data";
+import { ElementCategories } from "./schema-data";
 import {
   Accordion,
   AccordionContent,
@@ -49,10 +50,15 @@ const Page = () => {
             <AccordionItem value="item">
               <AccordionTrigger className="px-4">編輯屏幕</AccordionTrigger>
               <AccordionContent>
-                <EditContent
-                  data={Object.values(tableData)}
-                  screenKey="walkingDead"
-                />
+                <div className="w-full px-4">
+                  <EditContent
+                    data={Object.values(tableData)}
+                    screenKey="walkingDead"
+                    searchData={{
+                      categories: ElementCategories,
+                    }}
+                  />
+                </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>

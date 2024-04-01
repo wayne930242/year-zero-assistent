@@ -1,4 +1,4 @@
-import { Categorys } from "@/lib/types";
+import { Categories } from "@/lib/types";
 
 export const ElementCategories = {
   "core/pc": {
@@ -8,10 +8,6 @@ export const ElementCategories = {
   "core/item": {
     name: "物品",
     description: "物品相關，包括武器。",
-  },
-  "core/session": {
-    name: "聚會",
-    description: "聚會相關。",
   },
   "core/combat": {
     name: "戰鬥",
@@ -32,11 +28,6 @@ export const ElementCategories = {
   "core/walker": {
     name: "行屍",
     description: "行屍。",
-  },
-  "core/npc": {
-    name: "NPC",
-    description: "NPC 相關。",
-    gmOnly: true,
   },
   "core/haven": {
     name: "避難港",
@@ -66,4 +57,4 @@ export const ElementCategories = {
     description: "Atlanta 預設戰役。",
     gmOnly: true,
   },
-} as const satisfies Categorys;
+} as const satisfies Categories;

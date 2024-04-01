@@ -1,10 +1,16 @@
 import { ElementCategories } from "@/app/walking-dead/schema-data";
 
 /* ScreenSlice */
-interface ScreenSlice {
+export interface ScreenSlice {
   walkingDead: {
     elements: GameElement[];
+    searchs: ScreenSearch;
   };
+}
+
+export interface ScreenSearch {
+  categories?: string[];
+  gmOnly?: boolean;
 }
 
 export type GameElement = RandomTableElement | ExampleTableElement;
@@ -56,7 +62,7 @@ export interface GeneratorRow extends Row {
 export type TableData = GameElement[];
 
 /* Schema Element */
-export interface Categorys {
+export interface Categories {
   [path: string]: {
     name: string;
     description: string;
