@@ -144,7 +144,7 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
                     }}
                   />
                   <Label htmlFor="all-pc-category" className="w-full">
-                    PC only
+                    PL only
                   </Label>
                 </div>
 
