@@ -1,4 +1,4 @@
-import { ScreenSlice, RandomRow, GameElement } from "@/lib/types";
+import { ScreenSlice, RandomRow, GameElement, Categories } from "@/lib/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ReduxState } from "../store";
 
@@ -131,6 +131,22 @@ export const screenSlice = createSlice({
       const { key, searchs } = action.payload;
       state[key].searchs.categories = searchs;
     },
+    toggleAllPcCategory(
+      state,
+      action: PayloadAction<{
+        key: keyof ScreenSlice;
+        categories: Categories;
+      }>
+    ) {
+      const { key, categories } = action.payload;
+      if (state[key].searchs.categories?.length) {
+        state[key].searchs.categories = [];
+      } else {
+        state[key].searchs.categories = Object.keys(categories).filter(
+          (c) => !categories[c].gmOnly
+        );
+      }
+    },
   },
 });
 
@@ -142,6 +158,7 @@ export const {
   setElements,
   updateTableRow,
   setCategories,
+  toggleAllPcCategory,
 } = screenSlice.actions;
 export default screenSlice;
 

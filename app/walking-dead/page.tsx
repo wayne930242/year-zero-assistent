@@ -13,6 +13,7 @@ import {
 import { TableDnd } from "@/components/screenDnd";
 import { Metadata } from "next";
 import { EditContent } from "@/components/editContent";
+import { EditorAccordion } from "@/components/editorAccordion";
 
 export const metadata: Metadata = {
   title: "陰屍路宇宙——洪偉的元年引擎小助手",
@@ -46,22 +47,15 @@ const Page = () => {
       </div>
       <div className="lg:container lg:mx-auto bg-background">
         <div className="w-full">
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item">
-              <AccordionTrigger className="px-4">編輯屏幕</AccordionTrigger>
-              <AccordionContent>
-                <div className="w-full px-4">
-                  <EditContent
-                    data={Object.values(tableData)}
-                    screenKey="walkingDead"
-                    searchData={{
-                      categories: ElementCategories,
-                    }}
-                  />
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <EditorAccordion>
+            <EditContent
+              data={Object.values(tableData)}
+              screenKey="walkingDead"
+              searchData={{
+                categories: ElementCategories,
+              }}
+            />
+          </EditorAccordion>
         </div>
         <div className="px-0 py-4 sm:px-6">
           <TableDnd screenKey="walkingDead" />

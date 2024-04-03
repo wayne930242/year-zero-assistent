@@ -1,5 +1,12 @@
 import { ElementCategories } from "@/app/walking-dead/schema-data";
 
+/* AppSlice */
+export interface AppSlice {
+  screenEditorState: ScreenEditorState;
+}
+
+export type ScreenEditorState = 'open' | 'closed';
+
 /* ScreenSlice */
 export interface ScreenSlice {
   walkingDead: {

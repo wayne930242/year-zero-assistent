@@ -1,4 +1,5 @@
 import { Categories } from "@/lib/types";
+import * as Elements from "./table-data";
 
 export const ElementCategories = {
   "core/pc": {
@@ -25,10 +26,6 @@ export const ElementCategories = {
     name: "載具",
     description: "載具相關。",
   },
-  "core/walker": {
-    name: "行屍",
-    description: "行屍。",
-  },
   "core/haven": {
     name: "避難港",
     description: "避難港相關。",
@@ -43,8 +40,18 @@ export const ElementCategories = {
     gmOnly: true,
   },
   "core/gm/travel": {
-    name: "旅行遭遇",
-    description: "旅行遭遇相關。",
+    name: "旅行環境",
+    description: "旅行環境相關。",
+    gmOnly: true,
+  },
+  "core/gm/encounter": {
+    name: "遭遇",
+    description: "遭遇相關。",
+    gmOnly: true,
+  },
+  "core/walker": {
+    name: "行屍",
+    description: "行屍。",
     gmOnly: true,
   },
   "core/gm/npc_and_animal": {
@@ -58,3 +65,5 @@ export const ElementCategories = {
     gmOnly: true,
   },
 } as const satisfies Categories;
+
+export type ElementId = typeof Elements[keyof typeof Elements]["id"];

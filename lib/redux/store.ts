@@ -34,7 +34,7 @@ const persistConfig = {
   key: 'root',
   storage,
   whitelist: ['screen'],
-  blacklist: ['next-router', 'app', 'user'],
+  blacklist: ['next-router', 'app'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);

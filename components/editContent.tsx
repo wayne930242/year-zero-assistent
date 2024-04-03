@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { Check, Library } from "lucide-react";
+import { Check, EraserIcon, Library } from "lucide-react";
 
 import { Categories, GameElement, ScreenSlice } from "@/lib/types";
 import { Button } from "@/components/ui/button";
@@ -25,9 +25,11 @@ import {
   selectScreen,
   setElements,
   setCategories,
+  toggleAllPcCategory,
 } from "@/lib/redux/slices/screenSlice";
 import { cn } from "@/lib/utils";
 import { Label } from "./ui/label";
+import { setScreenEditorState } from "@/lib/redux/slices/appSlice";
 
 function calculateRelevance(search: string, dataItem: GameElement): number {
   const weights = {
@@ -104,16 +106,16 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
     <>
       {searchData && (
         <div className="w-full flex justify-end items-center gap-2 mb-4">
-          {searchData.categories && (
+          {searchData?.categories && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon">
                   <Library className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent className="h-[200px] overflow-y-auto">
                 <DropdownMenuItem
-                  className="items-top px-3 py-2"
+                  className="items-top px-3 py-2 flex space-x-2 items-center"
                   onClick={() => {
                     dispatch(
                       setCategories({
@@ -123,8 +125,25 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
                     );
                   }}
                 >
-                  清除
+                  <div>清除</div>
+                  <EraserIcon className="h-4 w-4" />
                 </DropdownMenuItem>
+                <div className="items-top flex space-x-2 px-3 py-2">
+                  <Checkbox
+                    id="all-pc-category"
+                    checked={!!globalData.searchs?.categories?.length}
+                    onCheckedChange={(b) => {
+                      dispatch(
+                        toggleAllPcCategory({
+                          key: screenKey,
+                          categories: searchData?.categories ?? {},
+                        })
+                      );
+                    }}
+                  />
+                  <Label htmlFor="all-pc-category">PC only</Label>
+                </div>
+
                 <DropdownMenuSeparator />
                 {Object.keys(searchData.categories).map((category) => (
                   <div
@@ -176,7 +195,7 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
         >
           <CommandInput placeholder="搜尋..." />
           <CommandEmpty>找不到表格。</CommandEmpty>
-          <CommandGroup className="overflow-y-auto h-[160px]">
+          <CommandGroup className="overflow-y-auto h-[160px] border">
             {data
               .filter((d) => {
                 if (!searchData) return true;
@@ -245,9 +264,9 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center sm:justify-end my-6 sm:my-2">
+      <div className="w-full flex justify-center sm:justify-end my-6 sm:my-2 gap-2">
         <Button
-          className="w-full max-w-36"
+          variant="secondary"
           onClick={() => {
             dispatch(
               setElements({
@@ -258,6 +277,19 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
           }}
         >
           套用
+        </Button>
+        <Button
+          onClick={() => {
+            dispatch(
+              setElements({
+                key: screenKey,
+                elements: data.filter((d) => selected.includes(d.id)),
+              })
+            );
+            dispatch(setScreenEditorState("closed"));
+          }}
+        >
+          確認
         </Button>
       </div>
     </>

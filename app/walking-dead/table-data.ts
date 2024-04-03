@@ -954,7 +954,7 @@ export const CloseCombatWeaponTable = {
     },
     {
       rowId: "spear",
-      defaultRows: [["短矛", "2", "+2", "1"]],
+      defaultRows: [["矛", "2", "+2", "1"]],
     },
     {
       rowId: "big-axe",
@@ -2060,7 +2060,7 @@ export const RandomResultTable = {
   name: "NPCs 任務結果",
   description: "NPCs 出去探索或執行任務後的可能結果。",
   type: "random-table",
-  category: "core/haven",
+  category: "core/travel",
   headers: ["D6", "結果"],
   rows: [
     {
@@ -2093,6 +2093,1519 @@ export const RandomResultTable = {
         [
           "6",
           "所有 NPC 都帶著他們出去尋找的東西回來了，而且他們還發現了一些有價值且意料之外的東西。",
+        ],
+      ],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const ChallengeNeedsTable = {
+  id: "challenge-needs-table",
+  originalName: "Challenge Needs",
+  name: "挑戰需求",
+  description: "根據隨機需求以建立挑戰。",
+  type: "random-table",
+  category: "core/gm/challenge",
+  headers: ["D6", "需求"],
+  rows: [
+    {
+      rowId: "1",
+      defaultRows: [["1", "食物"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [["2", "水"]],
+    },
+    {
+      rowId: "3",
+      defaultRows: [["3", "藥品"]],
+    },
+    {
+      rowId: "4",
+      defaultRows: [["4", "工具與裝備"]],
+    },
+    {
+      rowId: "5",
+      defaultRows: [["5", "武器與彈藥"]],
+    },
+    {
+      rowId: "6",
+      defaultRows: [
+        [
+          "6",
+          "耗材（汽油、保暖衣物、衛生巾、尿布、建築材料、備用零件、農作物、牲畜等）。",
+        ],
+      ],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const ChallengeRandomEventTable = {
+  id: "challenge-random-event-table",
+  originalName: "Challenge Random Event",
+  name: "挑戰隨機事件",
+  description: "根據隨機需求以建立挑戰。",
+  type: "random-table",
+  category: "core/gm/challenge",
+  headers: ["D66", "事件"],
+  rows: [
+    {
+      rowId: "11",
+      defaultRows: [["11", "避難所內傳播一種病毒，致病力7。"]],
+    },
+    {
+      rowId: "12",
+      defaultRows: [["12", "團體中有人懷孕了。"]],
+    },
+    {
+      rowId: "13",
+      defaultRows: [
+        [
+          "13",
+          "一個孩子或青少年走失了。擲骰子以確定他們的遭遇。1-2：被行屍吃掉。3-4：被綁架。5：逃跑了。6：迷路但安全。",
+        ],
+      ],
+    },
+    {
+      rowId: "14",
+      defaultRows: [["14", "有人試圖自殺。"]],
+    },
+    {
+      rowId: "15",
+      defaultRows: [["15", "一群行屍正接近避難所。擲一個雙高來確定其大小。"]],
+    },
+    {
+      rowId: "16",
+      defaultRows: [["16", "一場火災將會燒毀避難所，如果不加以處理的話。"]],
+    },
+    {
+      rowId: "21",
+      defaultRows: [["21", "某種方式下，一個行屍找到了進入避難所的方法。"]],
+    },
+    {
+      rowId: "22",
+      defaultRows: [["22", "團體中有人經歷了宗教覺醒——或是妄想性的迷戀。"]],
+    },
+    {
+      rowId: "23",
+      defaultRows: [
+        [
+          "23",
+          "團體中有人找到一張紙條，鼓勵倖存者聚集在某個地方以建立新的社會。",
+        ],
+      ],
+    },
+    {
+      rowId: "24",
+      defaultRows: [
+        [
+          "24",
+          "在避難所附近發現了一個赤裸的昏迷男子。他是一個小偷和臭名昭著的說謊者，因為偷竊而被他之前的團體懲罰。",
+        ],
+      ],
+    },
+    {
+      rowId: "25",
+      defaultRows: [
+        [
+          "25",
+          "團體中的某人從荒野回來，被動物咬傷。或者他們這麼聲稱……但牙印看起來可能是人類的。",
+        ],
+      ],
+    },
+    {
+      rowId: "26",
+      defaultRows: [["26", "地震/龍捲風/暴風雪/野火威脅避難所。"]],
+    },
+    {
+      rowId: "31",
+      defaultRows: [
+        ["31", "一群野狗（或狼，或其他掠食者）喜歡吃人肉，在附近定居下來。"],
+      ],
+    },
+    {
+      rowId: "32",
+      defaultRows: [["32", "行屍群接近，擲一個雙低來確定其大小。"]],
+    },
+    {
+      rowId: "33",
+      defaultRows: [
+        ["33", "直升機飛過，回來，然後在避難所上空盤旋一會兒再飛走。"],
+      ],
+    },
+    {
+      rowId: "34",
+      defaultRows: [
+        ["34", "避難所的水源意外被污染。喝了這水的每個人都會生病，毒性值6。"],
+      ],
+    },
+    {
+      rowId: "35",
+      defaultRows: [
+        [
+          "35",
+          "團體中的某人在事故中斷了腿或手臂。這個人要麼需要在避難所找不到的醫療援助，要麼被困在荒野中無法回到避難所。",
+        ],
+      ],
+    },
+    {
+      rowId: "36",
+      defaultRows: [
+        ["36", "日食發生。一個未知的倖存者群體在黑暗中包圍並向避難所移動。"],
+      ],
+    },
+    {
+      rowId: "41",
+      defaultRows: [["41", "行屍群接近，擲骰子以確定其大小。"]],
+    },
+    {
+      rowId: "42",
+      defaultRows: [["42", "團體中的某人發現了一家還沒有被洗劫的酒吧。"]],
+    },
+    {
+      rowId: "43",
+      defaultRows: [
+        [
+          "43",
+          "一隻饑餓的狗走進避難所，試圖讓人類收養它。它從另一個倖存者群體逃走，那群人正在尋找它。",
+        ],
+      ],
+    },
+    {
+      rowId: "44",
+      defaultRows: [["44", "團體中的某人對酒精、毒品或其他東西上癮。"]],
+    },
+    {
+      rowId: "45",
+      defaultRows: [["45", "團體中的某人絕望地愛上了錯誤的人。"]],
+    },
+    {
+      rowId: "46",
+      defaultRows: [["46", "團體中的某人開始討厭某人。"]],
+    },
+    {
+      rowId: "51",
+      defaultRows: [
+        [
+          "51",
+          "一件重要物品失踪了。擲D6看是誰拿走了它。1–2：NPC倖存者。3–4：來自另一派系的人。5–6：一個躲在附近的孤獨倖存者。",
+        ],
+      ],
+    },
+    {
+      rowId: "52",
+      defaultRows: [
+        [
+          "52",
+          "附近發現了農場動物，可能是豬或羊。如果被帶進避難所，它們將開始傳播一種致病力8的疾病。",
+        ],
+      ],
+    },
+    {
+      rowId: "53",
+      defaultRows: [
+        [
+          "53",
+          "在樹木間發現了十幾個新鮮的墳墓。PCs可以聽到來自地下的呻吟聲。行屍正試圖掙扎到地面上。",
+        ],
+      ],
+    },
+    {
+      rowId: "54",
+      defaultRows: [["54", "避難所中的某人被另一派系的人聯繫。"]],
+    },
+    {
+      rowId: "55",
+      defaultRows: [
+        [
+          "55",
+          "發現一個穿著防彈背心，攜帶自動卡賓槍和一整包彈藥的行屍。狙擊手躲在山脊上，看看是否有人會上餌。",
+        ],
+      ],
+    },
+    {
+      rowId: "56",
+      defaultRows: [["56", "避難所中的某人被一個人從另一派系聯繫。"]],
+    },
+    {
+      rowId: "61",
+      defaultRows: [["61", "不同群體的陌生人在避難所附近開始交火。"]],
+    },
+    {
+      rowId: "62",
+      defaultRows: [
+        [
+          "62",
+          "一個摩天輪。在其中一個頂部車廂中有毯子、食物和水，好像有人正在將它用作臨時基地。在毯子中有一張相當準確的避難所圖，上面標出了薄弱點。",
+        ],
+      ],
+    },
+    {
+      rowId: "63",
+      defaultRows: [["63", "一個哭泣的嬰兒。"]],
+    },
+    {
+      rowId: "64",
+      defaultRows: [
+        ["64", "一架老式螺旋槳飛機拖著橫幅：“Sommerville是安全的。”"],
+      ],
+    },
+    {
+      rowId: "65",
+      defaultRows: [
+        [
+          "65",
+          "避難所中的某個重要設施在無人注意的情況下壞了。可能是作物的灌溉系統、安全系統的某部分、槍支之一或車輛。也許是蓄意破壞？",
+        ],
+      ],
+    },
+    {
+      rowId: "66",
+      defaultRows: [
+        [
+          "66",
+          "一個隨機決定的NPC嚴重割傷自己，並感染了敗血症。幾小時內他們發燒，如果不獲得適當的抗生素治療，情況會惡化。擲一個雙低來確定他們在死亡前能撐多久。",
+        ],
+      ],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const TravelWeatherTable = {
+  id: "travel-weather-table",
+  originalName: "Travel Weather",
+  name: "旅行天氣",
+  description: "旅行天氣對應表",
+  type: "random-table",
+  category: "core/gm/travel",
+  headers: ["D6", "天氣"],
+  rows: [
+    {
+      rowId: "1",
+      defaultRows: [["1", "雨/雪/霧"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [["2", "多雲"]],
+    },
+    {
+      rowId: "3",
+      defaultRows: [["3", "比平常冷"]],
+    },
+    {
+      rowId: "4",
+      defaultRows: [["4", "比平常暖和"]],
+    },
+    {
+      rowId: "5",
+      defaultRows: [["5", "晴朗且陽光明媚"]],
+    },
+    {
+      rowId: "6",
+      defaultRows: [
+        ["6", "有風（再次擲骰，另一個6表示是暴風雨或極端熱或冷）。"],
+      ],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const TravelRuinTable = {
+  id: "travel-ruin-table",
+  originalName: "Travel Ruin",
+  name: "旅行遺跡",
+  description: "旅行遺跡對應表",
+  type: "random-table",
+  category: "core/gm/travel",
+  headers: ["D66", "描述"],
+  rows: [
+    {
+      rowId: "11",
+      defaultRows: [
+        [
+          "11",
+          "一個被遺棄的避難所，屋頂上掛著一面旗幟。不知為何，裡面的大多數行屍都穿著粉紅色的連身衣。",
+        ],
+      ],
+    },
+    {
+      rowId: "12",
+      defaultRows: [["12", "汙水處理廠。那裡的工作人員在其中一座塔樓自盡。"]],
+    },
+    {
+      rowId: "13",
+      defaultRows: [["13", "一所學校。士兵們曾嘗試在此抵抗。"]],
+    },
+    {
+      rowId: "14",
+      defaultRows: [
+        [
+          "14",
+          "一隊被超載的黑色豪華轎車。行屍戴著黑色太陽眼鏡、耳塞和隱藏的肩帶槍套。曾經是名人或富有之人的某人在附近躲藏。",
+        ],
+      ],
+    },
+    {
+      rowId: "15",
+      defaultRows: [["15", "住宅區。泳池就像是行屍掉進去後無法出來的陷阱。"]],
+    },
+    {
+      rowId: "16",
+      defaultRows: [
+        ["16", "一座空蕩蕩的教堂。內牆上塗鴉著關於上帝拋棄了我們的字樣。"],
+      ],
+    },
+    {
+      rowId: "21",
+      defaultRows: [
+        ["21", "圖書館。大部分完好無損。關於生存和農業的書籍位於二樓。"],
+      ],
+    },
+    {
+      rowId: "22",
+      defaultRows: [
+        ["22", "雜草叢生的公園內有一個巨大的遊樂場。一群野狗在這裡獵食。"],
+      ],
+    },
+    {
+      rowId: "23",
+      defaultRows: [
+        ["23", "一輛戰鬥坦克。它能運行，但沒有彈藥。內有一個行屍。"],
+      ],
+    },
+    {
+      rowId: "24",
+      defaultRows: [
+        [
+          "24",
+          "縣級市集。顯然，在疫情爆發那天，幾位客人的臉上畫著小丑、小貓或超級英雄的臉繪。",
+        ],
+      ],
+    },
+    {
+      rowId: "25",
+      defaultRows: [["25", "高層建築。頂樓被火燒黑，就像一個巨大的火柴杆。"]],
+    },
+    {
+      rowId: "26",
+      defaultRows: [["26", "電影院。一些自動販賣機裡還有蘇打罐。"]],
+    },
+    {
+      rowId: "31",
+      defaultRows: [
+        [
+          "31",
+          "一個被遺忘的難民營。一面帶有紅十字的旗幟。銀色的急救毯在風中飄揚。",
+        ],
+      ],
+    },
+    {
+      rowId: "32",
+      defaultRows: [["32", "停車場。在其中一層，幾輛車相互碰撞。"]],
+    },
+    {
+      rowId: "33",
+      defaultRows: [["33", "一輛翻覆的校車阻擋了道路。"]],
+    },
+    {
+      rowId: "34",
+      defaultRows: [
+        ["34", "博物館。展覽名為「我們將再次相見」。關於死亡和復活的藝術。"],
+      ],
+    },
+    {
+      rowId: "35",
+      defaultRows: [
+        ["35", "澡堂。行屍已污染了水源，但還有新鮮的毛巾和洗髮水。"],
+      ],
+    },
+    {
+      rowId: "36",
+      defaultRows: [
+        [
+          "36",
+          "一個購物中心。底層的門從內部被堵住了，但行屍已經通過地下停車場進入。",
+        ],
+      ],
+    },
+    {
+      rowId: "41",
+      defaultRows: [["41", "地面上的一個開口，可能是一個地鐵站入口。"]],
+    },
+    {
+      rowId: "42",
+      defaultRows: [["42", "一座橋。下面有一個空蕩蕩的帳篷營地。"]],
+    },
+    {
+      rowId: "43",
+      defaultRows: [
+        ["43", "劇院。一個告示讓你知道當時正在上演塞繆爾·貝克特的戲劇。"],
+      ],
+    },
+    {
+      rowId: "44",
+      defaultRows: [
+        [
+          "44",
+          "舊火車站。巨大的紅磚建築群。現在已空無一人，但明顯曾經有一個大型定居點在這裡生活。有著難以計數的燒烤坑。空氣中還飄著淡淡的烤肉味。",
+        ],
+      ],
+    },
+    {
+      rowId: "45",
+      defaultRows: [["45", "警局。一隻鹿或麋鹿找到了進入的方式。"]],
+    },
+    {
+      rowId: "46",
+      defaultRows: [
+        ["46", "體育場。它曾被用作難民營，但被超載了。一架直升機墜毀在此。"],
+      ],
+    },
+    {
+      rowId: "51",
+      defaultRows: [["51", "工業區。警告標誌勿進入。一個NPC正在躲藏。"]],
+    },
+    {
+      rowId: "52",
+      defaultRows: [["52", "射擊場。大量槍械。"]],
+    },
+    {
+      rowId: "53",
+      defaultRows: [["53", "研究設施。牆上寫著信，請名叫勞拉的人待在原地。"]],
+    },
+    {
+      rowId: "54",
+      defaultRows: [
+        [
+          "54",
+          "樹林中發現了十二個新鮮墳墓。玩家角色可以聽到來自地下的呻吟聲。行屍正試圖爬到地面上。",
+        ],
+      ],
+    },
+    {
+      rowId: "55",
+      defaultRows: [["55", "有人在避難所內被另一個派系的人聯繫。"]],
+    },
+    {
+      rowId: "56",
+      defaultRows: [["56", "有人在避難所內被另一個派系的人聯繫。"]],
+    },
+    {
+      rowId: "61",
+      defaultRows: [["61", "不同群體的陌生人在避難所附近開始交火。"]],
+    },
+    {
+      rowId: "62",
+      defaultRows: [
+        [
+          "62",
+          "摩天輪。其中一個頂部車廂中有毯子、食物和水，好像有人正在將它用作臨時基地。在毯子中有一張相當準確的避難所圖，標出了薄弱點。",
+        ],
+      ],
+    },
+    {
+      rowId: "63",
+      defaultRows: [["63", "一個哭泣的嬰兒。"]],
+    },
+    {
+      rowId: "64",
+      defaultRows: [
+        ["64", "一架老式螺旋槳飛機拖著橫幅：「Sommerville是安全的。」"],
+      ],
+    },
+    {
+      rowId: "65",
+      defaultRows: [
+        [
+          "65",
+          "避難所內的某個重要設施在無人注意的情況下壞掉。可能是作物的灌溉系統、安全系統的一部分、一把槍，或者是一輛車。也許是蓄意破壞？",
+        ],
+      ],
+    },
+    {
+      rowId: "66",
+      defaultRows: [
+        [
+          "66",
+          "一個隨機決定的NPC嚴重割傷自己，並感染了敗血症。幾小時內他們發燒，如果不獲得適當的抗生素治療，情況會惡化。擲一個雙低來確定他們在死亡前能撐多久。",
+        ],
+      ],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const TravelWildnessTable = {
+  id: "travel-wildness-table",
+  originalName: "Travel Wildness",
+  name: "野外遭遇",
+  description: "野外遭遇隨機表",
+  type: "random-table",
+  category: "core/gm/travel",
+  headers: ["D66", "描述"],
+  rows: [
+    {
+      rowId: "11",
+      defaultRows: [["11", "一個新立的巨大十字架位於看似空蕩蕩的田野中間。"]],
+    },
+    {
+      rowId: "12",
+      defaultRows: [["12", "一個高爾夫球場。有一輛功能正常的高爾夫球車。"]],
+    },
+    {
+      rowId: "13",
+      defaultRows: [["13", "沼澤，沉下的行屍會從下面攻擊。"]],
+    },
+    {
+      rowId: "14",
+      defaultRows: [["14", "過度生長的田野。這裡住著一匹野馬。"]],
+    },
+    {
+      rowId: "15",
+      defaultRows: [["15", "樹林密集，野生動物生存。"]],
+    },
+    {
+      rowId: "16",
+      defaultRows: [["16", "軍事基地，已被廢棄。"]],
+    },
+    {
+      rowId: "21",
+      defaultRows: [["21", "陡峭的山丘或山脈。餓了的山獅，甚至是貂鼠。"]],
+    },
+    {
+      rowId: "22",
+      defaultRows: [
+        [
+          "22",
+          "一架墜毀的飛機。駕駛艙門被鎖，死去的飛行員被安全帶困在座椅上。",
+        ],
+      ],
+    },
+    {
+      rowId: "23",
+      defaultRows: [
+        [
+          "23",
+          "雷區。警告標誌已被移除。幸運骰擲出一或二意味著領頭的PC奇蹟般地引導團隊穿越雷區間隙。地雷的爆炸力為8。",
+        ],
+      ],
+    },
+    {
+      rowId: "24",
+      defaultRows: [
+        [
+          "24",
+          "一個被遺棄的帳篷營地位於小樹林中。可以找到一封似乎寫給其中一名PC的信。",
+        ],
+      ],
+    },
+    {
+      rowId: "25",
+      defaultRows: [["25", "一個洞或峽谷，行屍落入其中但無法自行爬出。"]],
+    },
+    {
+      rowId: "26",
+      defaultRows: [
+        ["26", "一片美麗的草地。一隻豬開始尖叫，因為行屍正在吃它。"],
+      ],
+    },
+    {
+      rowId: "31",
+      defaultRows: [
+        ["31", "山丘中的一條溪流，一些鮭魚跳躍。一個熊洞就隱藏在轉角處。"],
+      ],
+    },
+    {
+      rowId: "32",
+      defaultRows: [["32", "荊棘叢中。有人或某物被困在其中。"]],
+    },
+    {
+      rowId: "33",
+      defaultRows: [["33", "一片美麗的湖泊、河流或池塘。許多青蛙。"]],
+    },
+    {
+      rowId: "34",
+      defaultRows: [
+        [
+          "34",
+          "帶有塔樓和奇異雕像的破敗大宅。一隻穿著小型人類衣物的猴子。主人已被吃掉。",
+        ],
+      ],
+    },
+    {
+      rowId: "35",
+      defaultRows: [
+        ["35", "一個荒涼的休息之家或療養院。一隻大角鴞似乎在監視著PC們。"],
+      ],
+    },
+    {
+      rowId: "36",
+      defaultRows: [["36", "炸彈坑。腐爛屍體中的蛆蟲。"]],
+    },
+    {
+      rowId: "41",
+      defaultRows: [["41", "一群行屍接近，擲骰子以確定其大小。"]],
+    },
+    {
+      rowId: "42",
+      defaultRows: [["42", "一個完全被植物覆蓋的獵屋。到處都是螢火蟲。"]],
+    },
+    {
+      rowId: "43",
+      defaultRows: [["43", "有人試圖通過在樹梢之間連接繩索來避開行屍。"]],
+    },
+    {
+      rowId: "44",
+      defaultRows: [["44", "高速公路上排列著燒毀的汽車。"]],
+    },
+    {
+      rowId: "45",
+      defaultRows: [["45", "一隻行屍被困在熊陷阱中。"]],
+    },
+    {
+      rowId: "46",
+      defaultRows: [
+        [
+          "46",
+          "一個被生存主義者用作靶場的堤壩，在疫情爆發前。他們沒有倖存下來。",
+        ],
+      ],
+    },
+    {
+      rowId: "51",
+      defaultRows: [["51", "巨大的石塊，要麼崩塌擋在PC的路上，要麼即將崩塌。"]],
+    },
+    {
+      rowId: "52",
+      defaultRows: [
+        [
+          "52",
+          "枯萎的樹林中有莓果、蘋果、蘑菇或其他可食用的植物（一份口糧）。",
+        ],
+      ],
+    },
+    {
+      rowId: "53",
+      defaultRows: [
+        ["53", "被大批行屍淹沒的新聞團隊與他們的車輛，在森林中央。"],
+      ],
+    },
+    {
+      rowId: "54",
+      defaultRows: [["54", "流沙或深泥濘。"]],
+    },
+    {
+      rowId: "55",
+      defaultRows: [
+        ["55", "一個大池塘周圍被高蕨類植物環繞。池塘裡潛藏著鱷魚或鰻魚。"],
+      ],
+    },
+    {
+      rowId: "56",
+      defaultRows: [["56", "一個孤獨的營火，附近的地面被掃過，灰燼仍然溫熱。"]],
+    },
+    {
+      rowId: "61",
+      defaultRows: [["61", "兩輛完好無損的山地自行車靠在柵欄柱子上。"]],
+    },
+    {
+      rowId: "62",
+      defaultRows: [
+        [
+          "62",
+          "一個摩天輪。其中最高的車廂中有毯子、食物和水，似乎有人將其用作臨時基地。在毯子中可以找到一張畫得相當準確的PC避難所及其弱點的圖。",
+        ],
+      ],
+    },
+    {
+      rowId: "63",
+      defaultRows: [["63", "一條山脊上插著斷頭的棍子，還在空中咬合。"]],
+    },
+    {
+      rowId: "64",
+      defaultRows: [
+        ["64", "一架拖著橫幅的老式螺旋槳飛機：「Sommerville是安全的。」"],
+      ],
+    },
+    {
+      rowId: "65",
+      defaultRows: [
+        [
+          "65",
+          "避難所中的某個重要裝置在無人注意的情況下壞掉了。可能是作物的灌溉系統、某處的安全系統、一把槍或一輛車。或許是被人蓄意破壞？",
+        ],
+      ],
+    },
+    {
+      rowId: "66",
+      defaultRows: [
+        [
+          "66",
+          "一位隨機決定的NPC嚴重割傷自己，並感染了敗血症。幾小時內他們就發燒了，如果不獲得適當的抗生素治療，病情會惡化。擲一個雙低來看他們在死亡前能撐多少天。",
+        ],
+      ],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const EncounterTable = {
+  id: "encounter-table",
+  originalName: "Encounter",
+  name: "遭遇表",
+  description: "決定發生哪一種遭遇",
+  type: "random-table",
+  category: "core/gm/encounter",
+  headers: ["D6", "描述"],
+  rows: [
+    {
+      rowId: "1-2",
+      defaultRows: [
+        ["1-2", "NPC 遭遇。擲 NPC 遭遇表，並以 NPC 反應表決定反應。"],
+      ],
+    },
+    {
+      rowId: "3-4",
+      defaultRows: [["3-4", "行屍群。擲骰決定群集大小。"]],
+    },
+    {
+      rowId: "5-6",
+      defaultRows: [["5-6", "陣營遭遇。擲你的陣營遭遇表。"]],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const NPCEncounterTable = {
+  id: "npc-encounter-table",
+  originalName: "NPC Encounter",
+  name: "NPC 遭遇表",
+  description: "NPC 遭遇表",
+  type: "random-table",
+  category: "core/gm/encounter",
+  headers: ["D66", "姓名", "背景", "專家", "受訓", "議題", "裝備"],
+  rows: [
+    {
+      rowId: "11",
+      defaultRows: [
+        [
+          "Jason Brooks",
+          "獵人",
+          "生存, 遠戰",
+          "機動, 近戰, 隱匿",
+          "傷痕累累且孤單，冷靜沉著。秘密問題：殘酷殺手團體的最後一員，操縱型的虐待狂",
+          "狩獵步槍, 6份口糧, 大刀",
+        ],
+      ],
+    },
+    {
+      rowId: "12",
+      defaultRows: [
+        [
+          "Rita, Danny, 和 Rosalynn Harvey",
+          "小孩",
+          "-",
+          "隱匿, 機動",
+          "彼此忠誠，目睹父母被謀殺，不信任任何人",
+          "自行車, 開山刀, 3份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "13",
+      defaultRows: [
+        [
+          "Santiago Perez",
+          "外科醫生",
+          "醫藥",
+          "技術",
+          "懦弱。秘密問題：藥物成癮",
+          "基本醫療裝備, 藥物, Vespa滑板車, 4份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "14",
+      defaultRows: [
+        [
+          "Paula Rodriguez",
+          "教師",
+          "-",
+          "技術、生存",
+          "糖尿病",
+          "跑車, 胰島素注射, 沒子彈的槍, 4份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "15",
+      defaultRows: [
+        [
+          "Lenny Smith 和 Ross Brown",
+          "音樂家及愛侶",
+          "—",
+          "遠戰",
+          "無法處理恐懼",
+          "小提琴, 機關槍, 6份口糧, 看門狗 Lennon, 小汽車",
+        ],
+      ],
+    },
+    {
+      rowId: "16",
+      defaultRows: [
+        [
+          "Joey Chard",
+          "建築工人",
+          "忍耐",
+          "力量, 近戰",
+          "害羞，為死去的女兒尋求復仇。秘密問題：對待他好的人容易墜入愛河",
+          "大錘, 6份口糧, 汽油不足的皮卡車",
+        ],
+      ],
+    },
+    {
+      rowId: "21",
+      defaultRows: [
+        [
+          "Peter Sloan 和 Patricia Anderson",
+          "青少年",
+          "—",
+          "隱匿, 近戰, 操縱",
+          "飢餓。秘密問題：小偷和謀殺犯",
+          "每人隱藏的刀, 胡椒噴霧和一把鏟子",
+        ],
+      ],
+    },
+    {
+      rowId: "22",
+      defaultRows: [
+        [
+          "Zoe Valdez",
+          "警員",
+          "遠戰",
+          "隱匿, 領導, 近戰",
+          "喜歡掌握指揮權",
+          "左輪手槍, 帽子, 徽章, 警車, 6份口糧, 獵槍, 刀, 剛殺死的動物, 5瓶葡萄酒",
+        ],
+      ],
+    },
+    {
+      rowId: "23",
+      defaultRows: [
+        [
+          "Harry Lee",
+          "菁英運動員",
+          "機動",
+          "近戰, 偵查",
+          "依循舊世界的道德觀",
+          "摩托車, 左輪手槍, 手斧, 4份口糧, 6張來自死去朋友的身份證",
+        ],
+      ],
+    },
+    {
+      rowId: "24",
+      defaultRows: [
+        [
+          "Angelina Banich",
+          "家庭主婦",
+          "遠戰",
+          "生存, 隱匿, 近戰",
+          "精神不穩定、孤獨者。秘密問題：殺死了她的舊幫派，用殺戮來解決衝突",
+          "手槍, 刀, 2份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "25",
+      defaultRows: [
+        [
+          "Viviane 和 James Moore",
+          "夫妻",
+          "-",
+          "近戰, 生存",
+          "夢想找到一個安全的地方撫養即將出生的孩子，Viviane正在懷孕，迫切尋找食物和安全",
+          "2份口糧, 2把手槍, 一輛汽車",
+        ],
+      ],
+    },
+    {
+      rowId: "26",
+      defaultRows: [
+        [
+          "Lucas Resick",
+          "心理學家",
+          "操縱",
+          "偵查",
+          "為了生存不擇手段",
+          "獵槍, 2份口糧, 一輛汽車, 一頂帳篷",
+        ],
+      ],
+    },
+    {
+      rowId: "31",
+      defaultRows: [
+        [
+          "Kai Patel",
+          "汽車技師",
+          "技術",
+          "近戰",
+          "遠離衝突。秘密問題：對最強者忠誠",
+          "滿載工具的吉普車, 機關槍, 斧頭, 6份口糧, 數個汽油桶",
+        ],
+      ],
+    },
+    {
+      rowId: "32",
+      defaultRows: [
+        [
+          "Roger Hammond 和 Kit Wilson",
+          "士兵",
+          "遠戰",
+          "近戰, 生存, 忍耐, 機動",
+          "受創傷，攜帶著他們重傷垂死的朋友",
+          "突擊步槍, 手槍, 刀, 12份口糧, 生存裝備",
+        ],
+      ],
+    },
+    {
+      rowId: "33",
+      defaultRows: [
+        [
+          "Melissa Jackson",
+          "前藥癮者",
+          "-",
+          "隱匿, 醫藥",
+          "對人惡意推測",
+          "基本醫療裝備, 十字鎬, 2份口糧, 1個手榴彈",
+        ],
+      ],
+    },
+    {
+      rowId: "34",
+      defaultRows: [
+        [
+          "Ellen Kay",
+          "教授",
+          "技術",
+          "操縱",
+          "擅長讓其他人為她戰鬥，冷靜沉著。秘密問題：永不忘記不公",
+          "廚房刀, 防暴盾, 4份口糧, 另一個為她戰鬥的倖存者（再次擲骰）",
+        ],
+      ],
+    },
+    {
+      rowId: "35",
+      defaultRows: [
+        [
+          "Ming–Na Ho",
+          "消防員",
+          "耐力",
+          "生存, 近戰, 蠻力",
+          "抑鬱、秘密問題：潛伏性肺結核",
+          "消防斧, 10份口糧, 摩托車, 帳篷",
+        ],
+      ],
+    },
+    {
+      rowId: "36",
+      defaultRows: [
+        [
+          "Kayd 和 Scott Pierson",
+          "父子",
+          "—",
+          "偵查, 隱匿, 機動",
+          "準備做任何事來生存",
+          "刀, 斧, 絞索, 2份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "41",
+      defaultRows: [
+        [
+          "Madeline Rivera",
+          "股票經紀人",
+          "操縱",
+          "-",
+          "過度自信、商人。秘密問題：指責最弱者",
+          "汽車, 20份口糧, 霰彈槍",
+        ],
+      ],
+    },
+    {
+      rowId: "42",
+      defaultRows: [
+        [
+          "Stu Harrison",
+          "卡通作家",
+          "-",
+          "-",
+          "依賴運氣。秘密問題：將他人置於危險之中",
+          "鏟子, 生存裝備, 2份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "43",
+      defaultRows: [
+        [
+          "Ezra Faheem",
+          "護士",
+          "—",
+          "醫藥, 近戰",
+          "信任問題",
+          "基本醫療裝備, 小汽車, 10份口糧, 魚叉槍",
+        ],
+      ],
+    },
+    {
+      rowId: "44",
+      defaultRows: [
+        [
+          "Eliot Harper",
+          "工程師",
+          "技術",
+          "-",
+          "對兒童有軟肋。秘密問題：為了拯救一個孩子願意犧牲任何東西",
+          "2份口糧, 穿著破洞的披風以便在死者中混入, 一個號角用來為了保護而呼喚死者",
+        ],
+      ],
+    },
+    {
+      rowId: "45",
+      defaultRows: [["Wayne Vo", "房東", "—", "—", "酒鬼", "—"]],
+    },
+    {
+      rowId: "46",
+      defaultRows: [
+        [
+          "Anne Jackson",
+          "演員",
+          "—",
+          "遠戰, 生存",
+          "從不睡覺。秘密問題：有聲音告訴她事情",
+          "劍, 2份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "51",
+      defaultRows: [
+        [
+          "Zane Sparks",
+          "動物訓練師",
+          "—",
+          "遠戰, 生存",
+          "從不改變對任何事情的看法",
+          "動物控制桿, 防護手套, 網, 鏟子, 電擊槍, 5份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "52",
+      defaultRows: [
+        [
+          "Jessica Fryers",
+          "飛行員",
+          "機動",
+          "近戰, 操縱",
+          "固執，受傷。秘密問題：某秘密派系的成員",
+          "卡賓槍, 沒油的螺旋槳飛機, 刀",
+        ],
+      ],
+    },
+    {
+      rowId: "53",
+      defaultRows: [
+        [
+          "Luke McGowan",
+          "刺客",
+          "遠戰、近戰",
+          "隱匿",
+          "從不按規則來玩。秘密問題：只對自己忠誠",
+          "狩獵步槍, 鏟子, 刀, Vespa滑板車, 4份口糧, 寵物貓Cindy",
+        ],
+      ],
+    },
+    {
+      rowId: "54",
+      defaultRows: [
+        [
+          "Mira Bello",
+          "工廠工人",
+          "—",
+          "忍受",
+          "孤獨且害怕",
+          "雙手斧, 1份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "55",
+      defaultRows: [
+        [
+          "Selena 與 Eva Cabello",
+          "廚師與記者",
+          "—",
+          "生存",
+          "從不讓任何人靠近，使用卑鄙手段戰鬥。秘密問題：Selena最近失去了她的雙胞胎嬰兒。",
+          "球棒, 矛, 設置陷阱的裝備, 2顆手榴彈, 8份口糧。",
+        ],
+      ],
+    },
+    {
+      rowId: "56",
+      defaultRows: [
+        [
+          "Jacky Hearts",
+          "名人",
+          "—",
+          "-",
+          "欺負弱小，秘密問題：是個小偷和殺人犯。",
+          "運動自行車, 左輪手槍, 錘子, 手持相機帶電池, 一位從不說話的男友 Claude, 8份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "61",
+      defaultRows: [
+        [
+          "Esmerelda Rains",
+          "公車司機",
+          "—",
+          "機動",
+          "知道一個安全地點，但沒有幫助無法到達。秘密問題：說謊成性",
+          "警長徽章, 左輪手槍, 假鑽戒, 手臂上的繃帶隱藏了一個醜陋的刺青",
+        ],
+      ],
+    },
+    {
+      rowId: "62",
+      defaultRows: [
+        [
+          "Oscar Lahm",
+          "垃圾收集者",
+          "-",
+          "—",
+          "小人之心度人",
+          "帶有隨機裝備的垃圾車, 步槍, 雙節棍, 磨尖螺絲刀, 20份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "63",
+      defaultRows: [
+        [
+          "Sheila Barboza",
+          "清潔女工",
+          "—",
+          "—",
+          "一直躲在預備者的地堡裡，直到最近才出來，幾乎在行屍面前無用。秘密問題：預備者沒有允許她離開",
+          "狩獵步槍, 生存裝備, 急救包, 10份口糧, 斧頭, 帳篷, 太陽能充電器, 無線電發射器, 兩個輪胎爆了的汽車",
+        ],
+      ],
+    },
+    {
+      rowId: "64",
+      defaultRows: [
+        [
+          "「少校」",
+          "獄卒",
+          "近戰、操縱",
+          "隱匿, 生存, 近戰",
+          "過度自信，且無畏。秘密問題：想要控制下屬，願燒毀世界以對敵人復仇",
+          "配有消音器的兩把槍, 防彈衣, 吉普車, 一個藏身處, 望遠鏡, 10份口糧",
+        ],
+      ],
+    },
+    {
+      rowId: "65",
+      defaultRows: [
+        [
+          "Adam Stark",
+          "屠夫",
+          "近戰",
+          "—",
+          "太過善良無法善待自己",
+          "屠夫的切肉刀, 屠夫刀, 左輪手槍, 6份口糧, 帳篷, 馬",
+        ],
+      ],
+    },
+    {
+      rowId: "66",
+      defaultRows: [
+        [
+          "Dax Heinz",
+          "汽車銷售員",
+          "-",
+          "操縱、隱匿",
+          "要照顧他重傷的兄弟",
+          "生存裝備, 6份口糧, 3個汽油彈, 斧頭",
+        ],
+      ],
+    },
+  ],
+} as const satisfies GameElement;
+export const RandomThreatLevelTable = {
+  id: "random-threat-level-table",
+  originalName: "Random Threat Level",
+  name: "隨機威脅等級",
+  description: "根據PC（玩家角色）行動產生的聲響等因素，決定威脅等級。",
+  type: "random-table",
+  category: "core/walker",
+  headers: ["D6", "威脅等級"],
+  rows: [
+    {
+      rowId: "0",
+      defaultRows: [["1–2", "0"]],
+    },
+    {
+      rowId: "1",
+      defaultRows: [["3–4", "1"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [["5–6", "2"]],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const WalkersApproachingTable = {
+  id: "walkers-approaching-table",
+  originalName: "Walkers Approaching",
+  name: "行屍接近時間",
+  description: "決定行屍群到達玩家所在位置所需的時間。",
+  type: "random-table",
+  category: "core/walker",
+  headers: ["D6", "時間"],
+  rows: [
+    {
+      rowId: "seconds",
+      defaultRows: [["1", "秒"]],
+    },
+    {
+      rowId: "minutes",
+      defaultRows: [["2", "分鐘"]],
+    },
+    {
+      rowId: "hours",
+      defaultRows: [
+        ["3", "小時"],
+        ["4", "一小時"],
+      ],
+    },
+    {
+      rowId: "days",
+      defaultRows: [["5", "天"]],
+    },
+    {
+      rowId: "too-far",
+      defaultRows: [["6", "太遠而找不到路徑來這裡"]],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const NpcReactionsTable = {
+  id: "npc-reactions-table",
+  originalName: "NPC Reactions",
+  name: "NPC反應",
+  description: "遭遇NPC時可能的反應。",
+  type: "random-table",
+  category: "core/gm/npc_and_animal",
+  headers: ["D6", "反應"],
+  rows: [
+    {
+      rowId: "1",
+      defaultRows: [["1", "友好或需要幫助。"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [["2", "謹慎但好奇。"]],
+    },
+    {
+      rowId: "3",
+      defaultRows: [["3", "想要交換物品、謠言或其他東西。"]],
+    },
+    {
+      rowId: "4",
+      defaultRows: [["4", "害怕且準備逃跑、躲藏或自衛。"]],
+    },
+    {
+      rowId: "5",
+      defaultRows: [["5", "敵對。"]],
+    },
+    {
+      rowId: "6",
+      defaultRows: [["6", "計劃通過武力或詭計奪取PC擁有的物品。"]],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const AnimalsExampleTable = {
+  id: "animals-example-table",
+  originalName: "Animals Example",
+  name: "動物列表",
+  description: "一些動物的例子。",
+  type: "example",
+  category: "core/gm/npc_and_animal",
+  headers: ["動物", "攻擊骰", "傷害", "健康"],
+  rows: [
+    {
+      rowId: "Alligator",
+      defaultRows: [["短吻鱷", "6", "2", "4"]],
+    },
+    {
+      rowId: "Bear",
+      defaultRows: [["熊", "8", "2", "4"]],
+    },
+    {
+      rowId: "Dog",
+      defaultRows: [["狗", "4", "1", "3"]],
+    },
+    {
+      rowId: "Eagle",
+      defaultRows: [["鷹", "4", "1", "2"]],
+    },
+    {
+      rowId: "Elk",
+      defaultRows: [["麋鹿", "5", "1", "4"]],
+    },
+    {
+      rowId: "Venomous snake",
+      defaultRows: [["蝮蛇", "5", "1 （+毒性）", "2"]],
+    },
+    {
+      rowId: "Tiger",
+      defaultRows: [["虎", "8", "2", "4"]],
+    },
+    {
+      rowId: "Trained watchdog",
+      defaultRows: [["看門狗", "6", "1", "3"]],
+    },
+    {
+      rowId: "Wolf",
+      defaultRows: [["狼", "6", "1", "3"]],
+    },
+    {
+      rowId: "Wolverine",
+      defaultRows: [["狼獾", "5", "1", "3"]],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const AtlantaFractionEncounterTable = {
+  id: "atlanta-fraction-encounter-table",
+  originalName: "Atlanta Fraction Encounter",
+  name: "Atlanta 戰役派系遭遇",
+  description: "Atlanta 戰役的派系遭遇表",
+  type: "random-table",
+  category: "campaign/atlanta-default",
+  headers: ["D6", "事件"],
+  rows: [
+    {
+      rowId: "1",
+      defaultRows: [["1", "兩個來自「再生者」的人正在外面尋找物資。"]],
+    },
+    {
+      rowId: "2",
+      defaultRows: [
+        [
+          "2",
+          "「生者」的五名成員找到了一批酒精。他們喝醉了，站在屋頂上向行屍投擲莫洛托夫雞尾酒作為酒後運動。",
+        ],
+      ],
+    },
+    {
+      rowId: "3",
+      defaultRows: [
+        [
+          "3",
+          "一個叫 Lisa 的害怕的孩子從學校逃跑了。她躲在某個地方，快要餓死了。Lisa 很害怕，但如果玩家角色獲得她的信任，她會想回去救她的朋友。",
+        ],
+      ],
+    },
+    {
+      rowId: "4",
+      defaultRows: [
+        [
+          "4",
+          '「再生者」在一個被遺棄的村莊的牆上釘了論述摩根神父教義的紙張。所有紙張上都標有一個帶有大寫M的十字架。',
+        ],
+      ],
+    },
+    {
+      rowId: "5",
+      defaultRows: [["5", '「生者」的兩名成員正在教訓他們的一名僕人一個教訓。']],
+    },
+    {
+      rowId: "6",
+      defaultRows: [
+        [
+          "6",
+          "一輛裝滿補給品的卡車在返回學校的途中壞了。如果它沒有到達，議會將派出安全隊去查明發生了什麼。",
+        ],
+      ],
+    },
+  ],
+} as const satisfies GameElement;
+
+export const AtlantaRumorsTable = {
+  id: "atlanta-rumors-table",
+  originalName: "Atlanta Rumors",
+  name: "Atlanta 戰役謠言",
+  description: "Atlanta 戰役謠言表",
+  type: "random-table",
+  category: "campaign/atlanta-default",
+  headers: ["D6", "結果"],
+  rows: [
+    {
+      rowId: "1",
+      defaultRows: [
+        [
+          "1",
+          "「人類的最後希望是一所學校，就在這附近。教師們一直在照顧數百名孩子，但他們迫切需要食物、保護和幫助。他們接納任何新來者。」",
+        ],
+      ],
+    },
+    {
+      rowId: "2",
+      defaultRows: [
+        [
+          "2",
+          "「有個叫 Jack Morgen 的人死了，但沒有變成行屍。我親眼所見。他的團體中的狂熱分子認為這是一個奇跡，證明摩根是耶穌的第二次降臨。如果科學家能得到那具屍體，或許他們能創造出抗病毒的解藥。」",
+        ],
+      ],
+    },
+    {
+      rowId: "3",
+      defaultRows: [
+        [
+          "3",
+          "「全國各地的人們已經開始通過無線電相互聯繫。許多人都在制定如何重建文明的計劃。我真希望能找到一個無線電發射器。」",
+        ],
+      ],
+    },
+    {
+      rowId: "4",
+      defaultRows: [
+        [
+          "4",
+          "「蘭尼爾湖上有一個船屋定居點。我生病的時候在那裡住了一段時間。他們收留了我，給我食物，幫助了我，並沒有要求任何回報。如果地球上還有好人，他們中的一些正在那些船上漂浮。」",
+        ],
+      ],
+    },
+    {
+      rowId: "5",
+      defaultRows: [
+        [
+          "5",
+          "「我正前往貝斯利家族的農場——這是周圍最大的一個。我的父母在那裡工作。你想和我一起去嗎？這個時候他們總是在找好工人。」",
+        ],
+      ],
+    },
+
+    {
+      rowId: "6",
+      defaultRows: [
+        [
+          "6",
+          "「有一群善良的基督徒叫做『再生者』。他們幫助任何有需要的人，並且能夠對抗劫掠者。當他們找到我時，我快要死了，但他們幫助了我。」",
         ],
       ],
     },
