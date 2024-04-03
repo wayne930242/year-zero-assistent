@@ -2885,6 +2885,7 @@ export const NPCEncounterTable = {
       rowId: "11",
       defaultRows: [
         [
+          "11",
           "Jason Brooks",
           "獵人",
           "生存, 遠戰",
@@ -2898,6 +2899,7 @@ export const NPCEncounterTable = {
       rowId: "12",
       defaultRows: [
         [
+          "12",
           "Rita, Danny, 和 Rosalynn Harvey",
           "小孩",
           "-",
@@ -2911,6 +2913,7 @@ export const NPCEncounterTable = {
       rowId: "13",
       defaultRows: [
         [
+          "13",
           "Santiago Perez",
           "外科醫生",
           "醫藥",
@@ -2924,6 +2927,7 @@ export const NPCEncounterTable = {
       rowId: "14",
       defaultRows: [
         [
+          "14",
           "Paula Rodriguez",
           "教師",
           "-",
@@ -2937,6 +2941,7 @@ export const NPCEncounterTable = {
       rowId: "15",
       defaultRows: [
         [
+          "15",
           "Lenny Smith 和 Ross Brown",
           "音樂家及愛侶",
           "—",
@@ -2950,6 +2955,7 @@ export const NPCEncounterTable = {
       rowId: "16",
       defaultRows: [
         [
+          "16",
           "Joey Chard",
           "建築工人",
           "忍耐",
@@ -2963,6 +2969,7 @@ export const NPCEncounterTable = {
       rowId: "21",
       defaultRows: [
         [
+          "21",
           "Peter Sloan 和 Patricia Anderson",
           "青少年",
           "—",
@@ -2976,6 +2983,7 @@ export const NPCEncounterTable = {
       rowId: "22",
       defaultRows: [
         [
+          "22",
           "Zoe Valdez",
           "警員",
           "遠戰",
@@ -2989,6 +2997,7 @@ export const NPCEncounterTable = {
       rowId: "23",
       defaultRows: [
         [
+          "23",
           "Harry Lee",
           "菁英運動員",
           "機動",
@@ -3002,6 +3011,7 @@ export const NPCEncounterTable = {
       rowId: "24",
       defaultRows: [
         [
+          "24",
           "Angelina Banich",
           "家庭主婦",
           "遠戰",
@@ -3015,6 +3025,7 @@ export const NPCEncounterTable = {
       rowId: "25",
       defaultRows: [
         [
+          "25",
           "Viviane 和 James Moore",
           "夫妻",
           "-",
@@ -3028,6 +3039,7 @@ export const NPCEncounterTable = {
       rowId: "26",
       defaultRows: [
         [
+          "26",
           "Lucas Resick",
           "心理學家",
           "操縱",
@@ -3041,6 +3053,7 @@ export const NPCEncounterTable = {
       rowId: "31",
       defaultRows: [
         [
+          "31",
           "Kai Patel",
           "汽車技師",
           "技術",
@@ -3054,6 +3067,7 @@ export const NPCEncounterTable = {
       rowId: "32",
       defaultRows: [
         [
+          "32",
           "Roger Hammond 和 Kit Wilson",
           "士兵",
           "遠戰",
@@ -3067,6 +3081,7 @@ export const NPCEncounterTable = {
       rowId: "33",
       defaultRows: [
         [
+          "33",
           "Melissa Jackson",
           "前藥癮者",
           "-",
@@ -3080,6 +3095,7 @@ export const NPCEncounterTable = {
       rowId: "34",
       defaultRows: [
         [
+          "34",
           "Ellen Kay",
           "教授",
           "技術",
@@ -3093,6 +3109,7 @@ export const NPCEncounterTable = {
       rowId: "35",
       defaultRows: [
         [
+          "35",
           "Ming–Na Ho",
           "消防員",
           "耐力",
@@ -3106,6 +3123,7 @@ export const NPCEncounterTable = {
       rowId: "36",
       defaultRows: [
         [
+          "36",
           "Kayd 和 Scott Pierson",
           "父子",
           "—",
@@ -3119,6 +3137,7 @@ export const NPCEncounterTable = {
       rowId: "41",
       defaultRows: [
         [
+          "41",
           "Madeline Rivera",
           "股票經紀人",
           "操縱",
@@ -3132,6 +3151,7 @@ export const NPCEncounterTable = {
       rowId: "42",
       defaultRows: [
         [
+          "42",
           "Stu Harrison",
           "卡通作家",
           "-",
@@ -3145,6 +3165,7 @@ export const NPCEncounterTable = {
       rowId: "43",
       defaultRows: [
         [
+          "43",
           "Ezra Faheem",
           "護士",
           "—",
@@ -3158,6 +3179,7 @@ export const NPCEncounterTable = {
       rowId: "44",
       defaultRows: [
         [
+          "44",
           "Eliot Harper",
           "工程師",
           "技術",
@@ -3169,12 +3191,13 @@ export const NPCEncounterTable = {
     },
     {
       rowId: "45",
-      defaultRows: [["Wayne Vo", "房東", "—", "—", "酒鬼", "—"]],
+      defaultRows: [["45", "Wayne Vo", "房東", "—", "—", "酒鬼", "—"]],
     },
     {
       rowId: "46",
       defaultRows: [
         [
+          "46",
           "Anne Jackson",
           "演員",
           "—",
@@ -3188,6 +3211,7 @@ export const NPCEncounterTable = {
       rowId: "51",
       defaultRows: [
         [
+          "51",
           "Zane Sparks",
           "動物訓練師",
           "—",
@@ -3201,6 +3225,7 @@ export const NPCEncounterTable = {
       rowId: "52",
       defaultRows: [
         [
+          "52",
           "Jessica Fryers",
           "飛行員",
           "機動",
@@ -3214,6 +3239,7 @@ export const NPCEncounterTable = {
       rowId: "53",
       defaultRows: [
         [
+          "53",
           "Luke McGowan",
           "刺客",
           "遠戰、近戰",
@@ -3227,6 +3253,7 @@ export const NPCEncounterTable = {
       rowId: "54",
       defaultRows: [
         [
+          "54",
           "Mira Bello",
           "工廠工人",
           "—",
@@ -3240,6 +3267,7 @@ export const NPCEncounterTable = {
       rowId: "55",
       defaultRows: [
         [
+          "55",
           "Selena 與 Eva Cabello",
           "廚師與記者",
           "—",
@@ -3253,6 +3281,7 @@ export const NPCEncounterTable = {
       rowId: "56",
       defaultRows: [
         [
+          "56",
           "Jacky Hearts",
           "名人",
           "—",
@@ -3266,6 +3295,7 @@ export const NPCEncounterTable = {
       rowId: "61",
       defaultRows: [
         [
+          "61",
           "Esmerelda Rains",
           "公車司機",
           "—",
@@ -3279,6 +3309,7 @@ export const NPCEncounterTable = {
       rowId: "62",
       defaultRows: [
         [
+          "62",
           "Oscar Lahm",
           "垃圾收集者",
           "-",
@@ -3292,6 +3323,7 @@ export const NPCEncounterTable = {
       rowId: "63",
       defaultRows: [
         [
+          "63",
           "Sheila Barboza",
           "清潔女工",
           "—",
@@ -3305,6 +3337,7 @@ export const NPCEncounterTable = {
       rowId: "64",
       defaultRows: [
         [
+          "64",
           "「少校」",
           "獄卒",
           "近戰、操縱",
@@ -3318,6 +3351,7 @@ export const NPCEncounterTable = {
       rowId: "65",
       defaultRows: [
         [
+          "65",
           "Adam Stark",
           "屠夫",
           "近戰",
@@ -3331,6 +3365,7 @@ export const NPCEncounterTable = {
       rowId: "66",
       defaultRows: [
         [
+          "66",
           "Dax Heinz",
           "汽車銷售員",
           "-",
@@ -3525,13 +3560,15 @@ export const AtlantaFractionEncounterTable = {
       defaultRows: [
         [
           "4",
-          '「再生者」在一個被遺棄的村莊的牆上釘了論述摩根神父教義的紙張。所有紙張上都標有一個帶有大寫M的十字架。',
+          "「再生者」在一個被遺棄的村莊的牆上釘了論述摩根神父教義的紙張。所有紙張上都標有一個帶有大寫M的十字架。",
         ],
       ],
     },
     {
       rowId: "5",
-      defaultRows: [["5", '「生者」的兩名成員正在教訓他們的一名僕人一個教訓。']],
+      defaultRows: [
+        ["5", "「生者」的兩名成員正在教訓他們的一名僕人一個教訓。"],
+      ],
     },
     {
       rowId: "6",
