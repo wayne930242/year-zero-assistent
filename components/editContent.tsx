@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Check, EraserIcon, Library } from "lucide-react";
 
 import { Categories, GameElement, ScreenSlice } from "@/lib/types";
@@ -92,7 +92,9 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
     setSelected(globalData.elements.map((element) => element.id));
   }, [globalData.elements]);
 
+  const setted = useRef(false);
   useEffect(() => {
+    if (setted.current) return;
     // Add elements to checkedList when selected new elements,
     // but if selected elements are removed, do not remove them from checkedList
     const updatedCheckedList = new Set(checkedList);
@@ -100,7 +102,8 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
       updatedCheckedList.add(element);
     });
     setCheckedList(Array.from(updatedCheckedList));
-  }, [selected]);
+    setted.current = true;
+  }, [selected, checkedList]);
 
   return (
     <>
@@ -141,7 +144,7 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
                       );
                     }}
                   />
-                  <Label htmlFor="all-pc-category">PC only</Label>
+                  <Label htmlFor="all-pc-category" className="w-full">PC only</Label>
                 </div>
 
                 <DropdownMenuSeparator />
@@ -171,7 +174,7 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
                         );
                       }}
                     />
-                    <Label htmlFor={category}>
+                    <Label htmlFor={category} className="w-full">
                       {searchData.categories[category].name}
                       {searchData.categories[category].gmOnly && (
                         <span className="text-xs ml-1 text-destructive">

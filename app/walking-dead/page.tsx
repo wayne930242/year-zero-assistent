@@ -4,12 +4,6 @@ import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import * as tableData from "./table-data";
 import { ElementCategories } from "./schema-data";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { TableDnd } from "@/components/screenDnd";
 import { Metadata } from "next";
 import { EditContent } from "@/components/editContent";
