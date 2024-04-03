@@ -92,18 +92,17 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
     setSelected(globalData.elements.map((element) => element.id));
   }, [globalData.elements]);
 
-  const setted = useRef(false);
   useEffect(() => {
-    if (setted.current) return;
     // Add elements to checkedList when selected new elements,
     // but if selected elements are removed, do not remove them from checkedList
-    const updatedCheckedList = new Set(checkedList);
-    selected.forEach((element) => {
-      updatedCheckedList.add(element);
+    setCheckedList((list) => {
+      const updated = new Set(list);
+      selected.forEach((element) => {
+        updated.add(element);
+      });
+      return Array.from(updated);
     });
-    setCheckedList(Array.from(updatedCheckedList));
-    setted.current = true;
-  }, [selected, checkedList]);
+  }, [selected]);
 
   return (
     <>
@@ -144,7 +143,9 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
                       );
                     }}
                   />
-                  <Label htmlFor="all-pc-category" className="w-full">PC only</Label>
+                  <Label htmlFor="all-pc-category" className="w-full">
+                    PC only
+                  </Label>
                 </div>
 
                 <DropdownMenuSeparator />
