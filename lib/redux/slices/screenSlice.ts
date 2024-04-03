@@ -129,7 +129,12 @@ export const screenSlice = createSlice({
       }>
     ) {
       const { key, searchs } = action.payload;
-      state[key].searchs.categories = searchs;
+      const searchsState = state[key].searchs;
+      if (searchsState) {
+        state[key].searchs.categories = searchs;
+      } else {
+        state[key].searchs = { categories: searchs };
+      }
     },
     toggleAllPcCategory(
       state,
