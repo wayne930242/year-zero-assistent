@@ -3439,8 +3439,8 @@ export const WalkersApproachingTable = {
 export const NpcReactionsTable = {
   id: "npc-reactions-table",
   originalName: "NPC Reactions",
-  name: "NPC反應",
-  description: "遭遇NPC時可能的反應。",
+  name: "NPC 反應",
+  description: "遭遇 NPC 時可能的反應。",
   type: "random-table",
   category: "core/gm/npc_and_animal",
   headers: ["D6", "反應"],
