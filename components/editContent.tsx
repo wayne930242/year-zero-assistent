@@ -1,15 +1,13 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
-
 import { Categories, GameElement, ScreenSlice } from "@/lib/types";
-
-import { useDispatch, useSelector } from "@/lib/redux/store";
-import { selectScreen } from "@/lib/redux/slices/screenSlice";
 import { CategoryFilterButton } from "./editor/toolbar/categoryFilterButton";
 import { GmOnlyButton } from "./editor/toolbar/gmOnlyButton";
 import { TableCombo } from "./editor/major/tableCombo";
+import { useSelector } from "@/lib/redux/store";
+import { selectScreenMode } from "@/lib/redux/slices/appSlice";
 
 export const EditContent = ({ data, screenKey, searchData }: Props) => {
+  const screenMode = useSelector(selectScreenMode);
   return (
     <>
       {searchData && (
@@ -27,7 +25,9 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
           </div>
         </div>
       )}
-      <TableCombo data={data} screenKey={screenKey} searchData={searchData} />
+      {screenMode === "table-select" && (
+        <TableCombo data={data} screenKey={screenKey} searchData={searchData} />
+      )}
     </>
   );
 };
