@@ -3,7 +3,7 @@
 import { ScreenSlice } from "@/lib/types";
 import { useDispatch, useSelector } from "@/lib/redux/store";
 import { selectScreen, setGmOnly } from "@/lib/redux/slices/screenSlice";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 
 export const GmOnlyButton = ({ screenKey }: Props) => {
   const dispatch = useDispatch();
