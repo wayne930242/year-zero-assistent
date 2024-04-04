@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, CornerLeftUp } from "lucide-react";
+import { X } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -61,7 +61,6 @@ export const TableDnd = ({ screenKey }: Props) => {
                         className="mb-4"
                         ref={provided.innerRef}
                         {...provided.draggableProps}
-                        {...provided.dragHandleProps}
                       >
                         <CardHeader
                           className="relative hover:bg-gray-100 p-4"
@@ -73,6 +72,7 @@ export const TableDnd = ({ screenKey }: Props) => {
                                 : [...prev, element.id]
                             );
                           }}
+                          {...provided.dragHandleProps}
                         >
                           <CardTitle>{element.name}</CardTitle>
                           <CardDescription>
