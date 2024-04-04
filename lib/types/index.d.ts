@@ -11,13 +11,13 @@ export type ScreenEditorState = 'open' | 'closed';
 export interface ScreenSlice {
   walkingDead: {
     elements: GameElement[];
-    searchs: ScreenSearch;
+    toolbar: Toolbar;
   };
 }
 
-export interface ScreenSearch {
+export interface Toolbar {
   categories?: string[];
-  gmOnly?: boolean;
+  iamGM?: boolean;
 }
 
 export type GameElement = RandomTableElement | ExampleTableElement;

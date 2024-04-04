@@ -13,6 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
 import { useDispatch, useSelector } from "@/lib/redux/store";
 import {
   selectScreen,
@@ -20,6 +21,7 @@ import {
   toggleAllPcCategory,
 } from "@/lib/redux/slices/screenSlice";
 import { Label } from "@/components/ui/label";
+import React from "react";
 
 export const CategoryFilterButton = ({ screenKey, categories }: Props) => {
   const dispatch = useDispatch();
@@ -29,7 +31,7 @@ export const CategoryFilterButton = ({ screenKey, categories }: Props) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="secondary" size="icon">
+        <Button size="icon">
           <Filter className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
@@ -48,50 +50,60 @@ export const CategoryFilterButton = ({ screenKey, categories }: Props) => {
           <div>清除</div>
           <EraserIcon className="h-4 w-4" />
         </DropdownMenuItem>
-        <div className="items-top flex space-x-2 px-3 py-2">
-          <Checkbox
-            id="all-pc-category"
-            checked={!!globalData.searchs?.categories?.length}
-            onCheckedChange={(b) => {
-              dispatch(
-                toggleAllPcCategory({
-                  key: screenKey,
-                  categories: categories,
-                })
-              );
-            }}
-          />
-          <Label htmlFor="all-pc-category" className="w-full">
-            PL only
-          </Label>
-        </div>
 
-        <DropdownMenuSeparator />
-        {Object.keys(categories).map((category) => (
-          <div key={category} className="items-top flex space-x-2 px-3 py-2">
+        {globalData.toolbar?.iamGM && (
+          <div className="items-top flex space-x-2 px-3 py-2">
             <Checkbox
-              id={category}
-              checked={globalData.searchs?.categories?.includes(category)}
+              id="all-pc-category"
+              checked={!!globalData.toolbar?.categories?.length}
               onCheckedChange={(b) => {
                 dispatch(
-                  setCategories({
+                  toggleAllPcCategory({
                     key: screenKey,
-                    searchs: b
-                      ? [...(globalData.searchs?.categories ?? []), category]
-                      : globalData.searchs?.categories?.filter(
-                          (c) => c !== category
-                        ) ?? [],
+                    categories: categories,
                   })
                 );
               }}
             />
-            <Label htmlFor={category} className="w-full">
-              {categories[category].name}
-              {categories[category].gmOnly && (
-                <span className="text-xs ml-1 text-destructive">GM</span>
-              )}
+            <Label htmlFor="all-pc-category" className="w-full">
+              PL only
             </Label>
           </div>
+        )}
+
+        <DropdownMenuSeparator />
+        {Object.keys(categories).map((category) => (
+          <React.Fragment key={category}>
+            {(!categories[category].gmOnly || globalData.toolbar?.iamGM) && (
+              <div className="items-top flex space-x-2 px-3 py-2">
+                <Checkbox
+                  id={category}
+                  checked={globalData.toolbar?.categories?.includes(category)}
+                  onCheckedChange={(b) => {
+                    dispatch(
+                      setCategories({
+                        key: screenKey,
+                        searchs: b
+                          ? [
+                              ...(globalData.toolbar?.categories ?? []),
+                              category,
+                            ]
+                          : globalData.toolbar?.categories?.filter(
+                              (c) => c !== category
+                            ) ?? [],
+                      })
+                    );
+                  }}
+                />
+                <Label htmlFor={category} className="w-full">
+                  {categories[category].name}
+                  {categories[category].gmOnly && (
+                    <span className="text-xs ml-1 text-destructive">GM</span>
+                  )}
+                </Label>
+              </div>
+            )}
+          </React.Fragment>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>

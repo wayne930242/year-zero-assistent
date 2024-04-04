@@ -5,9 +5,9 @@ import { ReduxState } from "../store";
 const initialState: ScreenSlice = {
   walkingDead: {
     elements: [],
-    searchs: {
+    toolbar: {
       categories: [],
-      gmOnly: false,
+      iamGM: false,
     },
   },
 };
@@ -129,11 +129,11 @@ export const screenSlice = createSlice({
       }>
     ) {
       const { key, searchs } = action.payload;
-      const searchsState = state[key].searchs;
+      const searchsState = state[key].toolbar;
       if (searchsState) {
-        state[key].searchs.categories = searchs;
+        state[key].toolbar.categories = searchs;
       } else {
-        state[key].searchs = { categories: searchs };
+        state[key].toolbar = { categories: searchs };
       }
     },
     toggleAllPcCategory(
@@ -144,13 +144,23 @@ export const screenSlice = createSlice({
       }>
     ) {
       const { key, categories } = action.payload;
-      if (state[key].searchs.categories?.length) {
-        state[key].searchs.categories = [];
+      if (state[key].toolbar.categories?.length) {
+        state[key].toolbar.categories = [];
       } else {
-        state[key].searchs.categories = Object.keys(categories).filter(
+        state[key].toolbar.categories = Object.keys(categories).filter(
           (c) => !categories[c].gmOnly
         );
       }
+    },
+    setGmOnly(
+      state,
+      action: PayloadAction<{
+        key: keyof ScreenSlice;
+        open: boolean;
+      }>
+    ) {
+      const { key, open } = action.payload;
+      state[key].toolbar.iamGM = open;
     },
   },
 });
@@ -164,6 +174,7 @@ export const {
   updateTableRow,
   setCategories,
   toggleAllPcCategory,
+  setGmOnly,
 } = screenSlice.actions;
 export default screenSlice;
 

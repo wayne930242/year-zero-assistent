@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 import { Label } from "./ui/label";
 import { setScreenEditorState } from "@/lib/redux/slices/appSlice";
 import { CategoryFilterButton } from "./toolbar/categoryFilterButton";
+import { GmOnlyButton } from "./toolbar/gmOnlyButton";
 
 function calculateRelevance(search: string, dataItem: GameElement): number {
   const weights = {
@@ -96,7 +97,9 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
   return (
     <>
       {searchData && (
-        <div className="w-full flex justify-end items-center gap-2 mb-4">
+        <div className="w-full flex justify-between items-center gap-2 mb-4">
+          <div className="flex grow-0 gap-2"></div>
+          <div className="flex-1"></div>
           <div className="flex grow-0 gap-2">
             {searchData?.categories && (
               <CategoryFilterButton
@@ -104,6 +107,7 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
                 categories={searchData.categories}
               />
             )}
+            {searchData?.categories && <GmOnlyButton screenKey={screenKey} />}
           </div>
         </div>
       )}
@@ -120,10 +124,14 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
             {data
               .filter((d) => {
                 if (!searchData) return true;
-                return (
-                  !globalData.searchs?.categories?.length ||
-                  globalData.searchs?.categories?.includes(d.category)
-                );
+                const inCategories =
+                  !globalData.toolbar?.categories?.length ||
+                  globalData.toolbar?.categories?.includes(d.category);
+                const fitGmOnly =
+                  !searchData.categories[d.category].gmOnly ||
+                  globalData.toolbar?.iamGM;
+
+                return inCategories && fitGmOnly;
               })
               .map((d) => (
                 <CommandItem
