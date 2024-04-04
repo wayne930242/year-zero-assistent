@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <main className="bg-accent">
+    <>
       <div className="w-full h-48 relative">
         <Image
           className="object-cover"
@@ -55,7 +55,7 @@ const Page = () => {
           <TableDnd screenKey="walkingDead" />
         </div>
       </div>
-    </main>
+    </>
   );
 };
 
