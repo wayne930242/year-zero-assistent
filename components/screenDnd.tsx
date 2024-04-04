@@ -30,8 +30,8 @@ export const TableDnd = ({ screenKey }: Props) => {
   return (
     <>
       {screen[screenKey].elements.length === 0 && (
-        <div className="text-center text-gray-500 flex justify-start items-center gap-2 px-4">
-          <p className="mt-8 shrink">你的 GM 屏幕是空白的。</p>
+        <div className="text-center text-gray-500 flex justify-start items-center gap-2 px-4 py-2">
+          你的 GM 屏幕是空白的。
         </div>
       )}
       <DragDropContext
