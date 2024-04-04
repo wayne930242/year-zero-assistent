@@ -112,8 +112,7 @@ export const TableCombo = ({ data, screenKey, searchData }: Props) => {
                   !globalData.toolbar?.categories?.length ||
                   globalData.toolbar?.categories?.includes(d.category);
                 const fitGmOnly =
-                  !searchData.categories[d.category].gmOnly ||
-                  globalData.toolbar?.iamGM;
+                  !d.category.includes("/gm/") || globalData.toolbar?.iamGM;
 
                 return inCategories && fitGmOnly;
               })
@@ -137,6 +136,9 @@ export const TableCombo = ({ data, screenKey, searchData }: Props) => {
                     )}
                   />
                   {d.name}
+                  {d.category.includes("/gm/") && (
+                    <span className="text-xs ml-1 text-destructive">GM</span>
+                  )}
                 </CommandItem>
               ))}
           </CommandGroup>

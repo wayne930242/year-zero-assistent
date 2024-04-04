@@ -13,7 +13,7 @@ export const GmOnlyButton = ({ screenKey }: Props) => {
 
   return (
     <Button
-      variant={iamGM ? "outline" : "destructive"}
+      variant={iamGM ? "destructive" : "default"}
       size="icon"
       onClick={() => {
         dispatch(
@@ -24,7 +24,7 @@ export const GmOnlyButton = ({ screenKey }: Props) => {
         );
       }}
     >
-      GM
+      {iamGM ? "GM" : "PL"}
     </Button>
   );
 };

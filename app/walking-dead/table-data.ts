@@ -3530,7 +3530,7 @@ export const AtlantaFractionEncounterTable = {
   name: "Atlanta 戰役派系遭遇",
   description: "Atlanta 戰役的派系遭遇表",
   type: "random-table",
-  category: "campaign/atlanta-default",
+  category: "campaign/gm/atlanta-default",
   headers: ["D6", "事件"],
   rows: [
     {
@@ -3588,7 +3588,7 @@ export const AtlantaRumorsTable = {
   name: "Atlanta 戰役謠言",
   description: "Atlanta 戰役謠言表",
   type: "random-table",
-  category: "campaign/atlanta-default",
+  category: "campaign/gm/atlanta-default",
   headers: ["D6", "結果"],
   rows: [
     {
