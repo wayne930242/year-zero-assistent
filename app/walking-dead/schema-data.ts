@@ -59,7 +59,7 @@ export const ElementCategories = {
     description: "NPC 與動物相關。",
     gmOnly: true,
   },
-  "campaign/atlanta-default": {
+  "campaign/gm/atlanta-default": {
     name: "Atlanta 戰役",
     description: "Atlanta 預設戰役。",
     gmOnly: true,
