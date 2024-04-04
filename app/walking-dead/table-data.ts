@@ -1708,7 +1708,7 @@ export const HavenOverrunTable = {
   id: "haven-overrun-table",
   originalName: "Haven Overrun",
   name: "避難港淹沒表",
-  description: "不同防禦等級和群體大小下，直到避難所被淹沒的時間。",
+  description: "不同防禦等級和群體大小下，直到避難港被淹沒的時間。",
   type: "random-table",
   category: "core/haven",
   headers: ["防禦等級", "群體大小", "直到被淹沒的時間"],
@@ -1748,7 +1748,7 @@ export const HavenIssueTable = {
   id: "haven-issue-table",
   originalName: "HavenIssue",
   name: "避難港問題",
-  description: "避難所可能面臨的問題。",
+  description: "避難港可能面臨的問題。",
   type: "random-table",
   headers: ["D66", "問題"],
   category: "core/haven",
@@ -1791,7 +1791,7 @@ export const HavenIssueTable = {
     },
     {
       rowId: "24",
-      defaultRows: [["24", "避難所的部分區域尚未被確保"]],
+      defaultRows: [["24", "避難港的部分區域尚未被確保"]],
     },
     {
       rowId: "25",
@@ -1924,7 +1924,7 @@ export const ProjectExamplesTable = {
   id: "project-examples-table",
   originalName: "Project Examples",
   name: "項目示例",
-  description: "避難所可以進行的項目示例及其效果、所需時間和條件。",
+  description: "避難港可以進行的項目示例及其效果、所需時間和條件。",
   type: "example",
   category: "core/haven",
   headers: ["項目", "效果", "時間", "勞動力", "要求"],
@@ -1951,7 +1951,7 @@ export const ProjectExamplesTable = {
           "容量 5",
           "數週",
           "20-30",
-          "有價值的交易物品、與其他避難所的聯繫、技術 1",
+          "有價值的交易物品、與其他避難港的聯繫、技術 1",
         ],
       ],
     },
@@ -2151,7 +2151,7 @@ export const ChallengeRandomEventTable = {
   rows: [
     {
       rowId: "11",
-      defaultRows: [["11", "避難所內傳播一種病毒，致病力7。"]],
+      defaultRows: [["11", "避難港內傳播一種病毒，致病力7。"]],
     },
     {
       rowId: "12",
@@ -2172,15 +2172,15 @@ export const ChallengeRandomEventTable = {
     },
     {
       rowId: "15",
-      defaultRows: [["15", "一群行屍正接近避難所。擲一個雙高來確定其大小。"]],
+      defaultRows: [["15", "一群行屍正接近避難港。擲一個雙高來確定其大小。"]],
     },
     {
       rowId: "16",
-      defaultRows: [["16", "一場火災將會燒毀避難所，如果不加以處理的話。"]],
+      defaultRows: [["16", "一場火災將會燒毀避難港，如果不加以處理的話。"]],
     },
     {
       rowId: "21",
-      defaultRows: [["21", "某種方式下，一個行屍找到了進入避難所的方法。"]],
+      defaultRows: [["21", "某種方式下，一個行屍找到了進入避難港的方法。"]],
     },
     {
       rowId: "22",
@@ -2200,7 +2200,7 @@ export const ChallengeRandomEventTable = {
       defaultRows: [
         [
           "24",
-          "在避難所附近發現了一個赤裸的昏迷男子。他是一個小偷和臭名昭著的說謊者，因為偷竊而被他之前的團體懲罰。",
+          "在避難港附近發現了一個赤裸的昏迷男子。他是一個小偷和臭名昭著的說謊者，因為偷竊而被他之前的團體懲罰。",
         ],
       ],
     },
@@ -2215,7 +2215,7 @@ export const ChallengeRandomEventTable = {
     },
     {
       rowId: "26",
-      defaultRows: [["26", "地震/龍捲風/暴風雪/野火威脅避難所。"]],
+      defaultRows: [["26", "地震/龍捲風/暴風雪/野火威脅避難港。"]],
     },
     {
       rowId: "31",
@@ -2230,13 +2230,13 @@ export const ChallengeRandomEventTable = {
     {
       rowId: "33",
       defaultRows: [
-        ["33", "直升機飛過，回來，然後在避難所上空盤旋一會兒再飛走。"],
+        ["33", "直升機飛過，回來，然後在避難港上空盤旋一會兒再飛走。"],
       ],
     },
     {
       rowId: "34",
       defaultRows: [
-        ["34", "避難所的水源意外被污染。喝了這水的每個人都會生病，毒性值6。"],
+        ["34", "避難港的水源意外被污染。喝了這水的每個人都會生病，毒性值6。"],
       ],
     },
     {
@@ -2244,14 +2244,14 @@ export const ChallengeRandomEventTable = {
       defaultRows: [
         [
           "35",
-          "團體中的某人在事故中斷了腿或手臂。這個人要麼需要在避難所找不到的醫療援助，要麼被困在荒野中無法回到避難所。",
+          "團體中的某人在事故中斷了腿或手臂。這個人要麼需要在避難港找不到的醫療援助，要麼被困在荒野中無法回到避難港。",
         ],
       ],
     },
     {
       rowId: "36",
       defaultRows: [
-        ["36", "日食發生。一個未知的倖存者群體在黑暗中包圍並向避難所移動。"],
+        ["36", "日食發生。一個未知的倖存者群體在黑暗中包圍並向避難港移動。"],
       ],
     },
     {
@@ -2267,7 +2267,7 @@ export const ChallengeRandomEventTable = {
       defaultRows: [
         [
           "43",
-          "一隻饑餓的狗走進避難所，試圖讓人類收養它。它從另一個倖存者群體逃走，那群人正在尋找它。",
+          "一隻饑餓的狗走進避難港，試圖讓人類收養它。它從另一個倖存者群體逃走，那群人正在尋找它。",
         ],
       ],
     },
@@ -2297,7 +2297,7 @@ export const ChallengeRandomEventTable = {
       defaultRows: [
         [
           "52",
-          "附近發現了農場動物，可能是豬或羊。如果被帶進避難所，它們將開始傳播一種致病力8的疾病。",
+          "附近發現了農場動物，可能是豬或羊。如果被帶進避難港，它們將開始傳播一種致病力8的疾病。",
         ],
       ],
     },
@@ -2312,7 +2312,7 @@ export const ChallengeRandomEventTable = {
     },
     {
       rowId: "54",
-      defaultRows: [["54", "避難所中的某人被另一派系的人聯繫。"]],
+      defaultRows: [["54", "避難港中的某人被另一派系的人聯繫。"]],
     },
     {
       rowId: "55",
@@ -2325,18 +2325,18 @@ export const ChallengeRandomEventTable = {
     },
     {
       rowId: "56",
-      defaultRows: [["56", "避難所中的某人被一個人從另一派系聯繫。"]],
+      defaultRows: [["56", "避難港中的某人被一個人從另一派系聯繫。"]],
     },
     {
       rowId: "61",
-      defaultRows: [["61", "不同群體的陌生人在避難所附近開始交火。"]],
+      defaultRows: [["61", "不同群體的陌生人在避難港附近開始交火。"]],
     },
     {
       rowId: "62",
       defaultRows: [
         [
           "62",
-          "一個摩天輪。在其中一個頂部車廂中有毯子、食物和水，好像有人正在將它用作臨時基地。在毯子中有一張相當準確的避難所圖，上面標出了薄弱點。",
+          "一個摩天輪。在其中一個頂部車廂中有毯子、食物和水，好像有人正在將它用作臨時基地。在毯子中有一張相當準確的避難港圖，上面標出了薄弱點。",
         ],
       ],
     },
@@ -2355,7 +2355,7 @@ export const ChallengeRandomEventTable = {
       defaultRows: [
         [
           "65",
-          "避難所中的某個重要設施在無人注意的情況下壞了。可能是作物的灌溉系統、安全系統的某部分、槍支之一或車輛。也許是蓄意破壞？",
+          "避難港中的某個重要設施在無人注意的情況下壞了。可能是作物的灌溉系統、安全系統的某部分、槍支之一或車輛。也許是蓄意破壞？",
         ],
       ],
     },
@@ -2423,7 +2423,7 @@ export const TravelRuinTable = {
       defaultRows: [
         [
           "11",
-          "一個被遺棄的避難所，屋頂上掛著一面旗幟。不知為何，裡面的大多數行屍都穿著粉紅色的連身衣。",
+          "一個被遺棄的避難港，屋頂上掛著一面旗幟。不知為何，裡面的大多數行屍都穿著粉紅色的連身衣。",
         ],
       ],
     },
@@ -2583,22 +2583,22 @@ export const TravelRuinTable = {
     },
     {
       rowId: "55",
-      defaultRows: [["55", "有人在避難所內被另一個派系的人聯繫。"]],
+      defaultRows: [["55", "有人在避難港內被另一個派系的人聯繫。"]],
     },
     {
       rowId: "56",
-      defaultRows: [["56", "有人在避難所內被另一個派系的人聯繫。"]],
+      defaultRows: [["56", "有人在避難港內被另一個派系的人聯繫。"]],
     },
     {
       rowId: "61",
-      defaultRows: [["61", "不同群體的陌生人在避難所附近開始交火。"]],
+      defaultRows: [["61", "不同群體的陌生人在避難港附近開始交火。"]],
     },
     {
       rowId: "62",
       defaultRows: [
         [
           "62",
-          "摩天輪。其中一個頂部車廂中有毯子、食物和水，好像有人正在將它用作臨時基地。在毯子中有一張相當準確的避難所圖，標出了薄弱點。",
+          "摩天輪。其中一個頂部車廂中有毯子、食物和水，好像有人正在將它用作臨時基地。在毯子中有一張相當準確的避難港圖，標出了薄弱點。",
         ],
       ],
     },
@@ -2617,7 +2617,7 @@ export const TravelRuinTable = {
       defaultRows: [
         [
           "65",
-          "避難所內的某個重要設施在無人注意的情況下壞掉。可能是作物的灌溉系統、安全系統的一部分、一把槍，或者是一輛車。也許是蓄意破壞？",
+          "避難港內的某個重要設施在無人注意的情況下壞掉。可能是作物的灌溉系統、安全系統的一部分、一把槍，或者是一輛車。也許是蓄意破壞？",
         ],
       ],
     },
@@ -2811,7 +2811,7 @@ export const TravelWildnessTable = {
       defaultRows: [
         [
           "62",
-          "一個摩天輪。其中最高的車廂中有毯子、食物和水，似乎有人將其用作臨時基地。在毯子中可以找到一張畫得相當準確的PC避難所及其弱點的圖。",
+          "一個摩天輪。其中最高的車廂中有毯子、食物和水，似乎有人將其用作臨時基地。在毯子中可以找到一張畫得相當準確的PC避難港及其弱點的圖。",
         ],
       ],
     },
@@ -2830,7 +2830,7 @@ export const TravelWildnessTable = {
       defaultRows: [
         [
           "65",
-          "避難所中的某個重要裝置在無人注意的情況下壞掉了。可能是作物的灌溉系統、某處的安全系統、一把槍或一輛車。或許是被人蓄意破壞？",
+          "避難港中的某個重要裝置在無人注意的情況下壞掉了。可能是作物的灌溉系統、某處的安全系統、一把槍或一輛車。或許是被人蓄意破壞？",
         ],
       ],
     },
