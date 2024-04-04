@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
 import { ReduxProviders } from "./providers";
@@ -26,9 +27,11 @@ export default function RootLayout({
     <html lang="zh-tw">
       <body className={notoSansTC.className}>
         <div className="h-10 bg-slate-800 px-2 py-1 flex justify-between text-white">
-          <div className="flex items-center gap-2 px-2">
-            <PenTool className="h-6 w-6" />
-            <a href="/">Year 0</a>
+          <div className="flex items-center gap-4 px-2">
+            <Link href="/" className="flex items-center gap-2">
+              <PenTool className="h-6 w-6" />
+              <span>Year 0</span>
+            </Link>
           </div>
           <div className="text-white flex justify-end items-center">
             <a
