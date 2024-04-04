@@ -11,8 +11,10 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
   return (
     <>
       {searchData && (
-        <div className="w-full flex justify-between items-center gap-2 mb-4">
-          <div className="flex grow-0 gap-2"></div>
+        <div className="w-full flex justify-between items-center gap-2 mb-4 p-2 rounded-md border">
+          <div className="flex grow-0 gap-2">
+            {searchData?.categories && <GmOnlyButton screenKey={screenKey} />}
+          </div>
           <div className="flex-1"></div>
           <div className="flex grow-0 gap-2">
             {searchData?.categories && (
@@ -21,7 +23,6 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
                 categories={searchData.categories}
               />
             )}
-            {searchData?.categories && <GmOnlyButton screenKey={screenKey} />}
           </div>
         </div>
       )}

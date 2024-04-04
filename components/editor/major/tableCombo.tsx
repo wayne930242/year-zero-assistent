@@ -97,14 +97,14 @@ export const TableCombo = ({ data, screenKey, searchData }: Props) => {
     <>
       <div className="w-full mx-auto flex-col-reverse items-center flex sm:flex-row sm:items-start sm:justify-between gap-4">
         <Command
-          className="w-full sm:w-[300px] justify-between"
+          className="w-full sm:w-[300px] justify-between border"
           filter={(value, search) => {
             return calculateRelevance(search, memoDataRecord[value]);
           }}
         >
           <CommandInput placeholder="搜尋..." />
           <CommandEmpty>找不到表格。</CommandEmpty>
-          <CommandGroup className="overflow-y-auto h-[160px] border">
+          <CommandGroup className="overflow-y-auto h-[160px]">
             {data
               .filter((d) => {
                 if (!searchData) return true;
@@ -143,7 +143,7 @@ export const TableCombo = ({ data, screenKey, searchData }: Props) => {
               ))}
           </CommandGroup>
         </Command>
-        <div className="grow border rounded-md px-6 py-2 max-h-[200px] w-full overflow-y-auto">
+        <div className="grow border rounded-md px-6 py-2 max-h-[200px] w-full overflow-y-auto sm:h-[200px] sm:min-h-12 flex items-center">
           <div className="flex flex-wrap gap-y-1 gap-x-2 items-center w-full">
             {checkedList.length > 0 &&
               checkedList.map((i) => (
@@ -171,7 +171,7 @@ export const TableCombo = ({ data, screenKey, searchData }: Props) => {
                 </div>
               ))}
             {checkedList.length === 0 && (
-              <div className="text-muted-foreground text-sm">
+              <div className="text-muted-foreground text-sm w-full text-center">
                 你還沒有勾選任何表格。
               </div>
             )}
@@ -179,9 +179,9 @@ export const TableCombo = ({ data, screenKey, searchData }: Props) => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center sm:justify-end my-6 sm:my-2 gap-2">
+      <div className="w-full flex justify-center sm:justify-end my-6 sm:my-2 gap-4">
         <Button
-          variant="secondary"
+          variant="outline"
           onClick={() => {
             dispatch(
               setElements({
