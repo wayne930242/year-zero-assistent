@@ -13,7 +13,7 @@ export const GmOnlyButton = ({ screenKey }: Props) => {
 
   return (
     <Button
-      variant={iamGM ? "destructive" : "default"}
+      variant={iamGM ? "destructive" : "secondary"}
       size="icon"
       onClick={() => {
         dispatch(

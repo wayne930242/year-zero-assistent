@@ -31,7 +31,7 @@ export const CategoryFilterButton = ({ screenKey, categories }: Props) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button size="icon">
+        <Button size="icon" variant="secondary">
           <Filter className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
