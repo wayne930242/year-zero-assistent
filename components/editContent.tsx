@@ -1,18 +1,11 @@
 "use client";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Check, EraserIcon, Library } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Check } from "lucide-react";
 
 import { Categories, GameElement, ScreenSlice } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 
-import {
-  DropdownMenuSeparator,
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import {
   Command,
   CommandEmpty,
@@ -21,15 +14,11 @@ import {
   CommandItem,
 } from "@/components/ui/command";
 import { useDispatch, useSelector } from "@/lib/redux/store";
-import {
-  selectScreen,
-  setElements,
-  setCategories,
-  toggleAllPcCategory,
-} from "@/lib/redux/slices/screenSlice";
+import { selectScreen, setElements } from "@/lib/redux/slices/screenSlice";
 import { cn } from "@/lib/utils";
 import { Label } from "./ui/label";
 import { setScreenEditorState } from "@/lib/redux/slices/appSlice";
+import { CategoryFilterButton } from "./toolbar/categoryFilterButton";
 
 function calculateRelevance(search: string, dataItem: GameElement): number {
   const weights = {
@@ -108,86 +97,14 @@ export const EditContent = ({ data, screenKey, searchData }: Props) => {
     <>
       {searchData && (
         <div className="w-full flex justify-end items-center gap-2 mb-4">
-          {searchData?.categories && (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Library className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="h-[200px] overflow-y-auto">
-                <DropdownMenuItem
-                  className="items-top px-3 py-2 flex space-x-2 items-center"
-                  onClick={() => {
-                    dispatch(
-                      setCategories({
-                        key: screenKey,
-                        searchs: [],
-                      })
-                    );
-                  }}
-                >
-                  <div>清除</div>
-                  <EraserIcon className="h-4 w-4" />
-                </DropdownMenuItem>
-                <div className="items-top flex space-x-2 px-3 py-2">
-                  <Checkbox
-                    id="all-pc-category"
-                    checked={!!globalData.searchs?.categories?.length}
-                    onCheckedChange={(b) => {
-                      dispatch(
-                        toggleAllPcCategory({
-                          key: screenKey,
-                          categories: searchData?.categories ?? {},
-                        })
-                      );
-                    }}
-                  />
-                  <Label htmlFor="all-pc-category" className="w-full">
-                    PL only
-                  </Label>
-                </div>
-
-                <DropdownMenuSeparator />
-                {Object.keys(searchData.categories).map((category) => (
-                  <div
-                    key={category}
-                    className="items-top flex space-x-2 px-3 py-2"
-                  >
-                    <Checkbox
-                      id={category}
-                      checked={globalData.searchs?.categories?.includes(
-                        category
-                      )}
-                      onCheckedChange={(b) => {
-                        dispatch(
-                          setCategories({
-                            key: screenKey,
-                            searchs: b
-                              ? [
-                                  ...(globalData.searchs?.categories ?? []),
-                                  category,
-                                ]
-                              : globalData.searchs?.categories?.filter(
-                                  (c) => c !== category
-                                ) ?? [],
-                          })
-                        );
-                      }}
-                    />
-                    <Label htmlFor={category} className="w-full">
-                      {searchData.categories[category].name}
-                      {searchData.categories[category].gmOnly && (
-                        <span className="text-xs ml-1 text-destructive">
-                          GM
-                        </span>
-                      )}
-                    </Label>
-                  </div>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          )}
+          <div className="flex grow-0 gap-2">
+            {searchData?.categories && (
+              <CategoryFilterButton
+                screenKey={screenKey}
+                categories={searchData.categories}
+              />
+            )}
+          </div>
         </div>
       )}
       <div className="w-full mx-auto flex-col-reverse items-center flex sm:flex-row sm:items-start sm:justify-between gap-4">
