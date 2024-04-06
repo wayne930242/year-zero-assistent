@@ -1,4 +1,7 @@
 import { GameElement } from "@/lib/types";
+import { ElementCategories } from "./schema-data";
+
+type WalkingDeadTableCategory = GameElement<typeof ElementCategories>;
 
 /*
 Every export modules should be a named export, and types should be GameElement.
@@ -29,7 +32,7 @@ export const overwhilmedTable = {
       weight: 1,
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const QuestionForXP = {
   id: "question-for-xp",
@@ -64,7 +67,7 @@ export const QuestionForXP = {
       defaultRows: [["6", "你是否有進行摯愛悼辭？（擲雙低看你獲得多少 XP）"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const NpcSurviors = {
   id: "npc-surviors",
@@ -381,7 +384,7 @@ export const NpcSurviors = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const MessingUpInCombat = {
   id: "messing-up-in-combat",
@@ -423,7 +426,7 @@ export const MessingUpInCombat = {
       weight: 1,
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const BrawlPhases = {
   id: "brawl-phases",
@@ -458,7 +461,7 @@ export const BrawlPhases = {
       defaultRows: [["6", "其他"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const ArmorTypes = {
   id: "armor-types",
@@ -482,7 +485,7 @@ export const ArmorTypes = {
       defaultRows: [["金屬板甲", "8", "–3"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const CriticalInjuries = {
   id: "critical-injuries",
@@ -639,7 +642,7 @@ export const CriticalInjuries = {
       defaultRows: [["66", "心臟穿刺", "是", "-", "你死了", "-"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const StabilizingIssuesTable = {
   id: "stabilizing-issues-table",
@@ -666,7 +669,7 @@ export const StabilizingIssuesTable = {
       defaultRows: [["6", "下次擲骰懲罰 -1", "（某個技能）永久懲罰 -1"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const ExplosiveWeaponTable = {
   id: "explosive-weapon-table",
@@ -698,7 +701,7 @@ export const ExplosiveWeaponTable = {
       defaultRows: [["榴彈砲", "14"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const FireTable = {
   id: "fire-table",
@@ -722,7 +725,7 @@ export const FireTable = {
       defaultRows: [["燃燒房間", "8"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const DeseaseTable = {
   id: "desease-table",
@@ -750,7 +753,7 @@ export const DeseaseTable = {
       defaultRows: [["MRSA", "10"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const TrapTable = {
   id: "trap-table",
@@ -782,7 +785,7 @@ export const TrapTable = {
       defaultRows: [["行屍陷阱", "集群大小 2，威脅等級 4"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const QualityOfItemsTable = {
   id: "quality-of-items-table",
@@ -813,7 +816,7 @@ export const QualityOfItemsTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const GerneralGearTable = {
   id: "general-gear-table",
@@ -905,7 +908,7 @@ export const GerneralGearTable = {
       defaultRows: [["對講機", "1/2", "領導 +1"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const CloseCombatWeaponTable = {
   id: "close-combat-weapon-table",
@@ -965,7 +968,7 @@ export const CloseCombatWeaponTable = {
       defaultRows: [["長柄大錘", "3", "0", "2"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const RangedWeaponTable = {
   id: "ranged-weapon-table",
@@ -1037,7 +1040,7 @@ export const RangedWeaponTable = {
       defaultRows: [["坦克炮", "BP 12", "+3", "極限", "X"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const VechicleConditionTable = {
   id: "vehicle-condition-table",
@@ -1075,7 +1078,7 @@ export const VechicleConditionTable = {
       defaultRows: [["6", "功能正常", "滿"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const VehicleTypeTable = {
   id: "vehicle-type-table",
@@ -1109,7 +1112,7 @@ export const VehicleTypeTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const CrashObjectsTable = {
   id: "crash-objects-table",
@@ -1145,7 +1148,7 @@ export const CrashObjectsTable = {
       defaultRows: [["6", "強化水泥牆", "10", "5"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const criticalVehicleDamageTable = {
   id: "critical-vehicle-damage-table",
@@ -1191,7 +1194,7 @@ export const criticalVehicleDamageTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const SwarmSizeTable = {
   id: "swarm-size-table",
@@ -1227,7 +1230,7 @@ export const SwarmSizeTable = {
       defaultRows: [["1000+", "6"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const ThreatLevelsTable = {
   id: "threat-levels-table",
@@ -1282,7 +1285,7 @@ export const ThreatLevelsTable = {
       defaultRows: [["6", "殭屍正面對著你，包圍了你。"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const WalkerAttackTable = {
   id: "walker-attack-table",
@@ -1576,7 +1579,7 @@ export const WalkerAttackTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const SwarmAttackTable = {
   id: "swarm-attack-table",
@@ -1604,7 +1607,7 @@ export const SwarmAttackTable = {
       defaultRows: [["6", "蠻力, 近戰", "大量攻擊"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const HavenCapacityTable = {
   id: "haven-capacity-table",
@@ -1648,7 +1651,7 @@ export const HavenCapacityTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const HavenDefenseTable = {
   id: "haven-defense-table",
@@ -1702,7 +1705,7 @@ export const HavenDefenseTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const HavenOverrunTable = {
   id: "haven-overrun-table",
@@ -1742,7 +1745,7 @@ export const HavenOverrunTable = {
       defaultRows: [["6", "6 (1,000+)", "數週"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const HavenIssueTable = {
   id: "haven-issue-table",
@@ -1898,7 +1901,7 @@ export const HavenIssueTable = {
       defaultRows: [["66", "群體中未解決的衝突"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const TeachingSurvivorsTable = {
   id: "teaching-survivors-table",
@@ -1918,7 +1921,7 @@ export const TeachingSurvivorsTable = {
       defaultRows: [["專家", "+3", "6", "六個月", "4+"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const ProjectExamplesTable = {
   id: "project-examples-table",
@@ -1976,7 +1979,7 @@ export const ProjectExamplesTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const GearProjectsTable = {
   id: "gear-projects-table",
@@ -2012,7 +2015,7 @@ export const GearProjectsTable = {
       defaultRows: [["修理步槍", "幾日", "1", "工具、技術 3"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const VehicleMovementTable = {
   id: "vehicle-movement-table",
@@ -2052,7 +2055,7 @@ export const VehicleMovementTable = {
       defaultRows: [["步行", "1"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const RandomResultTable = {
   id: "npcs-run-result-table",
@@ -2097,7 +2100,7 @@ export const RandomResultTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const ChallengeNeedsTable = {
   id: "challenge-needs-table",
@@ -2138,7 +2141,7 @@ export const ChallengeNeedsTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const ChallengeRandomEventTable = {
   id: "challenge-random-event-table",
@@ -2369,7 +2372,7 @@ export const ChallengeRandomEventTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const TravelWeatherTable = {
   id: "travel-weather-table",
@@ -2407,7 +2410,7 @@ export const TravelWeatherTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const TravelRuinTable = {
   id: "travel-ruin-table",
@@ -2631,7 +2634,7 @@ export const TravelRuinTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const TravelWildnessTable = {
   id: "travel-wildness-table",
@@ -2844,7 +2847,7 @@ export const TravelWildnessTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const EncounterTable = {
   id: "encounter-table",
@@ -2870,7 +2873,7 @@ export const EncounterTable = {
       defaultRows: [["5-6", "陣營遭遇。擲你的陣營遭遇表。"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const NPCEncounterTable = {
   id: "npc-encounter-table",
@@ -3376,7 +3379,7 @@ export const NPCEncounterTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 export const RandomThreatLevelTable = {
   id: "random-threat-level-table",
   originalName: "Random Threat Level",
@@ -3399,7 +3402,7 @@ export const RandomThreatLevelTable = {
       defaultRows: [["5–6", "2"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const WalkersApproachingTable = {
   id: "walkers-approaching-table",
@@ -3434,7 +3437,7 @@ export const WalkersApproachingTable = {
       defaultRows: [["6", "太遠而找不到路徑來這裡"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const NpcReactionsTable = {
   id: "npc-reactions-table",
@@ -3470,7 +3473,7 @@ export const NpcReactionsTable = {
       defaultRows: [["6", "計劃通過武力或詭計奪取PC擁有的物品。"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const AnimalsExampleTable = {
   id: "animals-example-table",
@@ -3522,7 +3525,7 @@ export const AnimalsExampleTable = {
       defaultRows: [["狼獾", "5", "1", "3"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const AtlantaFractionEncounterTable = {
   id: "atlanta-fraction-encounter-table",
@@ -3580,7 +3583,7 @@ export const AtlantaFractionEncounterTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;
 
 export const AtlantaRumorsTable = {
   id: "atlanta-rumors-table",
@@ -3647,4 +3650,4 @@ export const AtlantaRumorsTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableCategory;

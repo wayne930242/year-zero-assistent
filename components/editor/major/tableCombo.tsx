@@ -110,9 +110,9 @@ export const TableCombo = ({ data, screenKey, searchData }: Props) => {
                 if (!searchData) return true;
                 const inCategories =
                   !globalData.toolbar?.categories?.length ||
-                  globalData.toolbar?.categories?.includes(d.category);
+                  globalData.toolbar?.categories?.includes((d.category as string));
                 const fitGmOnly =
-                  !d.category.includes("/gm/") || globalData.toolbar?.iamGM;
+                  !(d.category as string).includes("/gm/") || globalData.toolbar?.iamGM;
 
                 return inCategories && fitGmOnly;
               })
@@ -136,14 +136,14 @@ export const TableCombo = ({ data, screenKey, searchData }: Props) => {
                     )}
                   />
                   {d.name}
-                  {d.category.includes("/gm/") && (
+                  {(d.category as string).includes("/gm/") && (
                     <span className="text-xs ml-1 text-destructive">GM</span>
                   )}
                 </CommandItem>
               ))}
           </CommandGroup>
         </Command>
-        <div className="grow border rounded-md px-6 py-2 max-h-[200px] w-full overflow-y-auto sm:h-[200px] sm:min-h-12 flex items-center">
+        <div className="grow border rounded-md px-6 py-2 max-h-[200px] w-full overflow-y-auto sm:h-[200px] sm:min-h-12 flex sm:items-start items-center ">
           <div className="flex flex-wrap gap-y-1 gap-x-2 items-center w-full">
             {checkedList.length > 0 &&
               checkedList.map((i) => (
