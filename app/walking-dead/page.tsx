@@ -8,7 +8,30 @@ import { EditorAccordion } from "@/components/editorAccordion";
 
 export const metadata: Metadata = {
   title: "陰屍路宇宙",
-  description: "洪偉的元年引擎小助手"
+  description: "洪偉的元年引擎小助手",
+  openGraph: {
+    title: "陰屍路宇宙",
+    description: "洪偉的元年引擎小助手",
+    url: "https://www.yuancheng.xyz/engine",
+    images: [
+      {
+        url: `https://${process.env.NEXT_PUBLIC_API_BASE_URL}/images/cover/walking-dead.jpeg"`,
+        width: 1920,
+        height: 1080,
+        alt: "walking-dead-cover",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "陰屍路宇宙",
+    description: "洪偉的元年引擎小助手",
+    images: [
+      `https://${process.env.NEXT_PUBLIC_API_BASE_URL}/images/cover/walking-dead.jpeg`,
+    ],
+    creator: "@wayne930242",
+    site: "@wayne930242",
+  }
 };
 
 const Page = () => {

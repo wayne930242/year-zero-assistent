@@ -13,9 +13,34 @@ const notoSansTC = Noto_Sans_TC({
   subsets: ["cyrillic", "latin", "latin-ext"],
 });
 
+const description = "協助玩家進行元年引擎遊戲的 APP。目前支援：陰屍路宇宙。";
+
 export const metadata: Metadata = {
   title: "洪偉的元年引擎小助手",
-  description: "協助你進行元年引擎遊戲的 APP。",
+  description,
+  openGraph: {
+    title: "洪偉的元年引擎小助手",
+    description,
+    url: "https://www.yuancheng.xyz/engine",
+    images: [
+      {
+        url: `https://${process.env.NEXT_PUBLIC_API_BASE_URL}/images/year-zero.webp`,
+        width: 1024,
+        height: 723,
+        alt: "engine-cover",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "洪偉的元年引擎小助手",
+    description,
+    images: [
+      `https://${process.env.NEXT_PUBLIC_API_BASE_URL}/images/year-zero.webp`,
+    ],
+    creator: "@wayne930242",
+    site: "@wayne930242",
+  },
 };
 
 export default function RootLayout({
