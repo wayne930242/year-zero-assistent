@@ -10,7 +10,8 @@ import { EditContent } from "@/components/editContent";
 import { EditorAccordion } from "@/components/editorAccordion";
 
 export const metadata: Metadata = {
-  title: "陰屍路宇宙——洪偉的元年引擎小助手",
+  title: "陰屍路宇宙",
+  description: "洪偉的元年引擎小助手"
 };
 
 const Page = () => {
