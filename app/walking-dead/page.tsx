@@ -12,10 +12,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "陰屍路宇宙",
     description: "洪偉的元年引擎小助手",
+    type: "website",
     url: "https://www.yuancheng.xyz/engine",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/images/cover/walking-dead.jpeg"`,
+        url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/images/cover/walking-dead.jpeg`,
         width: 1920,
         height: 1080,
         alt: "walking-dead-cover",
