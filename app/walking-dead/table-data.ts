@@ -1,4 +1,7 @@
 import { GameElement } from "@/lib/types";
+import { TableElementCategories } from "./schema-data";
+
+type WalkingDeadTableElement = GameElement<typeof TableElementCategories>;
 
 /*
 Every export modules should be a named export, and types should be GameElement.
@@ -29,7 +32,7 @@ export const overwhilmedTable = {
       weight: 1,
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const QuestionForXP = {
   id: "question-for-xp",
@@ -64,7 +67,7 @@ export const QuestionForXP = {
       defaultRows: [["6", "你是否有進行摯愛悼辭？（擲雙低看你獲得多少 XP）"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const NpcSurviors = {
   id: "npc-surviors",
@@ -381,7 +384,7 @@ export const NpcSurviors = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const MessingUpInCombat = {
   id: "messing-up-in-combat",
@@ -423,7 +426,7 @@ export const MessingUpInCombat = {
       weight: 1,
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const BrawlPhases = {
   id: "brawl-phases",
@@ -458,7 +461,7 @@ export const BrawlPhases = {
       defaultRows: [["6", "其他"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const ArmorTypes = {
   id: "armor-types",
@@ -482,7 +485,7 @@ export const ArmorTypes = {
       defaultRows: [["金屬板甲", "8", "–3"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const CriticalInjuries = {
   id: "critical-injuries",
@@ -639,7 +642,7 @@ export const CriticalInjuries = {
       defaultRows: [["66", "心臟穿刺", "是", "-", "你死了", "-"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const StabilizingIssuesTable = {
   id: "stabilizing-issues-table",
@@ -666,7 +669,7 @@ export const StabilizingIssuesTable = {
       defaultRows: [["6", "下次擲骰懲罰 -1", "（某個技能）永久懲罰 -1"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const ExplosiveWeaponTable = {
   id: "explosive-weapon-table",
@@ -698,7 +701,7 @@ export const ExplosiveWeaponTable = {
       defaultRows: [["榴彈砲", "14"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const FireTable = {
   id: "fire-table",
@@ -722,7 +725,7 @@ export const FireTable = {
       defaultRows: [["燃燒房間", "8"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const DeseaseTable = {
   id: "desease-table",
@@ -750,7 +753,7 @@ export const DeseaseTable = {
       defaultRows: [["MRSA", "10"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const TrapTable = {
   id: "trap-table",
@@ -782,7 +785,7 @@ export const TrapTable = {
       defaultRows: [["行屍陷阱", "集群大小 2，威脅等級 4"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const QualityOfItemsTable = {
   id: "quality-of-items-table",
@@ -813,7 +816,7 @@ export const QualityOfItemsTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const GerneralGearTable = {
   id: "general-gear-table",
@@ -905,7 +908,7 @@ export const GerneralGearTable = {
       defaultRows: [["對講機", "1/2", "領導 +1"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const CloseCombatWeaponTable = {
   id: "close-combat-weapon-table",
@@ -965,7 +968,7 @@ export const CloseCombatWeaponTable = {
       defaultRows: [["長柄大錘", "3", "0", "2"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const RangedWeaponTable = {
   id: "ranged-weapon-table",
@@ -1037,7 +1040,7 @@ export const RangedWeaponTable = {
       defaultRows: [["坦克炮", "BP 12", "+3", "極限", "X"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const VechicleConditionTable = {
   id: "vehicle-condition-table",
@@ -1075,7 +1078,7 @@ export const VechicleConditionTable = {
       defaultRows: [["6", "功能正常", "滿"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const VehicleTypeTable = {
   id: "vehicle-type-table",
@@ -1109,7 +1112,7 @@ export const VehicleTypeTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const CrashObjectsTable = {
   id: "crash-objects-table",
@@ -1145,7 +1148,7 @@ export const CrashObjectsTable = {
       defaultRows: [["6", "強化水泥牆", "10", "5"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const criticalVehicleDamageTable = {
   id: "critical-vehicle-damage-table",
@@ -1191,7 +1194,7 @@ export const criticalVehicleDamageTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const SwarmSizeTable = {
   id: "swarm-size-table",
@@ -1199,7 +1202,7 @@ export const SwarmSizeTable = {
   name: "群體大小",
   description: "群體大小對照表",
   type: "random-table",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["行屍數量", "群體大小"],
   rows: [
     {
@@ -1227,7 +1230,7 @@ export const SwarmSizeTable = {
       defaultRows: [["1000+", "6"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const ThreatLevelsTable = {
   id: "threat-levels-table",
@@ -1235,7 +1238,7 @@ export const ThreatLevelsTable = {
   name: "威脅等級",
   description: "不同情境下的威脅等級對照表",
   type: "random-table",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["威脅等級", "情境"],
   rows: [
     {
@@ -1282,7 +1285,7 @@ export const ThreatLevelsTable = {
       defaultRows: [["6", "殭屍正面對著你，包圍了你。"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const WalkerAttackTable = {
   id: "walker-attack-table",
@@ -1290,7 +1293,7 @@ export const WalkerAttackTable = {
   name: "行屍攻擊",
   description: "遭遇行屍攻擊時可能發生的效果。",
   type: "random-table",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["D66", "效果"],
   rows: [
     {
@@ -1576,7 +1579,7 @@ export const WalkerAttackTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const SwarmAttackTable = {
   id: "swarm-attack-table",
@@ -1584,7 +1587,7 @@ export const SwarmAttackTable = {
   name: "群體攻擊",
   description: "群體攻擊對照表",
   type: "example",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["威脅等級", "技能", "攻擊"],
   rows: [
     {
@@ -1604,7 +1607,7 @@ export const SwarmAttackTable = {
       defaultRows: [["6", "蠻力, 近戰", "大量攻擊"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const HavenCapacityTable = {
   id: "haven-capacity-table",
@@ -1648,7 +1651,7 @@ export const HavenCapacityTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const HavenDefenseTable = {
   id: "haven-defense-table",
@@ -1702,7 +1705,7 @@ export const HavenDefenseTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const HavenOverrunTable = {
   id: "haven-overrun-table",
@@ -1742,7 +1745,7 @@ export const HavenOverrunTable = {
       defaultRows: [["6", "6 (1,000+)", "數週"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const HavenIssueTable = {
   id: "haven-issue-table",
@@ -1898,7 +1901,7 @@ export const HavenIssueTable = {
       defaultRows: [["66", "群體中未解決的衝突"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const TeachingSurvivorsTable = {
   id: "teaching-survivors-table",
@@ -1911,14 +1914,14 @@ export const TeachingSurvivorsTable = {
   rows: [
     {
       rowId: "trained",
-      defaultRows: [["訓練有素", "+2", "1–5", "一個月", "2+"]],
+      defaultRows: [["受訓", "+2", "1–5", "一個月", "2+"]],
     },
     {
       rowId: "expert",
       defaultRows: [["專家", "+3", "6", "六個月", "4+"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const ProjectExamplesTable = {
   id: "project-examples-table",
@@ -1976,7 +1979,7 @@ export const ProjectExamplesTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const GearProjectsTable = {
   id: "gear-projects-table",
@@ -2012,7 +2015,7 @@ export const GearProjectsTable = {
       defaultRows: [["修理步槍", "幾日", "1", "工具、技術 3"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const VehicleMovementTable = {
   id: "vehicle-movement-table",
@@ -2052,7 +2055,7 @@ export const VehicleMovementTable = {
       defaultRows: [["步行", "1"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const RandomResultTable = {
   id: "npcs-run-result-table",
@@ -2097,7 +2100,7 @@ export const RandomResultTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const ChallengeNeedsTable = {
   id: "challenge-needs-table",
@@ -2138,7 +2141,7 @@ export const ChallengeNeedsTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const ChallengeRandomEventTable = {
   id: "challenge-random-event-table",
@@ -2369,7 +2372,7 @@ export const ChallengeRandomEventTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const TravelWeatherTable = {
   id: "travel-weather-table",
@@ -2407,7 +2410,7 @@ export const TravelWeatherTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const TravelRuinTable = {
   id: "travel-ruin-table",
@@ -2631,7 +2634,7 @@ export const TravelRuinTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const TravelWildnessTable = {
   id: "travel-wildness-table",
@@ -2844,7 +2847,7 @@ export const TravelWildnessTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const EncounterTable = {
   id: "encounter-table",
@@ -2870,7 +2873,7 @@ export const EncounterTable = {
       defaultRows: [["5-6", "陣營遭遇。擲你的陣營遭遇表。"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const NPCEncounterTable = {
   id: "npc-encounter-table",
@@ -3376,14 +3379,14 @@ export const NPCEncounterTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 export const RandomThreatLevelTable = {
   id: "random-threat-level-table",
   originalName: "Random Threat Level",
   name: "隨機威脅等級",
   description: "根據PC（玩家角色）行動產生的聲響等因素，決定威脅等級。",
   type: "random-table",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["D6", "威脅等級"],
   rows: [
     {
@@ -3399,7 +3402,7 @@ export const RandomThreatLevelTable = {
       defaultRows: [["5–6", "2"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const WalkersApproachingTable = {
   id: "walkers-approaching-table",
@@ -3407,7 +3410,7 @@ export const WalkersApproachingTable = {
   name: "行屍接近時間",
   description: "決定行屍群到達玩家所在位置所需的時間。",
   type: "random-table",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["D6", "時間"],
   rows: [
     {
@@ -3434,7 +3437,7 @@ export const WalkersApproachingTable = {
       defaultRows: [["6", "太遠而找不到路徑來這裡"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const NpcReactionsTable = {
   id: "npc-reactions-table",
@@ -3470,7 +3473,7 @@ export const NpcReactionsTable = {
       defaultRows: [["6", "計劃通過武力或詭計奪取PC擁有的物品。"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const AnimalsExampleTable = {
   id: "animals-example-table",
@@ -3522,7 +3525,7 @@ export const AnimalsExampleTable = {
       defaultRows: [["狼獾", "5", "1", "3"]],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const AtlantaFractionEncounterTable = {
   id: "atlanta-fraction-encounter-table",
@@ -3580,7 +3583,7 @@ export const AtlantaFractionEncounterTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
 
 export const AtlantaRumorsTable = {
   id: "atlanta-rumors-table",
@@ -3647,4 +3650,2298 @@ export const AtlantaRumorsTable = {
       ],
     },
   ],
-} as const satisfies GameElement;
+} as const satisfies WalkingDeadTableElement;
+
+export const WalkersPastTable = {
+  id: "walkers-past-table",
+  originalName: "Walker's Past",
+  name: "行屍的過去",
+  description: "描述他在成為行屍之前的身份。",
+  type: "random-table",
+  category: "core/gm/walker",
+  headers: ["D66", "過去身份"],
+  rows: [
+    {
+      rowId: "hippie-professor",
+      defaultRows: [["11", "嬉皮教授"]],
+    },
+    {
+      rowId: "child-with-toy",
+      defaultRows: [["12", "手持玩具的孩子"]],
+    },
+    {
+      rowId: "punk-rocker",
+      defaultRows: [["13", "龐克搖滾樂手"]],
+    },
+    {
+      rowId: "car-salesperson",
+      defaultRows: [["14", "汽車銷售員"]],
+    },
+    {
+      rowId: "kindergarten-teacher",
+      defaultRows: [["15", "幼稚園教師"]],
+    },
+    {
+      rowId: "asylum-patient",
+      defaultRows: [["16", "精神病院病人"]],
+    },
+    {
+      rowId: "computer-nerd",
+      defaultRows: [["21", "電腦宅"]],
+    },
+    {
+      rowId: "ufo-enthusiast",
+      defaultRows: [["22", "UFO愛好者"]],
+    },
+    {
+      rowId: "granny",
+      defaultRows: [["23", "奶奶"]],
+    },
+    {
+      rowId: "politician",
+      defaultRows: [["24", "政治人物"]],
+    },
+    {
+      rowId: "police-officer",
+      defaultRows: [["25", "警官"]],
+    },
+    {
+      rowId: "cult-member",
+      defaultRows: [["26", "邪教成員"]],
+    },
+    {
+      rowId: "hunter",
+      defaultRows: [["31", "獵人"]],
+    },
+    {
+      rowId: "carpenter",
+      defaultRows: [["32", "木匠"]],
+    },
+    {
+      rowId: "nanny",
+      defaultRows: [["33", "保姆"]],
+    },
+    {
+      rowId: "goth-teenager",
+      defaultRows: [["34", "哥特式青少年"]],
+    },
+    {
+      rowId: "sports-fanatic",
+      defaultRows: [["35", "體育狂熱者"]],
+    },
+    {
+      rowId: "wine-snob",
+      defaultRows: [["36", "葡萄酒鼻子"]],
+    },
+    {
+      rowId: "homeless-person",
+      defaultRows: [["41", "無家可歸者"]],
+    },
+    {
+      rowId: "old-rocker",
+      defaultRows: [["42", "老搖滾樂手"]],
+    },
+    {
+      rowId: "addict",
+      defaultRows: [["43", "成癮者"]],
+    },
+    {
+      rowId: "janitor",
+      defaultRows: [["44", "清潔工"]],
+    },
+    {
+      rowId: "waiter",
+      defaultRows: [["45", "侍者"]],
+    },
+    {
+      rowId: "priest",
+      defaultRows: [["46", "牧師"]],
+    },
+    {
+      rowId: "pizza-delivery-person",
+      defaultRows: [["51", "披薩送餐員"]],
+    },
+    {
+      rowId: "garbage-collector",
+      defaultRows: [["52", "垃圾收集員"]],
+    },
+    {
+      rowId: "celebrity",
+      defaultRows: [["53", "名人"]],
+    },
+    {
+      rowId: "postman",
+      defaultRows: [["54", "郵差"]],
+    },
+    {
+      rowId: "journalist",
+      defaultRows: [["55", "記者"]],
+    },
+    {
+      rowId: "soldier",
+      defaultRows: [["56", "士兵"]],
+    },
+    {
+      rowId: "child-with-tiara",
+      defaultRows: [["61", "戴著頭冠的孩子"]],
+    },
+    {
+      rowId: "gangster",
+      defaultRows: [["62", "黑幫成員"]],
+    },
+    {
+      rowId: "teenager-with-braces",
+      defaultRows: [["63", "戴牙套的青少年"]],
+    },
+    {
+      rowId: "doomsday-preacher",
+      defaultRows: [["64", "末日預言者"]],
+    },
+    {
+      rowId: "eccentric-spinster",
+      defaultRows: [["65", "古怪的老處女"]],
+    },
+    {
+      rowId: "truck-driver",
+      defaultRows: [["66", "卡車司機"]],
+    },
+  ],
+} as const satisfies WalkingDeadTableElement;
+
+export const WalkerWoundsTable = {
+  id: "walker-wounds-table",
+  originalName: "Walker's Wounds",
+  name: "行屍的傷口",
+  description: "詳細描述行屍身上的傷口。",
+  type: "random-table",
+  category: "core/gm/walker",
+  headers: ["D66", "傷口描述"],
+  rows: [
+    {
+      rowId: "arm-torn-from-the-body",
+      defaultRows: [["11", "手臂被撕離身體"]],
+    },
+    {
+      rowId: "hole-in-gut",
+      defaultRows: [["12", "腹部有洞，腸子掛出"]],
+    },
+    {
+      rowId: "eye-eaten-by-birds",
+      defaultRows: [["13", "眼睛被鳥啄食"]],
+    },
+    {
+      rowId: "one-foot-dangling",
+      defaultRows: [["14", "一隻腳懸掛著，僅由筋膜連著"]],
+    },
+    {
+      rowId: "open-skull",
+      defaultRows: [["15", "開放性顱骨傷，腦部外露"]],
+    },
+    {
+      rowId: "parts-of-abdomen-eaten",
+      defaultRows: [["16", "腹部部分被吃掉"]],
+    },
+    {
+      rowId: "hanging-flesh-on-throat",
+      defaultRows: [["21", "喉嚨掛著的肉"]],
+    },
+    {
+      rowId: "gun-wounds-upper-body",
+      defaultRows: [["22", "上半身滿是槍傷"]],
+    },
+    {
+      rowId: "handcuffs-knife-face",
+      defaultRows: [["23", "一隻手銬住，臉上有刀痕"]],
+    },
+    {
+      rowId: "spear-wounds-legs",
+      defaultRows: [["24", "腿部有矛傷"]],
+    },
+    {
+      rowId: "shotgun-wound-chest",
+      defaultRows: [["25", "胸部有霰彈槍傷"]],
+    },
+    {
+      rowId: "neck-broken",
+      defaultRows: [["26", "脖子折斷"]],
+    },
+    {
+      rowId: "nose-lips-bitten-off",
+      defaultRows: [["31", "鼻子和嘴唇被咬掉"]],
+    },
+    {
+      rowId: "rotten-falling-apart",
+      defaultRows: [["32", "腐爛幾乎要散架"]],
+    },
+    {
+      rowId: "dried-up-skeleton-visible",
+      defaultRows: [["33", "身體乾枯，骨骼透皮可見"]],
+    },
+    {
+      rowId: "covered-in-open-sores",
+      defaultRows: [["34", "覆蓋著開放性潰瘍"]],
+    },
+    {
+      rowId: "bloated-swollen",
+      defaultRows: [["35", "腫脹如氣球"]],
+    },
+    {
+      rowId: "no-arms",
+      defaultRows: [["36", "無手臂"]],
+    },
+    {
+      rowId: "no-lower-jaw",
+      defaultRows: [["41", "下巴消失"]],
+    },
+    {
+      rowId: "almost-torn-apart",
+      defaultRows: [["42", "幾乎被撕裂，身體即將崩塌"]],
+    },
+    {
+      rowId: "arrow-through-throat",
+      defaultRows: [["43", "喉嚨中箭"]],
+    },
+    {
+      rowId: "burnt-by-electricity",
+      defaultRows: [["44", "被電燒傷"]],
+    },
+    {
+      rowId: "many-knife-wounds",
+      defaultRows: [["45", "多處刀傷"]],
+    },
+    {
+      rowId: "rotten-bandages",
+      defaultRows: [["46", "腐爛的繃帶"]],
+    },
+    {
+      rowId: "skin-eaten-from-face",
+      defaultRows: [["51", "臉部皮膚被吃掉"]],
+    },
+    {
+      rowId: "one-hand-missing",
+      defaultRows: [["52", "缺一隻手"]],
+    },
+    {
+      rowId: "no-hair-no-teeth",
+      defaultRows: [["53", "沒有頭髮，沒有牙齒，只剩皮膚和骨頭"]],
+    },
+    {
+      rowId: "skin-cooked-hot-water",
+      defaultRows: [["54", "皮膚被熱水煮過"]],
+    },
+    {
+      rowId: "half-burnt",
+      defaultRows: [["55", "半邊身體燒傷"]],
+    },
+    {
+      rowId: "moldy-maggots",
+      defaultRows: [["55", "發霉且充滿蛆蟲"]],
+    },
+    {
+      rowId: "broken-spear-body",
+      defaultRows: [["61", "身體插著折斷的矛"]],
+    },
+    {
+      rowId: "body-crushed",
+      defaultRows: [["62", "身體被壓碎"]],
+    },
+    {
+      rowId: "newly-drowned",
+      defaultRows: [["63", "新溺水的屍體"]],
+    },
+    {
+      rowId: "meat-missing-back-neck",
+      defaultRows: [["64", "背部和脖子的肉缺失（從前面看還算完好）"]],
+    },
+    {
+      rowId: "hands-tied-shot-chest",
+      defaultRows: [["65", "雙手被綁，胸部中槍"]],
+    },
+    {
+      rowId: "died-sickbed-infusion",
+      defaultRows: [["66", "死在病床上，仍連著輸液管"]],
+    },
+  ],
+} as const satisfies WalkingDeadTableElement;
+
+export const EmptyRoomContentsTable = {
+  id: "empty-room-contents-table",
+  originalName: "Empty Room Contents",
+  name: "空房內容",
+  description: "描述玩家在空房間中看到的場景或物品。",
+  type: "random-table",
+  category: "core/gm/travel",
+  headers: ["D66", "內容描述"],
+  rows: [
+    {
+      rowId: "shrine-to-death",
+      defaultRows: [["11", "致死和毀滅的神壇。"]],
+    },
+    {
+      rowId: "several-defeated-walkers",
+      defaultRows: [["12", "幾個被打敗的行屍。"]],
+    },
+    {
+      rowId: "valuables-stolen",
+      defaultRows: [
+        ["13", "從人們那裡偷來的貴重物品：手錶、項鍊、金戒指、錢包。"],
+      ],
+    },
+    {
+      rowId: "friendly-kittens",
+      defaultRows: [["14", "友好的小貓。"]],
+    },
+    {
+      rowId: "kettle-boiling-water",
+      defaultRows: [["15", "火爐上的水壺正煮著水。"]],
+    },
+    {
+      rowId: "writing-on-wall-sun",
+      defaultRows: [["16", "牆上的字：“太陽將燃燒他們所有人。我是太陽。”"]],
+    },
+    {
+      rowId: "baby-starving-sick",
+      defaultRows: [["21", "一個餓壞且生病的嬰兒。"]],
+    },
+    {
+      rowId: "walker-hanging-from-roof",
+      defaultRows: [["22", "行屍從屋頂吊下。"]],
+    },
+    {
+      rowId: "hidden-room-walker-parts",
+      defaultRows: [["23", "一個隱藏的房間，裡面有保存在罐子裡的行屍部件。"]],
+    },
+    {
+      rowId: "survival-instructions",
+      defaultRows: [["24", "生存指南以圖片和文字形式刻在牆上。"]],
+    },
+    {
+      rowId: "writing-on-wall-get-out",
+      defaultRows: [["26", "牆上的字：“走開或死掉，最後警告！”"]],
+    },
+    {
+      rowId: "empty-tents-backpacks",
+      defaultRows: [["31", "空的帳篷和背包。"]],
+    },
+    {
+      rowId: "signs-of-deadly-shootout",
+      defaultRows: [["32", "致命槍戰的跡象。"]],
+    },
+    {
+      rowId: "spear-traps",
+      defaultRows: [["33", "矛陷阱。一個行屍被困在其中。"]],
+    },
+    {
+      rowId: "cradle-with-bottle",
+      defaultRows: [["34", "搖籃中有半滿的瓶子，瓶中液體為綠色。"]],
+    },
+    {
+      rowId: "furniture-block-walkers",
+      defaultRows: [["35", "家具堆疊起來以阻擋行屍。"]],
+    },
+    {
+      rowId: "writing-on-wall-no-hope",
+      defaultRows: [["36", "牆上的字：“沒有希望，沒有希望，沒有希望。”"]],
+    },
+    {
+      rowId: "walker-chained-to-bed",
+      defaultRows: [["41", "行屍被鏈在床上，顯示出自殺失敗的跡象。"]],
+    },
+    {
+      rowId: "bushes-indoors",
+      defaultRows: [["43", "室內生長的灌木，透過屋頂的裂縫獲取陽光和水分。"]],
+    },
+    {
+      rowId: "rats-roaches-crawling",
+      defaultRows: [["42", "老鼠、蟑螂以及其他爬行的東西。"]],
+    },
+    {
+      rowId: "heap-of-cigarette-butts",
+      defaultRows: [["44", "一堆香煙蒂堆在一張椅子前，空氣中有古龍水的味道。"]],
+    },
+    {
+      rowId: "several-maps",
+      defaultRows: [["45", "地板上有幾張地圖，上面用墨水標記著地點和符號。"]],
+    },
+    {
+      rowId: "writing-on-wall-infection",
+      defaultRows: [
+        ["46", "牆上的字：“感染在你的頭裡：你所見的死者是活著的！”"],
+      ],
+    },
+    {
+      rowId: "hole-in-wall-explosion",
+      defaultRows: [["51", "牆上由於爆炸而形成的洞。"]],
+    },
+    {
+      rowId: "empty-backpack-dried-blood",
+      defaultRows: [["52", "地板中央的空背包，一面牆上有乾掉的血跡。"]],
+    },
+    {
+      rowId: "entries-blocked-chess-game",
+      defaultRows: [["53", "所有入口被封鎖，桌上擺著一盤棋，黑棋正在贏。"]],
+    },
+    {
+      rowId: "stuffed-animals",
+      defaultRows: [["54", "幾個填充動物。"]],
+    },
+    {
+      rowId: "everything-burnt",
+      defaultRows: [["55", "一切都被燒毀，只剩黑灰和灰燼。"]],
+    },
+    {
+      rowId: "writing-on-wall-meet",
+      defaultRows: [["56", "牆上的字：“在老地方見。”"]],
+    },
+    {
+      rowId: "dead-walkers-pentagram",
+      defaultRows: [["61", "死去的行屍被擺放成五角星的形狀在地板上。"]],
+    },
+    {
+      rowId: "miniature-laboratory",
+      defaultRows: [["62", "微型實驗室，有人在檢查人類血液的樣本。"]],
+    },
+    {
+      rowId: "diary-of-mike",
+      defaultRows: [
+        [
+          "63",
+          "一個名叫Mike的男人寫的日記，記錄了疫情爆發及其後發生的一切，直到昨天。",
+        ],
+      ],
+    },
+    {
+      rowId: "broken-moonshine-still",
+      defaultRows: [["64", "破損的自製月光酒蒸餾器。"]],
+    },
+    {
+      rowId: "backpacks-nailed-walls",
+      defaultRows: [["65", "背包釘在牆上，血跡斑斑且骯髒。"]],
+    },
+    {
+      rowId: "writing-on-wall-birds-nest",
+      defaultRows: [
+        [
+          "66",
+          "牆上的字：「來到鳥巢，所有人的安全之地。讓我們建造一個新世界！」",
+        ],
+      ],
+    },
+  ],
+} as const satisfies WalkingDeadTableElement;
+
+export const RandomLocationsTable = {
+  id: "random-locations-table",
+  originalName: "Random Locations",
+  name: "隨機地點",
+  description:
+    "當你需要一個地點時，使用下面的表格。先擲一個D66來生成一棟建築物，然後擲一個D6來決定內部可以找到什麼。",
+  type: "random-table",
+  category: "core/gm/travel",
+  headers: ["D66", "地點", "D6: 1–2", "D6: 3–4", "D6: 5–6"],
+  rows: [
+    {
+      rowId: "hospital",
+      defaultRows: [
+        [
+          "11",
+          "醫院",
+          "充滿行屍，但有一群倖存者在頂樓設有基地，配備完善的醫療設備。",
+          "大量醫療設備，但也有很多被鎖在這裡的行屍。",
+          "一切都被帶走了，屋頂上有直升機。油料不多。",
+        ],
+      ],
+    },
+    {
+      rowId: "school",
+      defaultRows: [
+        [
+          "12",
+          "學校",
+          "地下室有食物儲藏（30份配給）。單獨一個行屍。",
+          "青少年大聚會，前樂團成員變成了行屍。",
+          "孩子們躲在通風管道裡，走廊上是行屍老師。",
+        ],
+      ],
+    },
+    {
+      rowId: "gym",
+      defaultRows: [
+        [
+          "13",
+          "健身房",
+          "甲基安非他命實驗室的殘骸。有五個在實驗室爆炸時被殺死的行屍。",
+          "頂樓藏有一個年幼的孩子。",
+          "健身者行屍。",
+        ],
+      ],
+    },
+    {
+      rowId: "decrepit-building",
+      defaultRows: [
+        [
+          "14",
+          "破舊建築",
+          "前幫派在三樓設基地。他們在一樓用鎖鏈綁著的死去警察作為保護。",
+          "這裡發生了一場大戰；活著的人沒有贏。",
+          "頂樓住著一個奉新神的邪教。他們的象徵，一隻觀察之眼，被噴漆在附近的每個地方。",
+        ],
+      ],
+    },
+    {
+      rowId: "water-tower",
+      defaultRows: [
+        [
+          "15",
+          "水塔",
+          "秘密藏匿處有汽油。",
+          "一位即將死於疾病的孤獨倖存者。",
+          "有人隱藏了一台太陽能驅動的無線電發射器，和一本用於發送訊息的密碼書。",
+        ],
+      ],
+    },
+    {
+      rowId: "water-park",
+      defaultRows: [
+        [
+          "16",
+          "水上樂園",
+          "舊攤位裡有罐頭食品，但處處都是行屍。",
+          "水池中的行屍被困著，正在腐爛。",
+          "頂端的水滑梯上有一個被遺棄的營地。",
+        ],
+      ],
+    },
+    {
+      rowId: "factory",
+      defaultRows: [
+        [
+          "22",
+          "工廠",
+          "到處都是死去的工人，噴漆箭頭指向已經封鎖自己在辦公室且隱瞞自己已被咬傷的經理。",
+          "安靜且空無一人，一間房間內滿是一起自盡的工人。",
+          "士兵在這裡進行了最後的抵抗。一些槍支、手榴彈和酒瓶。所有士兵都變成了行屍。",
+        ],
+      ],
+    },
+    {
+      rowId: "grocery-store",
+      defaultRows: [
+        [
+          "21",
+          "雜貨店",
+          "一群野狗將這裡當成了家。",
+          "保持供應，外面也有一輛車留下的新鮮輪胎印。",
+          "店主藏在閣樓上，殺死並吃掉那些試圖掠奪商店的人。",
+        ],
+      ],
+    },
+    {
+      rowId: "bus-station",
+      defaultRows: [
+        [
+          "23",
+          "巴士站",
+          "有人在一輛被行屍包圍的巴士裡藏了一個榴彈發射器。該巴士被標記了一個紅X。",
+          "一名女子和她的孩子將自己鎖在裡面。他們通過屋頂的天窗進出。",
+          "一輛功能正常的巴士。門鎖著，但有鑰匙的巴士司機與其他行屍一起行走。",
+        ],
+      ],
+    },
+    {
+      rowId: "office-building",
+      defaultRows: [
+        [
+          "24",
+          "辦公樓",
+          "建築的一部分已經燒毀。四樓有一個營地的殘餘。隱藏的應急包。",
+          "死亡在新電腦遊戲發布派對中間來臨。",
+          "會議室被用作生產凝固汽油彈的實驗室。此刻裡面沒人，但很快會有人駕著一輛功能齊全的吉普車到來。",
+        ],
+      ],
+    },
+    {
+      rowId: "hotel",
+      defaultRows: [
+        [
+          "26",
+          "旅館",
+          "地下室有大量食物，但一樓充斥著死者。",
+          "旅館的部分區域被炸彈炸毀。到處都是動物和植物。",
+          "舉辦婚禮的時候死亡來臨。一些賓客倖存下來。",
+        ],
+      ],
+    },
+    {
+      rowId: "suburban-family-house",
+      defaultRows: [
+        [
+          "25",
+          "郊區家庭房",
+          "幾個家庭躲在這裡，太害怕出去，但幾乎沒有剩餘食物。",
+          "到處都是老鼠，死者在追逐它們。",
+          "有人將音響開著，死者正圍繞著房子聚集。電力來自屋頂上一個功能完善的風力發電站。",
+        ],
+      ],
+    },
+    {
+      rowId: "prison",
+      defaultRows: [
+        [
+          "31",
+          "監獄",
+          "建築的部分被拆毀。充滿死囚的建築物得到了良好保護。",
+          "囚犯運行這個地方，作為遊戲中的一個新派系。",
+          "空無一人且安靜。囚犯被放進巴士準備被運送到某個地方。但他們只到達了大門。幾輛有著被銬在座位上的死囚的巴士。",
+        ],
+      ],
+    },
+    {
+      rowId: "farm",
+      defaultRows: [
+        [
+          "32",
+          "農場",
+          "大量食物在地下室，但地面樓層充斥著死者。",
+          "有人襲擊了這個地方，殺死了一切，並摧毀了任何有用的東西。每個房間的牆上都用骯髒的字眼噴漆。",
+          "主屋中有一些補給品，馬廄中有兩匹餓壞的馬。進入房子的門設有手榴彈的陷阱。",
+        ],
+      ],
+    },
+    {
+      rowId: "church",
+      defaultRows: [
+        [
+          "34",
+          "教堂",
+          "功能完善的基地。只有兩個青少年倖存。他們躲避陌生人。",
+          "當地的倖存者群體每月在這裡會面一次進行交易和討論。",
+          "一群倖存者在這裡被殘忍處決，不久前的事；他們的背包中可能還有補給品。",
+        ],
+      ],
+    },
+    {
+      rowId: "tattoo-studio",
+      defaultRows: [
+        [
+          "35",
+          "紋身工作室",
+          "從附近的飛地帶來的強迫勞工在這裡獲得他們的標記。",
+          "一個被墨水覆蓋的行屍。",
+          "隱藏的補給（20份食物配給、基本醫療設備、五支步槍及彈藥）。",
+        ],
+      ],
+    },
+    {
+      rowId: "shopping-mall",
+      defaultRows: [
+        [
+          "36",
+          "購物中心",
+          "大群倖存者在疫情爆發後躲藏在這裡。他們中的許多人現在已經是屍體。",
+          "幫派控制了這個地方，在購物中心內騎摩托車四處移動（購物中心充滿了死者）。他們已經固守了二樓的部分區域。",
+          "一名年輕的服裝店店員仍在這裡生活，悄悄四處搜尋，從商店中獲取物資。武裝著弓和箭。",
+        ],
+      ],
+    },
+    {
+      rowId: "greenhouse",
+      defaultRows: [
+        [
+          "41",
+          "溫室",
+          "一個被藤蔓纏繞無法掙脫的行屍。有許多馬鈴薯植物。",
+          "大量的農藥，可以用來製造爆炸物。",
+          "大量的植物和種子（番茄、黃瓜、豆類等）。",
+        ],
+      ],
+    },
+    {
+      rowId: "train-station",
+      defaultRows: [
+        [
+          "43",
+          "火車站",
+          "一輛有燃料的完全功能性柴油機車。",
+          "軍隊試圖保護這個地方，用沙袋和汽車圍成圈來阻擋道路。但這是徒勞的。可以從行走的屍體中收集槍械和手榴彈。",
+          "一列裝滿了大量汽油和各種建築材料的貨運列車。到處都是行屍，有人用噴漆在貨車上標記：“狼群財產”。",
+        ],
+      ],
+    },
+    {
+      rowId: "stadium",
+      defaultRows: [
+        [
+          "44",
+          "體育場",
+          "從天而降的衛星摧毀了體育場的一半。衛星上仍有可收穫和使用的功能性電子組件。",
+          "一顆衛星從天上掉落，摧毀了體育場的一半。還有一些功能性的電子組件可以回收利用。",
+          "運動員變成了行屍。到處都是蛋白棒、運動飲料和基本的醫療裝備。",
+        ],
+      ],
+    },
+    {
+      rowId: "rock-club",
+      defaultRows: [
+        [
+          "45",
+          "搖滾俱樂部",
+          "樂迷吃掉了樂隊。",
+          "有人準備並在吧台上一字排開了40個莫洛托夫雞尾酒。",
+          "屋頂作為裝飾懸掛著一輛全功能、定制的摩托車。死去的樂隊成員徘徊在舞池上。",
+        ],
+      ],
+    },
+    {
+      rowId: "high-rise-building",
+      defaultRows: [
+        [
+          "46",
+          "高層建築",
+          "有人切斷了許多行屍的四肢，沒有殺死他們。被肢解的屍體在地板上爬行。",
+          "這個地方被封鎖了，疫情爆發時沒有被開啟過。",
+          "兩名狙擊手使用這棟建築從遠處射殺倖存者，而他們的同伴則在地面上搶走倖存者所攜帶的物品。",
+        ],
+      ],
+    },
+    {
+      rowId: "kindergarten",
+      defaultRows: [
+        [
+          "51",
+          "幼兒園",
+          "孩子們情況不妙。",
+          "一名老師帶著一群孩子。他們設立了捕捉老鼠和鳥的陷阱，並在屋頂的桶里種植蘿蔔和馬鈴薯。",
+          "一群青少年在照顧一些年幼的孩子。他們都變成了為了生存而偷竊和謀殺的人。他們還能被拯救嗎？",
+        ],
+      ],
+    },
+    {
+      rowId: "scientific-installation",
+      defaultRows: [
+        [
+          "52",
+          "科學設施",
+          "先進的技術設備、廣播站、備用發電機（燃料足夠使用（低骰兩次的結果）個月）。功能性淋浴和大量罐頭食品。還有許多徘徊的行屍。",
+          "一位科學家有一個阻止死者再次復活的想法。他只需要一些幫助來找到合適的工具、電力和一個功能性實驗室。",
+          "看似為當地醫院工作的普通實驗室。但有一個通往地下高安全實驗室的隱藏入口，科學家們一直在研究用於化學戰的致命疾病。一位科學家還活著。她偏執並準備使用疾病作為武器。",
+        ],
+      ],
+    },
+    {
+      rowId: "bomb-shelter",
+      defaultRows: [
+        [
+          "53",
+          "防空洞",
+          "一些罐頭食品、兩把左輪手槍，以及一個在魚缸裡不停嘮叨的行屍頭。",
+          "幾個行屍和牆上噴漆的指示，描述通往安全區的路線。",
+          "有人在這裡安裝了先進的醫療設備。",
+        ],
+      ],
+    },
+    {
+      rowId: "graveyard",
+      defaultRows: [
+        [
+          "54",
+          "墓地",
+          "死者試圖從他們的墳墓中爬出來。",
+          "新建的死神祭壇，有大量供品（罐頭食品、汽油、武器和水壺）。如果有人從屍體主的祭壇上偷東西，死亡天使會非常不悅。",
+          "一個全身赤裸、著迷於殺死行屍並埋葬他們的男人。",
+        ],
+      ],
+    },
+    {
+      rowId: "radio-station",
+      defaultRows: [
+        [
+          "55",
+          "廣播電台",
+          "來自自稱為和平避風港的廣播。",
+          "一台音響播放著極大聲的搖滾音樂，使行屍圍繞著它。但裡面找不到任何人。大量的技術設備。",
+          "這個世界這一部分的最後一個廣播電台，由兩名固執的女性維持運作，她們需要一切：食物、武器、醫藥、希望。",
+        ],
+      ],
+    },
+    {
+      rowId: "home-for-the-elderly",
+      defaultRows: [
+        [
+          "56",
+          "老人之家",
+          "沒有人搜索過這個地方，因為它充滿了死者，食物儲藏自疫情爆發前就一直是滿的。",
+          "工作人員仍在照顧老人，但其中一些人因為即將死去而被鏈在床上。",
+          "空無一人，除了一位躲在掃把櫃裡的孤獨倖存者。他聲稱自己開始了末日。",
+        ],
+      ],
+    },
+    {
+      rowId: "movie-theater",
+      defaultRows: [
+        [
+          "61",
+          "電影院",
+          "有人在屋頂安裝了太陽能板，電影院功能齊全。也充滿了新鮮的行屍。",
+          "電影院被轉變為疫情爆發後的資訊中心。這裡有來自全國各地的科學家和記者的錄音，講述著正在發生的事情，以及政府試圖做什麼。這是尋找...任何事情的完美地點。",
+          "一個小男孩住在放映室裡。一切都壞了，但男孩聲稱他在等待他的家人，他們出去尋找食物了。",
+        ],
+      ],
+    },
+    {
+      rowId: "storage-facility",
+      defaultRows: [
+        [
+          "62",
+          "儲存設施",
+          "有人在這裡放了一隻野生動物。",
+          "這裡還有一些好東西，和行屍。",
+          "一個敵對派系使用這作為儲藏設施。有一個報警系統，當有人闖入時會警告他們。還有一個使用行屍的陷阱。",
+        ],
+      ],
+    },
+    {
+      rowId: "bridge",
+      defaultRows: [
+        [
+          "64",
+          "橋樑",
+          "有人通過傾倒大堆的礫石封鎖了兩端。在它們之間有營地的殘餘和一些行屍。",
+          "一個被遺棄的軍事哨站，有一挺功能性的機槍。",
+          "一架直升機撞到了橋上，它即將倒塌。一次只能有一個人過橋。如果附近的行屍被警覺，它們將成群結隊地襲擊橋樑，使其倒塌。",
+        ],
+      ],
+    },
+    {
+      rowId: "gas-station",
+      defaultRows: [
+        [
+          "63",
+          "加油站",
+          "一場巨大的爆炸摧毀了一切。",
+          "一群車輛聚集在此，還有些剩餘的汽油，和一個永遠不離她的泰迪熊的年輕行屍女孩。",
+          "有人在屋頂留下了補給品。不幸的是，屋頂因水損壞嚴重，無法承受成人的重量。而且商店下面有行屍。",
+        ],
+      ],
+    },
+    {
+      rowId: "library",
+      defaultRows: [
+        [
+          "65",
+          "圖書館",
+          "有人收集了一大堆在死者之地生存的有用書籍，然後出於某種原因留在這裡。",
+          "一群在世界末日時留在這裡的圖書館員聚集在此，現在他們也死了。",
+          "窗戶掛著白旗，外牆上噴漆了和平標誌。裡面滿是設置了的陷阱，有矛的陷阱被觸發，行屍被卡在裡面。",
+        ],
+      ],
+    },
+    {
+      rowId: "museum",
+      defaultRows: [
+        [
+          "66",
+          "博物館",
+          "許多對倖存者有用的物資，也有一百個行屍在地下室，並且所有樓層的樓梯門都不見了。任何聲音，死者都會成群結隊地湧上來。",
+          "關於死亡、木乃伊和歷史上的死亡崇拜的展覽。",
+          "關於建造新世界時需要合作的筆記。一個特定的時間，應該在這裡以便被聯繫。",
+        ],
+      ],
+    },
+  ],
+} as const satisfies WalkingDeadTableElement;
+
+export const NPCFeatureTable = {
+  id: "npc-feature-table",
+  originalName: "NPC Feature",
+  name: "NPC 特性",
+  description: "NPC 特性",
+  type: "random-table",
+  category: "core/gm/npc_and_animal",
+  headers: ["D66", "特性"],
+  rows: [
+    {
+      rowId: "cowboy-hat",
+      defaultRows: [["11", "牛仔帽"]],
+    },
+    {
+      rowId: "high-pitched-voice",
+      defaultRows: [["12", "尖細的聲音"]],
+    },
+    {
+      rowId: "scarred-face",
+      defaultRows: [["13", "疤痕臉"]],
+    },
+    {
+      rowId: "unicorn-tattoo",
+      defaultRows: [["14", "獨角獸紋身"]],
+    },
+    {
+      rowId: "irritating-laughter",
+      defaultRows: [["15", "惱人的笑聲"]],
+    },
+    {
+      rowId: "thousand-yard-stare",
+      defaultRows: [["16", "遠眺的凝視"]],
+    },
+    {
+      rowId: "amputated-body-part",
+      defaultRows: [["21", "截肢部位"]],
+    },
+    {
+      rowId: "clothes-in-bright-colors",
+      defaultRows: [["22", "穿著鮮豔的衣服"]],
+    },
+    {
+      rowId: "piercings-all-over",
+      defaultRows: [["24", "全身穿孔"]],
+    },
+    {
+      rowId: "suit-and-tie",
+      defaultRows: [["25", "西裝和領帶"]],
+    },
+    {
+      rowId: "big-beard-or-hair",
+      defaultRows: [["26", "大鬍子或頭髮"]],
+    },
+    {
+      rowId: "dressed-in-rags",
+      defaultRows: [["35", "穿著破布"]],
+    },
+    {
+      rowId: "extremely-tall",
+      defaultRows: [["31", "極高"]],
+    },
+    {
+      rowId: "cute-child-like-face",
+      defaultRows: [["33", "可愛的、像孩子的臉"]],
+    },
+    {
+      rowId: "bathing-shorts",
+      defaultRows: [["32", "沐浴短褲"]],
+    },
+    {
+      rowId: "intense-eyes",
+      defaultRows: [["34", "深邃的眼睛"]],
+    },
+    {
+      rowId: "skin-covered-by-blisters",
+      defaultRows: [["36", "皮膚布滿水泡"]],
+    },
+    {
+      rowId: "barefoot",
+      defaultRows: [["41", "赤腳"]],
+    },
+    {
+      rowId: "dressed-in-sheets",
+      defaultRows: [["42", "穿著床單"]],
+    },
+    {
+      rowId: "uniform",
+      defaultRows: [["43", "制服"]],
+    },
+    {
+      rowId: "many-golden-rings-and-necklaces",
+      defaultRows: [["44", "許多金戒指和項鍊"]],
+    },
+    {
+      rowId: "sunglasses",
+      defaultRows: [["45", "太陽眼鏡"]],
+    },
+    {
+      rowId: "dressed-in-spandex",
+      defaultRows: [["46", "穿著氨綸衣物"]],
+    },
+    {
+      rowId: "missing-an-ear-the-nose-or-the-lips",
+      defaultRows: [["51", "缺少一隻耳朵、鼻子或嘴唇"]],
+    },
+    {
+      rowId: "hair-in-many-colors",
+      defaultRows: [["52", "多色頭髮"]],
+    },
+    {
+      rowId: "burn-marked",
+      defaultRows: [["53", "燒傷標記"]],
+    },
+    {
+      rowId: "t-shirt-with-smiley-face",
+      defaultRows: [["54", "印有笑臉的T恤"]],
+    },
+    {
+      rowId: "leather-jacket",
+      defaultRows: [["55", "皮夾克"]],
+    },
+    {
+      rowId: "jump-suit",
+      defaultRows: [["56", "連身衣"]],
+    },
+    {
+      rowId: "canadian-tuxedo",
+      defaultRows: [["61", "加拿大無袖夾克"]],
+    },
+    {
+      rowId: "dressed-in-furs",
+      defaultRows: [["62", "穿著毛皮"]],
+    },
+    {
+      rowId: "dressed-in-black",
+      defaultRows: [["63", "穿著黑色衣物"]],
+    },
+    {
+      rowId: "helmet-wrist-guards-elbow-and-knee-pads",
+      defaultRows: [["64", "戴頭盔，腕護、肘護和膝護"]],
+    },
+    {
+      rowId: "barcode-tattooed-on-the-neck",
+      defaultRows: [["65", "脖子上紋有條碼"]],
+    },
+    {
+      rowId: "vest-with-wings-on-the-back",
+      defaultRows: [["66", "背後有翅膀的背心"]],
+    },
+  ],
+} as const satisfies WalkingDeadTableElement;
+
+export const NPCIssuesTable = {
+  id: "npc-issues-table",
+  originalName: "NPC Issues",
+  name: "NPC 問題",
+  description: "NPC 問題",
+  type: "random-table",
+  category: "core/gm/npc_and_animal",
+  headers: ["D66", "問題"],
+  rows: [
+    {
+      rowId: "coward",
+      defaultRows: [["11", "懦夫"]],
+    },
+    {
+      rowId: "never-gives-up",
+      defaultRows: [["12", "永不放棄"]],
+    },
+    {
+      rowId: "seeks-affirmation",
+      defaultRows: [["13", "尋求肯定"]],
+    },
+    {
+      rowId: "wants-to-be-the-leader",
+      defaultRows: [["14", "想成為領袖"]],
+    },
+    {
+      rowId: "always-on-the-lookout-for-trouble",
+      defaultRows: [["15", "總是提防麻煩"]],
+    },
+    {
+      rowId: "never-stops-talking",
+      defaultRows: [["16", "永遠不停止講話"]],
+    },
+    {
+      rowId: "depressed",
+      defaultRows: [["21", "抑鬱"]],
+    },
+    {
+      rowId: "angry",
+      defaultRows: [["22", "易怒"]],
+    },
+    {
+      rowId: "easily-insulted",
+      defaultRows: [["23", "容易受到侮辱"]],
+    },
+    {
+      rowId: "alcoholic",
+      defaultRows: [["24", "酗酒"]],
+    },
+    {
+      rowId: "always-hungry",
+      defaultRows: [["25", "總是餓著"]],
+    },
+    {
+      rowId: "bully",
+      defaultRows: [["26", "欺凌者"]],
+    },
+    {
+      rowId: "takes-what-they-want",
+      defaultRows: [["31", "拿他們想要的"]],
+    },
+    {
+      rowId: "religious",
+      defaultRows: [["32", "宗教信仰者"]],
+    },
+    {
+      rowId: "bountiful",
+      defaultRows: [["33", "豐富"]],
+    },
+    {
+      rowId: "cold-hearted",
+      defaultRows: [["34", "冷酷無情"]],
+    },
+    {
+      rowId: "obsessed-with-music",
+      defaultRows: [["35", "迷戀音樂"]],
+    },
+    {
+      rowId: "sacrifices-anything-to-survive",
+      defaultRows: [["36", "為了生存不惜犧牲一切"]],
+    },
+    {
+      rowId: "laughs-at-the-world",
+      defaultRows: [["41", "嘲笑世界"]],
+    },
+    {
+      rowId: "weirdo",
+      defaultRows: [["42", "怪人"]],
+    },
+    {
+      rowId: "falls-in-love-easily",
+      defaultRows: [["43", "容易墜入愛河"]],
+    },
+    {
+      rowId: "trusts-no-one",
+      defaultRows: [["44", "不信任任何人"]],
+    },
+    {
+      rowId: "hearing-impaired",
+      defaultRows: [["45", "聽力受損"]],
+    },
+    {
+      rowId: "criminal-past",
+      defaultRows: [["46", "有犯罪歷史"]],
+    },
+    {
+      rowId: "pacifist",
+      defaultRows: [["51", "和平主義者"]],
+    },
+    {
+      rowId: "cares-only-for-their-child-friend-sibling",
+      defaultRows: [["52", "只關心他們的孩子/朋友/兄弟姐妹"]],
+    },
+    {
+      rowId: "wants-to-build-a-new-world",
+      defaultRows: [["53", "想要建造一個新世界"]],
+    },
+    {
+      rowId: "expects-the-worst-from-all",
+      defaultRows: [["54", "對所有人都持最壞的預期"]],
+    },
+    {
+      rowId: "easily-freaks-out",
+      defaultRows: [["55", "容易驚慌失措"]],
+    },
+    {
+      rowId: "loner",
+      defaultRows: [["56", "孤獨者"]],
+    },
+    {
+      rowId: "wants-to-do-what-is-right",
+      defaultRows: [["61", "想要做正確的事"]],
+    },
+    {
+      rowId: "likes-to-gossip",
+      defaultRows: [["62", "喜歡閒聊"]],
+    },
+    {
+      rowId: "terminal-illness",
+      defaultRows: [["63", "終末期疾病"]],
+    },
+    {
+      rowId: "show-off",
+      defaultRows: [["64", "愛炫耀"]],
+    },
+    {
+      rowId: "doesnt-follow-rules",
+      defaultRows: [["65", "不遵守規則"]],
+    },
+    {
+      rowId: "questions-the-leader",
+      defaultRows: [["66", "質疑領袖"]],
+    },
+  ],
+} as const satisfies WalkingDeadTableElement;
+
+export const NPCSecretIssuesTable = {
+  id: "npc-secret-issues-table",
+  originalName: "NPC Secret Issues",
+  name: "NPC 秘密問題",
+  description: "NPC 秘密問題",
+  type: "random-table",
+  category: "core/gm/npc_and_animal",
+  headers: ["D66", "問題"],
+  rows: [
+    {
+      rowId: "suicidal",
+      defaultRows: [["11", "有自殺傾向"]],
+    },
+    {
+      rowId: "murderous",
+      defaultRows: [["12", "有殺人傾向"]],
+    },
+    {
+      rowId: "drug-addict",
+      defaultRows: [["13", "藥物成癮者"]],
+    },
+    {
+      rowId: "keeps-their-brother-sister-family-friend-locked-up",
+      defaultRows: [["14", "將他們的兄弟/姐妹/家人/朋友鎖在某處"]],
+    },
+    {
+      rowId: "worships-the-dead",
+      defaultRows: [["15", "崇拜死者"]],
+    },
+    {
+      rowId: "wants-to-kill-someone",
+      defaultRows: [["16", "想要殺死某人"]],
+    },
+    {
+      rowId: "madly-in-love-with-someone-who-does-not-feel-the-same",
+      defaultRows: [["21", "瘋狂地愛上了一個不同感覺的人"]],
+    },
+    {
+      rowId: "psychopath",
+      defaultRows: [["22", "精神病患者"]],
+    },
+    {
+      rowId: "wants-to-see-the-world-burn",
+      defaultRows: [["23", "想要看著世界燃燒"]],
+    },
+    {
+      rowId: "punishes-themself",
+      defaultRows: [["24", "懲罰自己"]],
+    },
+    {
+      rowId: "hears-commanding-voices",
+      defaultRows: [["25", "聽到命令的聲音"]],
+    },
+    {
+      rowId: "traumatized",
+      defaultRows: [["26", "受到創傷"]],
+    },
+    {
+      rowId: "loves-to-fight",
+      defaultRows: [["31", "喜歡戰鬥"]],
+    },
+    {
+      rowId: "traitor",
+      defaultRows: [["32", "叛徒"]],
+    },
+    {
+      rowId: "compulsive-liar",
+      defaultRows: [["33", "強迫性說謊者"]],
+    },
+    {
+      rowId: "secret-plan",
+      defaultRows: [["34", "秘密計劃"]],
+    },
+    {
+      rowId: "wants-someone-something-in-the-group",
+      defaultRows: [["35", "想要團體中的某人/某物"]],
+    },
+    {
+      rowId: "lies-about-everything",
+      defaultRows: [["36", "對一切都撒謊"]],
+    },
+    {
+      rowId: "pretends-to-be-skilled",
+      defaultRows: [["41", "假裝有技能"]],
+    },
+    {
+      rowId: "lies-about-the-atrocities-they-committed",
+      defaultRows: [["42", "對他們犯下的暴行撒謊"]],
+    },
+    {
+      rowId: "spreads-rumors-to-gain-power",
+      defaultRows: [["43", "散布謠言以獲取權力"]],
+    },
+    {
+      rowId: "secretly-works-for-another-faction",
+      defaultRows: [["44", "秘密為另一個派別工作"]],
+    },
+    {
+      rowId: "pyromaniac",
+      defaultRows: [["45", "縱火狂"]],
+    },
+    {
+      rowId: "murders-their-opponents",
+      defaultRows: [["46", "謀殺他們的對手"]],
+    },
+    {
+      rowId: "does-not-remember-their-true-identity",
+      defaultRows: [["51", "不記得他們的真實身份"]],
+    },
+    {
+      rowId: "lies-about-what-they-know",
+      defaultRows: [["52", "對他們所知的事情撒謊"]],
+    },
+    {
+      rowId: "keeps-a-dead-relative-as-a-pet",
+      defaultRows: [["53", "將一位死去的親人當作寵物"]],
+    },
+    {
+      rowId: "has-trained-their-kids-to-kill-steal-and-lie",
+      defaultRows: [["54", "訓練他們的孩子殺戮、偷竊和說謊"]],
+    },
+    {
+      rowId: "cannibal",
+      defaultRows: [["55", "食人族"]],
+    },
+    {
+      rowId: "believes-the-dead-are-a-punishment-from-god",
+      defaultRows: [["56", "相信死者是上帝的懲罰"]],
+    },
+    {
+      rowId: "thief",
+      defaultRows: [["61", "小偷"]],
+    },
+    {
+      rowId: "likes-to-torment-opponents",
+      defaultRows: [["62", "喜歡折磨對手"]],
+    },
+    {
+      rowId: "knows-about-secret-tunnels-filled-with-resources",
+      defaultRows: [["63", "知道充滿資源的秘密隧道"]],
+    },
+    {
+      rowId: "has-been-bitten",
+      defaultRows: [["64", "已被咬"]],
+    },
+    {
+      rowId: "has-a-contagious-disease",
+      defaultRows: [["65", "有傳染病"]],
+    },
+    {
+      rowId: "drugs-people-and-takes-their-gear-or-imprisons-them",
+      defaultRows: [["66", "給人下藥並拿走他們的裝備或將他們囚禁"]],
+    },
+  ],
+} as const satisfies WalkingDeadTableElement;
+
+export const NPCSkillTable = {
+  id: "npc-skill-table",
+  originalName: "NPC Skill",
+  name: "NPC 技能",
+  description: "擲骰決定 NPC 專家和受訓的技能數量。",
+  type: "random-table",
+  category: "core/gm/npc_and_animal",
+  headers: ["D66", "受訓", "專家"],
+  rows: [
+    {
+      rowId: "skill-0",
+      defaultRows: [["1", "0", "0"]],
+    },
+    {
+      rowId: "skill-1",
+      defaultRows: [["2", "1", "0"]],
+    },
+    {
+      rowId: "skill-2",
+      defaultRows: [["3", "2", "0"]],
+    },
+    {
+      rowId: "skill-3",
+      defaultRows: [["4", "1", "1"]],
+    },
+    {
+      rowId: "skill-4",
+      defaultRows: [["5", "2", "1"]],
+    },
+    {
+      rowId: "skill-5",
+      defaultRows: [["6", "3", "2"]],
+    },
+  ],
+} as const satisfies WalkingDeadTableElement;
+
+export const NPCGearTable = {
+  id: "npc-gear-table",
+  originalName: "NPC Gear",
+  name: "NPC 裝備",
+  description: "擲骰決定 NPC 的裝備。",
+  type: "random-table",
+  category: "core/gm/npc_and_animal",
+  headers: ["D66", "裝備"],
+  rows: [
+    {
+      rowId: "gear-1",
+      defaultRows: [["1", "無"]],
+    },
+    {
+      rowId: "gear-2",
+      defaultRows: [["2", "刀子和一份口糧"]],
+    },
+    {
+      rowId: "gear-3",
+      defaultRows: [
+        ["3", "近戰武器，D6份口糧和一件物品（例如：望遠鏡、帳篷或自行車）"],
+      ],
+    },
+    {
+      rowId: "gear-4",
+      defaultRows: [["4", "遠程武器，刀子，D6份口糧，一些生存裝備"]],
+    },
+    {
+      rowId: "gear-5",
+      defaultRows: [["5", "遠程武器，近戰武器，D6份口糧，實用裝備"]],
+    },
+    {
+      rowId: "gear-6",
+      defaultRows: [["6", "遠程武器，十份口糧，一輛車/摩托車，實用裝備"]],
+    },
+  ],
+} as const satisfies WalkingDeadTableElement;
+
+export const ScaveningTable = {
+  id: "scavenging-table",
+  originalName: "Scavenging",
+  name: "拾荒",
+  description: "擲骰決定拾荒成功後找到什麼。",
+  type: "random-table",
+  category: "core/travel",
+  headers: ["D666", "找到"],
+  rows: [
+    {
+      rowId: "toothbrush-barely-used",
+      defaultRows: [["111", "幾乎未使用的牙刷"]],
+    },
+    {
+      rowId: "photo-album",
+      defaultRows: [["112", "相冊。一位前總統出現在一張照片上"]],
+    },
+    {
+      rowId: "celebrity-autograph",
+      defaultRows: [["113", "名人簽名"]],
+    },
+    {
+      rowId: "diary-written-in-spanish",
+      defaultRows: [
+        ["114", "一本由名為Leticia的女孩用西班牙語寫的日記，她非常渴望panocha"],
+      ],
+    },
+    {
+      rowId: "toy-soldier",
+      defaultRows: [["115", "玩具士兵"]],
+    },
+    {
+      rowId: "books-on-warsaw-uprising",
+      defaultRows: [["116", "關於1944年華沙起義的幾本書"]],
+    },
+    {
+      rowId: "pack-of-candles",
+      defaultRows: [["121", "一包蠟燭"]],
+    },
+    {
+      rowId: "cd-one-hit-wonder",
+      defaultRows: [["122", "CD，一個一擊即中藝術家的最佳命中曲"]],
+    },
+    {
+      rowId: "amnesty-report",
+      defaultRows: [["123", "關於騷擾一個少數民族的大赦國際報告，印在散頁上"]],
+    },
+    {
+      rowId: "bag-with-gold-and-jewels",
+      defaultRows: [["124", "裝滿黃金和珠寶的袋子"]],
+    },
+    {
+      rowId: "funny-hat",
+      defaultRows: [["125", "有趣的帽子"]],
+    },
+    {
+      rowId: "hand-made-ufo-replica",
+      defaultRows: [["126", "手工製作的UFO複製品"]],
+    },
+    {
+      rowId: "well-made-crucifix",
+      defaultRows: [["131", "做工精良的十字架"]],
+    },
+    {
+      rowId: "still-functional-wristwatch",
+      defaultRows: [["132", "仍然功能正常的手錶"]],
+    },
+    {
+      rowId: "hijabs-in-many-colors",
+      defaultRows: [["133", "多種顏色的頭巾"]],
+    },
+    {
+      rowId: "ten-potato-plants",
+      defaultRows: [["134", "十株需要澆水的馬鈴薯植物"]],
+    },
+    {
+      rowId: "bucket-with-unsorted-batteries",
+      defaultRows: [["135", "裝滿未分類電池的桶"]],
+    },
+    {
+      rowId: "accordion",
+      defaultRows: [["136", "手風琴"]],
+    },
+    {
+      rowId: "parrot-named-james",
+      defaultRows: [["141", "名為James的鸚鵡（真的很想要一塊餅乾）"]],
+    },
+    {
+      rowId: "box-with-fireworks",
+      defaultRows: [["142", "裝滿煙火的盒子"]],
+    },
+    {
+      rowId: "camera",
+      defaultRows: [["143", "相機"]],
+    },
+    {
+      rowId: "binoculars",
+      defaultRows: [["144", "望遠鏡"]],
+    },
+    {
+      rowId: "frightened-puppy",
+      defaultRows: [["145", "受驚的小狗"]],
+    },
+    {
+      rowId: "cutlery-with-illuminati-eye",
+      defaultRows: [["146", "帶有光明會之眼的餐具"]],
+    },
+    {
+      rowId: "harmonica",
+      defaultRows: [["152", "口琴"]],
+    },
+    {
+      rowId: "sleeping-bag",
+      defaultRows: [["153", "睡袋"]],
+    },
+    {
+      rowId: "spirit-stove",
+      defaultRows: [["154", "酒精爐"]],
+    },
+    {
+      rowId: "set-with-twenty-different-spices",
+      defaultRows: [["155", "包含二十種不同香料的套裝"]],
+    },
+    {
+      rowId: "clean-towels",
+      defaultRows: [["156", "乾淨的毛巾"]],
+    },
+    {
+      rowId: "great-boots",
+      defaultRows: [["151", "優質的靴子"]],
+    },
+    {
+      rowId: "shirts-and-pants",
+      defaultRows: [["161", "襯衫和褲子"]],
+    },
+    {
+      rowId: "clean-and-dry-socks",
+      defaultRows: [["162", "乾淨且乾燥的襪子"]],
+    },
+    {
+      rowId: "umbrella",
+      defaultRows: [["163", "雨傘"]],
+    },
+    {
+      rowId: "warm-clothes",
+      defaultRows: [["164", "保暖衣物"]],
+    },
+    {
+      rowId: "shovel",
+      defaultRows: [["165", "鏟子"]],
+    },
+    {
+      rowId: "flashlight",
+      defaultRows: [["166", "手電筒"]],
+    },
+    {
+      rowId: "canned-goods-baked-beans",
+      defaultRows: [["211", "罐頭食品，烘豆（一份口糧）"]],
+    },
+    {
+      rowId: "candy-and-orange-soda",
+      defaultRows: [["212", "糖果和橙子汽水（一份口糧）"]],
+    },
+    {
+      rowId: "grilled-hamster",
+      defaultRows: [["213", "烤倉鼠（一份口糧）"]],
+    },
+    {
+      rowId: "canned-goods-mild-tomatoes-and-green-chilies",
+      defaultRows: [["214", "罐頭食品，溫和的番茄和青辣椒（一份口糧）"]],
+    },
+    {
+      rowId: "canned-goods-chicken-broth",
+      defaultRows: [["215", "罐頭食品，雞湯（一份口糧）"]],
+    },
+    {
+      rowId: "canned-goods-bell-peppers-in-oil",
+      defaultRows: [["216", "罐頭食品，油浸甜椒（一份口糧）"]],
+    },
+    {
+      rowId: "can-opener",
+      defaultRows: [["222", "開罐器"]],
+    },
+    {
+      rowId: "canned-goods-spaghetti-meatballs",
+      defaultRows: [["221", "罐頭食品，意大利麵肉丸（一份口糧）"]],
+    },
+    {
+      rowId: "canned-goods-pork-and-beans",
+      defaultRows: [["223", "罐頭食品，豬肉和豆子（一份口糧）"]],
+    },
+    {
+      rowId: "canned-goods-beef-and-beans",
+      defaultRows: [["224", "罐頭食品，牛肉和豆子（一份口糧）"]],
+    },
+    {
+      rowId: "canned-goods-tuna-in-water",
+      defaultRows: [["225", "罐頭食品，水中金槍魚（一份口糧）"]],
+    },
+    {
+      rowId: "canned-goods-tuna-in-oil",
+      defaultRows: [["226", "罐頭食品，油中金槍魚（一份口糧）"]],
+    },
+    {
+      rowId: "knife-sharpener",
+      defaultRows: [["232", "刀具磨刀器"]],
+    },
+    {
+      rowId: "canned-goods-chicken-soup",
+      defaultRows: [["234", "罐頭食品，雞湯（一份口糧）"]],
+    },
+    {
+      rowId: "canned-goods-chicken-noodle-soup",
+      defaultRows: [["236", "罐頭食品，雞肉麵條湯（一份口糧）"]],
+    },
+    {
+      rowId: "fried-green-tomatoes",
+      defaultRows: [["242", "炸綠番茄（一份口糧）"]],
+    },
+    {
+      rowId: "pickled-eggs",
+      defaultRows: [["244", "醃蛋（一份口糧）"]],
+    },
+    {
+      rowId: "small-bag-with-walnuts",
+      defaultRows: [["246", "小袋核桃（一份口糧）"]],
+    },
+    {
+      rowId: "dried-meat",
+      defaultRows: [["252", "乾肉（一份口糧）"]],
+    },
+    {
+      rowId: "canned-goods-kidney-beans",
+      defaultRows: [["254", "罐頭食品，腰豆（一份口糧）"]],
+    },
+    {
+      rowId: "jar-with-baby-food-risotto-with-turkey-vegetables",
+      defaultRows: [["256", "嬰兒食品罐，火雞蔬菜燴飯（一份口糧）"]],
+    },
+    {
+      rowId: "dog-food-chicken-barley",
+      defaultRows: [["261", "狗食，雞肉與大麥（一份口糧）"]],
+    },
+    {
+      rowId: "cat-food-salmon-jelly",
+      defaultRows: [["262", "貓食，果凍鮭魚（一份口糧）"]],
+    },
+    {
+      rowId: "moldy-sandwiches-peanut-butter-raspberry-jam",
+      defaultRows: [["263", "發霉的三明治，花生醬與覆盆子果醬（一份口糧）"]],
+    },
+    {
+      rowId: "bottle-of-porridge",
+      defaultRows: [["264", "一瓶粥（一份口糧）"]],
+    },
+    {
+      rowId: "food-powder-mashed-potatoes",
+      defaultRows: [["265", "食物粉，馬鈴薯泥（一份口糧）"]],
+    },
+    {
+      rowId: "dried-banana-nuts",
+      defaultRows: [["266", "乾香蕉和堅果（一份口糧）"]],
+    },
+    {
+      rowId: "candy-stash",
+      defaultRows: [["311", "糖果藏匿（一份口糧）"]],
+    },
+    {
+      rowId: "kitten-on-a-stick",
+      defaultRows: [["312", "烤串上的小貓（一份口糧）"]],
+    },
+    {
+      rowId: "rice-bag-water-jugs",
+      defaultRows: [["313", "米袋和水壺（十份口糧）"]],
+    },
+    {
+      rowId: "fake-mustache",
+      defaultRows: [["314", "假鬍子"]],
+    },
+    {
+      rowId: "baby-porridge",
+      defaultRows: [["315", "嬰兒粥（一份口糧）"]],
+    },
+    {
+      rowId: "goldfish-in-water-jar",
+      defaultRows: [["316", "水罐裡的金魚（一份口糧）"]],
+    },
+    {
+      rowId: "box-with-twenty-bags-of-chips",
+      defaultRows: [["321", "裝有二十包薯片的箱子，海鹽與醋味（四份口糧）"]],
+    },
+    {
+      rowId: "dried-meat-rat",
+      defaultRows: [["322", "乾肉，老鼠（一份口糧）"]],
+    },
+    {
+      rowId: "bag-with-dead-birds",
+      defaultRows: [["323", "裝有死鳥的袋子（一份口糧）"]],
+    },
+    {
+      rowId: "rice-and-nuts",
+      defaultRows: [["324", "米飯和堅果（兩份口糧）"]],
+    },
+    {
+      rowId: "tomatoes-cucumber-paprika",
+      defaultRows: [["325", "番茄，黃瓜，和紅椒（一份口糧）"]],
+    },
+    {
+      rowId: "living-worms-in-bag-filled-with-dirt",
+      defaultRows: [["326", "裝滿泥土的袋子裡的活蟲（一份口糧）"]],
+    },
+    {
+      rowId: "smoked-snake-meat",
+      defaultRows: [["331", "煙燻蛇肉（兩份口糧）"]],
+    },
+    {
+      rowId: "assault-rifle",
+      defaultRows: [["332", "突擊步槍"]],
+    },
+    {
+      rowId: "big-pack-cereals",
+      defaultRows: [["333", "大包裝穀物（一份口糧）"]],
+    },
+    {
+      rowId: "dried-fruit-six-pack-cider-cans",
+      defaultRows: [["334", "乾果和六罐蘋果酒（兩份口糧）"]],
+    },
+    {
+      rowId: "whiskey-bottle-freeze-dried-taco-stew",
+      defaultRows: [
+        ["335", "威士忌瓶和冷凍乾燥的墨西哥玉米餅燉菜（兩份口糧）"],
+      ],
+    },
+    {
+      rowId: "freeze-dried-beef-pasta-marinara",
+      defaultRows: [
+        ["336", "冷凍乾燥的牛肉和意大利面，馬里納拉醬（兩份口糧）"],
+      ],
+    },
+    {
+      rowId: "freeze-dried-hamburgers-and-cola-bottles",
+      defaultRows: [["341", "冷凍乾燥漢堡和可樂瓶（兩份口糧）"]],
+    },
+    {
+      rowId: "cheese",
+      defaultRows: [["342", "乳酪（一份口糧）"]],
+    },
+    {
+      rowId: "rice-and-curry",
+      defaultRows: [["343", "米飯和咖哩（兩份口糧）"]],
+    },
+    {
+      rowId: "potatoes-water",
+      defaultRows: [["344", "馬鈴薯和水（三份口糧）"]],
+    },
+    {
+      rowId: "pasta-and-cold-coffee",
+      defaultRows: [["345", "意大利麵和冷咖啡（一份口糧）"]],
+    },
+    {
+      rowId: "assorted-root-vegetables",
+      defaultRows: [["346", "各式根菜（兩份口糧）"]],
+    },
+    {
+      rowId: "ten-firework-rockets",
+      defaultRows: [["351", "十枚煙火火箭"]],
+    },
+    {
+      rowId: "rice-cookies",
+      defaultRows: [["352", "米飯和餅乾（兩份口糧）"]],
+    },
+    {
+      rowId: "pasta-and-sparkling-water",
+      defaultRows: [["353", "意大利麵和氣泡水（一份口糧）"]],
+    },
+    {
+      rowId: "carrots-goat-head-bottles-of-beer",
+      defaultRows: [["354", "胡蘿蔔，羊頭和啤酒瓶（兩份口糧）"]],
+    },
+    {
+      rowId: "egg-and-ham",
+      defaultRows: [["355", "雞蛋和火腿（一份口糧）"]],
+    },
+    {
+      rowId: "revolver",
+      defaultRows: [["356", "左輪手槍"]],
+    },
+
+    {
+      rowId: "bag-of-rice-and-water",
+      defaultRows: [["361", "一袋米和水（三份口糧）"]],
+    },
+    {
+      rowId: "biscuits-gravy",
+      defaultRows: [["362", "餅乾和肉汁（一份口糧）"]],
+    },
+
+    {
+      rowId: "mac-and-cheese-in-a-plastic-container",
+      defaultRows: [
+        ["363", "塑料容器裡的通心粉和奶酪，聞起來有點怪（一份口糧）"],
+      ],
+    },
+    {
+      rowId: "collard-greens-fried-bacon",
+      defaultRows: [["364", "羽衣甘藍和炸培根（一份口糧）"]],
+    },
+
+    {
+      rowId: "corn-pudding",
+      defaultRows: [["365", "玉米布丁（一份口糧）"]],
+    },
+    {
+      rowId: "protein-bars-bottle-of-wine",
+      defaultRows: [["366", "蛋白棒和一瓶酒（一份口糧）"]],
+    },
+    {
+      rowId: "sports-bag-filled-with-potatoes-and-carrots",
+      defaultRows: [["411", "裝滿馬鈴薯和胡蘿蔔的運動包（三份口糧）"]],
+    },
+    {
+      rowId: "toolbox",
+      defaultRows: [["412", "工具箱"]],
+    },
+    {
+      rowId: "spear",
+      defaultRows: [["413", "矛"]],
+    },
+    {
+      rowId: "dried-meat-pork",
+      defaultRows: [["414", "乾肉，豬肉（兩份口糧）"]],
+    },
+
+    {
+      rowId: "smoked-meat-elk",
+      defaultRows: [["415", "煙燻肉，麋鹿（十份口糧）"]],
+    },
+    {
+      rowId: "smoked-meat-beaver",
+      defaultRows: [["416", "煙燻肉，河狸（三份口糧）"]],
+    },
+    {
+      rowId: "salted-meat-pork",
+      defaultRows: [["421", "鹽漬肉，豬（兩份口糧）"]],
+    },
+    {
+      rowId: "salted-meat-cow",
+      defaultRows: [["422", "鹽漬肉，牛（三份口糧）"]],
+    },
+
+    {
+      rowId: "freeze-dried-meat-and-vegetables-and-a-bottle-of-rum",
+      defaultRows: [["423", "冷凍乾燥的肉和蔬菜以及一瓶朗姆酒（兩份口糧）"]],
+    },
+    {
+      rowId: "powdered-milk",
+      defaultRows: [["424", "奶粉（一份口糧）"]],
+    },
+    {
+      rowId: "powdered-eggs",
+      defaultRows: [["425", "蛋粉（一份口糧）"]],
+    },
+    {
+      rowId: "big-jar-of-honey",
+      defaultRows: [["426", "大罐蜂蜜（一份口糧）"]],
+    },
+    {
+      rowId: "lime-sauce",
+      defaultRows: [["431", "酸橙醬（一份口糧）"]],
+    },
+    {
+      rowId: "package-of-couscous-and-a-smoked-ham",
+      defaultRows: [["432", "一包蒸粗麥和一個煙熏火腿（兩份口糧）"]],
+    },
+
+    {
+      rowId: "knife",
+      defaultRows: [["433", "刀"]],
+    },
+    {
+      rowId: "plastic-bags-filled-with-moldy-bread",
+      defaultRows: [["434", "裝滿發霉麵包的塑膠袋（兩份口糧）"]],
+    },
+    {
+      rowId: "packages-of-instant-noodles-and-water-bottles",
+      defaultRows: [["435", "方便麵包和水瓶（兩份口糧）"]],
+    },
+    {
+      rowId: "chocolate-santa-and-a-thermos-with-cold-mulled-wine",
+      defaultRows: [["436", "巧克力聖誕老人和裝有冷紅酒的保溫瓶（一份口糧）"]],
+    },
+    {
+      rowId: "ice-tea-and-cornbread",
+      defaultRows: [["441", "冰茶和玉米麵包（一份口糧）"]],
+    },
+    {
+      rowId: "bag-with-pieces-of-raw-meat-and-a-bottle-of-moonshine",
+      defaultRows: [["442", "裝有生肉塊和一瓶自釀酒的袋子（兩份口糧）"]],
+    },
+    {
+      rowId: "two-dead-doves-and-a-water-bottle",
+      defaultRows: [["443", "兩隻死鴿子和一瓶水（一份口糧）"]],
+    },
+    {
+      rowId: "apple-pie-and-a-bottle-of-milk",
+      defaultRows: [["444", "蘋果派和一瓶牛奶（一份口糧）"]],
+    },
+    {
+      rowId: "chili-and-water-bottle",
+      defaultRows: [["445", "辣椒和水瓶（一份口糧）"]],
+    },
+    {
+      rowId: "tater-tots-and-a-bottle-of-lemonade",
+      defaultRows: [["446", "薯塊和一瓶檸檬水（一份口糧）"]],
+    },
+    {
+      rowId: "bag-with-fruit",
+      defaultRows: [["451", "裝有水果的袋子（兩份口糧）"]],
+    },
+    {
+      rowId: "goat-cheese-and-goat-milk",
+      defaultRows: [["452", "羊奶酪和羊奶（兩份口糧）"]],
+    },
+    {
+      rowId: "gumbo-and-a-water-jug",
+      defaultRows: [["453", "岡波湯和一個水壺（三份口糧）"]],
+    },
+    {
+      rowId: "plastic-bag-with-grits",
+      defaultRows: [["454", "裝有糊狀玉米粉的塑膠袋（兩份口糧）"]],
+    },
+    {
+      rowId: "roots-vegetables-and-grape-juice",
+      defaultRows: [["455", "根菜和一瓶葡萄汁（兩份口糧）"]],
+    },
+    {
+      rowId: "pistol",
+      defaultRows: [["456", "手槍"]],
+    },
+    {
+      rowId: "salted-bird-meat",
+      defaultRows: [["461", "鹽漬鳥肉（一份口糧）"]],
+    },
+    {
+      rowId: "newly-killed-goose",
+      defaultRows: [["462", "新鮮殺死的鵝（六份口糧）"]],
+    },
+    {
+      rowId: "slices-of-smoked-meat",
+      defaultRows: [["463", "煙燻肉片，味道有點怪（一份口糧）"]],
+    },
+    {
+      rowId: "plastic-jar-with-fox-meat",
+      defaultRows: [["464", "裝有狐狸肉的塑料罐（兩份口糧）"]],
+    },
+    {
+      rowId: "assorted-frogs-snakes-lizards",
+      defaultRows: [["465", "各式各樣的青蛙、蛇和蜥蜴（一份口糧）"]],
+    },
+    {
+      rowId: "half-horse-smoked",
+      defaultRows: [["466", "半邊煙燻馬肉（14份口糧）"]],
+    },
+    {
+      rowId: "rifle",
+      defaultRows: [["511", "步槍"]],
+    },
+    {
+      rowId: "shotgun",
+      defaultRows: [["512", "獵槍"]],
+    },
+    {
+      rowId: "canned-goods-chicken-noodle-soup",
+      defaultRows: [["513", "罐頭食品，雞肉麵條湯（一份口糧）"]],
+    },
+    {
+      rowId: "basic-medical-gear-1",
+      defaultRows: [["514", "基本醫療裝備"]],
+    },
+    {
+      rowId: "tent",
+      defaultRows: [["515", "帳篷"]],
+    },
+    {
+      rowId: "gas-can-full",
+      defaultRows: [["516", "加滿油的汽油罐"]],
+    },
+    {
+      rowId: "submachine-gun",
+      defaultRows: [["521", "衝鋒槍"]],
+    },
+    {
+      rowId: "canned-goods-four-rations",
+      defaultRows: [["522", "罐頭食品（四份口糧）"]],
+    },
+    {
+      rowId: "baseball-bat-with-barbed-wire",
+      defaultRows: [["523", "帶刺鐵絲的棒球棍"]],
+    },
+    {
+      rowId: "bicycle",
+      defaultRows: [["524", "自行車"]],
+    },
+    {
+      rowId: "egg-and-milk",
+      defaultRows: [["525", "雞蛋和牛奶（一份口糧）"]],
+    },
+    {
+      rowId: "molotov-cocktail",
+      defaultRows: [["526", "莫洛托夫雞尾酒"]],
+    },
+    {
+      rowId: "smoked-snake-meat-and-a-beer",
+      defaultRows: [["531", "煙燻蛇肉和一瓶啤酒（一份口糧）"]],
+    },
+    {
+      rowId: "bow-and-arrows",
+      defaultRows: [["532", "弓和箭"]],
+    },
+    {
+      rowId: "walkie-talkies-with-batteries",
+      defaultRows: [["533", "帶電池的對講機"]],
+    },
+    {
+      rowId: "hand-grenade",
+      defaultRows: [["534", "手榴彈"]],
+    },
+    {
+      rowId: "throwing-knife",
+      defaultRows: [["535", "飛刀"]],
+    },
+    {
+      rowId: "squirrel-meat-and-water",
+      defaultRows: [["536", "松鼠肉和水（一份口糧）"]],
+    },
+    {
+      rowId: "sword",
+      defaultRows: [["541", "劍"]],
+    },
+    {
+      rowId: "bag-with-lighters",
+      defaultRows: [["542", "裝有打火機的袋子"]],
+    },
+    {
+      rowId: "rice-and-curry-two-rations",
+      defaultRows: [["543", "米飯和咖哩（兩份口糧）"]],
+    },
+    {
+      rowId: "basic-medical-gear-2",
+      defaultRows: [["544", "基本醫療裝備"]],
+    },
+    {
+      rowId: "warm-clothes",
+      defaultRows: [["545", "保暖衣物"]],
+    },
+    {
+      rowId: "sledgehammer",
+      defaultRows: [["546", "鐵鎚"]],
+    },
+    {
+      rowId: "jug-with-soup-two-rations",
+      defaultRows: [["551", "裝有湯的罐子（兩份口糧）"]],
+    },
+    {
+      rowId: "big-axe",
+      defaultRows: [["552", "大斧頭"]],
+    },
+    {
+      rowId: "matchbox",
+      defaultRows: [["553", "火柴盒"]],
+    },
+    {
+      rowId: "rain-clothes",
+      defaultRows: [["554", "雨衣"]],
+    },
+    {
+      rowId: "big-tarp-and-rope",
+      defaultRows: [["555", "大型防水布和繩子"]],
+    },
+    {
+      rowId: "soap",
+      defaultRows: [["556", "肥皂"]],
+    },
+    {
+      rowId: "bottle-of-lighter-fuel",
+      defaultRows: [["561", "打火機油瓶"]],
+    },
+    {
+      rowId: "boots",
+      defaultRows: [["562", "靴子"]],
+    },
+    {
+      rowId: "friendly-dog",
+      defaultRows: [["563", "友好的狗"]],
+    },
+    {
+      rowId: "compass",
+      defaultRows: [["564", "指南針"]],
+    },
+    {
+      rowId: "bread-and-water",
+      defaultRows: [["565", "麵包和水（兩份口糧）"]],
+    },
+    {
+      rowId: "crowbar",
+      defaultRows: [["566", "撬棍"]],
+    },
+    {
+      rowId: "small-solar-panel",
+      defaultRows: [["611", "小型太陽能板"]],
+    },
+    {
+      rowId: "camouflage-clothes",
+      defaultRows: [["612", "迷彩服"]],
+    },
+    {
+      rowId: "hockey-equipment",
+      defaultRows: [["613", "曲棍球裝備"]],
+    },
+    {
+      rowId: "hammer",
+      defaultRows: [["614", "錘子"]],
+    },
+    {
+      rowId: "windable-pocket-lamp",
+      defaultRows: [["615", "可上發條的口袋燈"]],
+    },
+    {
+      rowId: "mosquito-repellent",
+      defaultRows: [["616", "驅蚊劑"]],
+    },
+    {
+      rowId: "sunscreen",
+      defaultRows: [["621", "防曬霜"]],
+    },
+    {
+      rowId: "fish-two-rations",
+      defaultRows: [["622", "魚（兩份口糧）"]],
+    },
+    {
+      rowId: "mosquito-net",
+      defaultRows: [["623", "蚊帳"]],
+    },
+    {
+      rowId: "windable-radio",
+      defaultRows: [["624", "可上發條的收音機"]],
+    },
+    {
+      rowId: "equipment-for-amateur-radio-station",
+      defaultRows: [["625", "業餘無線電站設備"]],
+    },
+    {
+      rowId: "air-balloon",
+      defaultRows: [["626", "氣球"]],
+    },
+    {
+      rowId: "pills-for-water-purifying",
+      defaultRows: [["631", "凈水藥片"]],
+    },
+    {
+      rowId: "medicine-stash",
+      defaultRows: [["632", "藥品藏匿"]],
+    },
+    {
+      rowId: "light-flares",
+      defaultRows: [["633", "照明信號彈"]],
+    },
+    {
+      rowId: "revolver-2",
+      defaultRows: [["634", "左輪手槍"]],
+    },
+    {
+      rowId: "video-camera-with-batteries",
+      defaultRows: [["635", "帶電池的攝像機"]],
+    },
+    {
+      rowId: "chainsaw",
+      defaultRows: [["636", "電鋸"]],
+    },
+    {
+      rowId: "hang-glider",
+      defaultRows: [["641", "滑翔翼"]],
+    },
+    {
+      rowId: "net-for-fishing",
+      defaultRows: [["642", "捕魚網"]],
+    },
+    {
+      rowId: "potatoes-three-rations",
+      defaultRows: [["643", "馬鈴薯（三份口糧）"]],
+    },
+    {
+      rowId: "survivalist-books",
+      defaultRows: [["644", "求生者書籍"]],
+    },
+    {
+      rowId: "megaphone",
+      defaultRows: [["645", "擴音器"]],
+    },
+    {
+      rowId: "walker-skin-dress",
+      defaultRows: [["646", "行屍皮製衣服"]],
+    },
+    {
+      rowId: "spray-paint",
+      defaultRows: [["651", "噴漆"]],
+    },
+    {
+      rowId: "stiletto",
+      defaultRows: [["652", "高跟鞋"]],
+    },
+    {
+      rowId: "smoke-grenades",
+      defaultRows: [["653", "煙霧彈"]],
+    },
+    {
+      rowId: "body-armor",
+      defaultRows: [["654", "防彈衣"]],
+    },
+    {
+      rowId: "smoked-deer-meat-ten-rations",
+      defaultRows: [["656", "煙燻鹿肉（十份口糧）"]],
+    },
+    {
+      rowId: "handcuffs",
+      defaultRows: [["655", "手銬"]],
+    },
+    {
+      rowId: "crossbow",
+      defaultRows: [["661", "弩"]],
+    },
+    {
+      rowId: "collection-of-seeds",
+      defaultRows: [["662", "種子收藏"]],
+    },
+    {
+      rowId: "metal-plated-armor",
+      defaultRows: [["663", "金屬板甲"]],
+    },
+
+    {
+      rowId: "sniper-rifle",
+      defaultRows: [["664", "狙擊步槍"]],
+    },
+    {
+      rowId: "advanced-medical-gear",
+      defaultRows: [["665", "高級醫療裝備"]],
+    },
+    {
+      rowId: "instructions-on-where-to-find-a-storehouse",
+      defaultRows: [
+        ["666", "關於如何找到一個充滿罐頭食品的倉庫的說明（可能是個陷阱...）"],
+      ],
+    },
+  ],
+} as const satisfies WalkingDeadTableElement;

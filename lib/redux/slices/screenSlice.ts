@@ -1,6 +1,7 @@
 import { ScreenSlice, RandomRow, GameElement, Categories } from "@/lib/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ReduxState } from "../store";
+import * as TableElements from "@/app/walking-dead/table-data";
 
 const initialState: ScreenSlice = {
   walkingDead: {

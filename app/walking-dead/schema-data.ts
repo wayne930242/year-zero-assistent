@@ -1,7 +1,7 @@
 import { Categories } from "@/lib/types";
-import * as Elements from "./table-data";
+import * as TableElements from "./table-data";
 
-export const ElementCategories = {
+export const TableElementCategories = {
   "core/pc": {
     name: "PC",
     description: "PC 相關。",
@@ -49,7 +49,7 @@ export const ElementCategories = {
     description: "遭遇相關。",
     gmOnly: true,
   },
-  "core/walker": {
+  "core/gm/walker": {
     name: "行屍",
     description: "行屍。",
     gmOnly: true,
@@ -66,4 +66,23 @@ export const ElementCategories = {
   },
 } as const satisfies Categories;
 
-export type ElementId = typeof Elements[keyof typeof Elements]["id"];
+export type TableElementId = typeof TableElements[keyof typeof TableElements]["id"];
+
+export const RuleElementCategories = {
+  "core/rule/pc": {
+    name: "玩家角色",
+    description: "創建玩家角色的規則。",
+  },
+  "core/rule/skills-and-talents": {
+    name: "技能與天賦",
+    description: "技能與天賦的規則。",
+  },
+  "core/rule/combat-and-healing": {
+    name: "戰鬥與治療",
+    description: "戰鬥與治療的規則。",
+  },
+  "core/rule/home-and-away": {
+    name: "回家與離家",
+    description: "關於避難港和旅行的規則。",
+  },
+} as const satisfies Categories;

@@ -1,5 +1,3 @@
-import { ElementCategories } from "@/app/walking-dead/schema-data";
-
 /* AppSlice */
 export interface AppSlice {
   screenEditorState: ScreenEditorState;
@@ -27,9 +25,20 @@ export interface Toolbar {
   iamGM?: boolean;
 }
 
-export type GameElement = RandomTableElement | ExampleTableElement;
+export type GameElement<T extends Categories = Categories> =
+  | RandomTableElement<T>
+  | ExampleTableElement<T>
 
-export interface GameElementBase {
+export interface RuleElement<T extends Categories> extends GameElementBase<T> {
+  type: "rule";
+  rows: RuleRow[];
+}
+
+export interface RuleRow extends Row {
+  tables?: string[];
+}
+
+export interface GameElementBase<T extends Categories> {
   id: string;
   tags?: string[];
   name: string;
@@ -37,18 +46,20 @@ export interface GameElementBase {
   description: string;
   editable?: boolean;
   order?: number;
-  category: keyof typeof ElementCategories;
+  category: keyof T;
 }
 
 export type TableType = "example" | "random-table" | "generator";
 
-export interface ExampleTableElement extends GameElementBase {
+export interface ExampleTableElement<T extends Categories>
+  extends GameElementBase<T> {
   type: "example";
   headers?: string[];
   rows: Row[];
 }
 
-export interface RandomTableElement extends GameElementBase {
+export interface RandomTableElement<T extends Categories>
+  extends GameElementBase<T> {
   type: "random-table";
   headers: string[];
   rows: RandomRow[];
