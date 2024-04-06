@@ -49,7 +49,7 @@ export const ElementCategories = {
     description: "遭遇相關。",
     gmOnly: true,
   },
-  "core/walker": {
+  "core/gm/walker": {
     name: "行屍",
     description: "行屍。",
     gmOnly: true,

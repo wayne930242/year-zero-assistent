@@ -1199,7 +1199,7 @@ export const SwarmSizeTable = {
   name: "群體大小",
   description: "群體大小對照表",
   type: "random-table",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["行屍數量", "群體大小"],
   rows: [
     {
@@ -1235,7 +1235,7 @@ export const ThreatLevelsTable = {
   name: "威脅等級",
   description: "不同情境下的威脅等級對照表",
   type: "random-table",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["威脅等級", "情境"],
   rows: [
     {
@@ -1290,7 +1290,7 @@ export const WalkerAttackTable = {
   name: "行屍攻擊",
   description: "遭遇行屍攻擊時可能發生的效果。",
   type: "random-table",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["D66", "效果"],
   rows: [
     {
@@ -1584,7 +1584,7 @@ export const SwarmAttackTable = {
   name: "群體攻擊",
   description: "群體攻擊對照表",
   type: "example",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["威脅等級", "技能", "攻擊"],
   rows: [
     {
@@ -3383,7 +3383,7 @@ export const RandomThreatLevelTable = {
   name: "隨機威脅等級",
   description: "根據PC（玩家角色）行動產生的聲響等因素，決定威脅等級。",
   type: "random-table",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["D6", "威脅等級"],
   rows: [
     {
@@ -3407,7 +3407,7 @@ export const WalkersApproachingTable = {
   name: "行屍接近時間",
   description: "決定行屍群到達玩家所在位置所需的時間。",
   type: "random-table",
-  category: "core/walker",
+  category: "core/gm/walker",
   headers: ["D6", "時間"],
   rows: [
     {
