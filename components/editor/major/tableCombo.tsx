@@ -110,9 +110,12 @@ export const TableCombo = ({ data, screenKey, searchData }: Props) => {
                 if (!searchData) return true;
                 const inCategories =
                   !globalData.toolbar?.categories?.length ||
-                  globalData.toolbar?.categories?.includes((d.category as string));
+                  globalData.toolbar?.categories?.includes(
+                    d.category as string
+                  );
                 const fitGmOnly =
-                  !(d.category as string).includes("/gm/") || globalData.toolbar?.iamGM;
+                  !(d.category as string).includes("/gm/") ||
+                  globalData.toolbar?.iamGM;
 
                 return inCategories && fitGmOnly;
               })

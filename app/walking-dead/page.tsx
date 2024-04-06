@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import * as tableData from "./table-data";
-import { ElementCategories } from "./schema-data";
+import { TableElementCategories } from "./schema-data";
 import { TableDnd } from "@/components/screenDnd";
 import { Metadata } from "next";
 import { EditContent } from "@/components/editContent";
@@ -46,7 +46,7 @@ const Page = () => {
               data={Object.values(tableData)}
               screenKey="walkingDead"
               searchData={{
-                categories: ElementCategories,
+                categories: TableElementCategories,
               }}
             />
           </EditorAccordion>
