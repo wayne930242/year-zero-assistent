@@ -85,4 +85,8 @@ export const RuleElementCategories = {
     name: "回家與離家",
     description: "關於避難港和旅行的規則。",
   },
+  "core/rule/gm/running-the-game": {
+    name: "運行遊戲",
+    description: "運行遊戲的規則。",
+  },
 } as const satisfies Categories;
