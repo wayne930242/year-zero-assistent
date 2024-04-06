@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "陰屍路宇宙",
     description: "洪偉的元年引擎小助手",
+    type: "website",
     url: "https://www.yuancheng.xyz/engine",
     images: [
       {
