@@ -1,3 +1,5 @@
+import { TableElementCategories as WalkingDeadTableElementCategories } from "@/app/walking-dead/schema-data";
+
 /* AppSlice */
 export interface AppSlice {
   screenEditorState: ScreenEditorState;
@@ -28,13 +30,23 @@ export interface Toolbar {
 export type GameElement<T extends Categories = Categories> =
   | RandomTableElement<T>
   | ExampleTableElement<T>
+  | RuleElement<T>;
 
-export interface RuleElement<T extends Categories> extends GameElementBase<T> {
+export interface Row {
+  rowId: string | number;
+  editedRows?: string[][];
+  defaultRows: string[][];
+}
+
+export interface RuleElement<
+  T extends Categories = Categories
+> extends GameElementBase<T> {
   type: "rule";
+  order: number;
   rows: RuleRow[];
 }
 
-export interface RuleRow extends Row {
+interface RuleRow extends Row {
   tables?: string[];
 }
 
@@ -51,24 +63,18 @@ export interface GameElementBase<T extends Categories> {
 
 export type TableType = "example" | "random-table" | "generator";
 
-export interface ExampleTableElement<T extends Categories>
+export interface ExampleTableElement<T extends Categories = Categories>
   extends GameElementBase<T> {
   type: "example";
   headers?: string[];
   rows: Row[];
 }
 
-export interface RandomTableElement<T extends Categories>
+export interface RandomTableElement<T extends Categories = Categories>
   extends GameElementBase<T> {
   type: "random-table";
   headers: string[];
   rows: RandomRow[];
-}
-
-export interface Row {
-  rowId: string | number;
-  editedRows?: string[][];
-  defaultRows: string[][];
 }
 
 export interface RandomRow extends Row {

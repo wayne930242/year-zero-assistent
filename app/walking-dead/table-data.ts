@@ -389,9 +389,9 @@ export const NpcSurviors = {
 export const MessingUpInCombat = {
   id: "messing-up-in-combat",
   originalName: "Messing up in Combat",
-  name: "戰鬥失誤",
+  name: "在戰鬥中搞砸",
   category: "core/combat",
-  description: "在壓力骰擲出 1 時，若在戰鬥中，擲一次 D6 決定失誤效果。",
+  description: "在壓力骰擲出 1 時，若在戰鬥中，擲一次 D6 決定搞砸效果。",
   type: "random-table",
   headers: ["D6", "效果"],
   rows: [
@@ -647,8 +647,8 @@ export const CriticalInjuries = {
 export const StabilizingIssuesTable = {
   id: "stabilizing-issues-table",
   originalName: "Stabilizing Issues Table",
-  name: "穩定傷勢失誤表",
-  description: "在擲醫藥以穩定傷勢時失誤的後果",
+  name: "穩定傷勢問題表",
+  description: "在擲醫藥以穩定傷勢時搞砸的後果",
   type: "random-table",
   category: "core/health_and_armor",
   headers: ["D6", "醫藥擲骰成功", "醫藥擲骰失敗"],
