@@ -5197,6 +5197,10 @@ export const ScaveningTable = {
       defaultRows: [["146", "帶有光明會之眼的餐具"]],
     },
     {
+      rowId: "great-boots",
+      defaultRows: [["151", "優質的靴子"]],
+    },
+    {
       rowId: "harmonica",
       defaultRows: [["152", "口琴"]],
     },
@@ -5215,10 +5219,6 @@ export const ScaveningTable = {
     {
       rowId: "clean-towels",
       defaultRows: [["156", "乾淨的毛巾"]],
-    },
-    {
-      rowId: "great-boots",
-      defaultRows: [["151", "優質的靴子"]],
     },
     {
       rowId: "shirts-and-pants",
@@ -5269,12 +5269,12 @@ export const ScaveningTable = {
       defaultRows: [["216", "罐頭食品，油浸甜椒（一份口糧）"]],
     },
     {
-      rowId: "can-opener",
-      defaultRows: [["222", "開罐器"]],
-    },
-    {
       rowId: "canned-goods-spaghetti-meatballs",
       defaultRows: [["221", "罐頭食品，意大利麵肉丸（一份口糧）"]],
+    },
+    {
+      rowId: "can-opener",
+      defaultRows: [["222", "開罐器"]],
     },
     {
       rowId: "canned-goods-pork-and-beans",
@@ -5293,36 +5293,72 @@ export const ScaveningTable = {
       defaultRows: [["226", "罐頭食品，油中金槍魚（一份口糧）"]],
     },
     {
+      rowId: "canned-goods-ravioli",
+      defaultRows: [["231", "罐頭食品，意大利餃（一份口糧）"]]
+    },
+    {
       rowId: "knife-sharpener",
       defaultRows: [["232", "刀具磨刀器"]],
+    },
+    {
+      rowId: "ketchup-bottle",
+      defaultRows: [["233", "番茄醬瓶（一份口糧）"]]
     },
     {
       rowId: "canned-goods-chicken-soup",
       defaultRows: [["234", "罐頭食品，雞湯（一份口糧）"]],
     },
     {
+      rowId: "canned-goods-tomato-soup",
+      defaultRows: [["235", "罐頭食品，番茄湯（一份口糧）"]]
+    },
+    {
       rowId: "canned-goods-chicken-noodle-soup",
       defaultRows: [["236", "罐頭食品，雞肉麵條湯（一份口糧）"]],
+    },
+    {
+      rowId: "pickled-cucumbers",
+      defaultRows: [["241", "醃黃瓜（一份口糧）"]]
     },
     {
       rowId: "fried-green-tomatoes",
       defaultRows: [["242", "炸綠番茄（一份口糧）"]],
     },
     {
+      rowId: "cooked-beans",
+      defaultRows: [["243", "煮豆子（一份口糧）"]]
+    },
+    {
       rowId: "pickled-eggs",
       defaultRows: [["244", "醃蛋（一份口糧）"]],
+    },
+    {
+      rowId: "pickled-jalapenos",
+      defaultRows: [["245", "醃墨西哥辣椒（一份口糧）"]]
     },
     {
       rowId: "small-bag-with-walnuts",
       defaultRows: [["246", "小袋核桃（一份口糧）"]],
     },
     {
+      rowId: "water-bottle-and-two-rusks",
+      defaultRows: [["251", "水瓶和兩塊乾餅（一份口糧）"]]
+    },
+    {
       rowId: "dried-meat",
       defaultRows: [["252", "乾肉（一份口糧）"]],
     },
     {
+      rowId: "bag-of-flavored-popcorn",
+      defaultRows: [["253", "調味爆米花袋，酸奶油和洋蔥味（一份口糧）"]]
+    },
+    {
       rowId: "canned-goods-kidney-beans",
       defaultRows: [["254", "罐頭食品，腰豆（一份口糧）"]],
+    },
+    {
+      rowId: "bag-with-raisins-and-a-cola-bottle",
+      defaultRows: [["255", "裝有葡萄乾和可樂瓶的袋子（一份口糧）"]]
     },
     {
       rowId: "jar-with-baby-food-risotto-with-turkey-vegetables",
