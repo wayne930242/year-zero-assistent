@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: process.env.NEXT_PUBLIC_API_BASE_URL,
     images: [
       {
-        url: `https://${process.env.NEXT_PUBLIC_API_BASE_URL}/images/year-zero.webp`,
+        url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/images/year-zero.webp`,
         width: 1024,
         height: 723,
         alt: "engine-cover",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "洪偉的元年引擎小助手",
     description,
     images: [
-      `https://${process.env.NEXT_PUBLIC_API_BASE_URL}/images/year-zero.webp`,
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/images/year-zero.webp`,
     ],
     creator: "@wayne930242",
     site: "@wayne930242",
