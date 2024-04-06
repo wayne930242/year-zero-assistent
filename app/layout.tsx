@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "洪偉的元年引擎小助手",
     description,
-    url: "https://www.yuancheng.xyz/engine",
+    url: process.env.NEXT_PUBLIC_API_BASE_URL,
     images: [
       {
         url: `https://${process.env.NEXT_PUBLIC_API_BASE_URL}/images/year-zero.webp`,
