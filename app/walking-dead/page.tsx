@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "https://www.yuancheng.xyz/engine",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/images/cover/walking-dead.jpeg"`,
+        url: `${process.env.NEXT_PUBLIC_API_BASE_URL}/images/cover/walking-dead.jpeg`,
         width: 1920,
         height: 1080,
         alt: "walking-dead-cover",
