@@ -17,7 +17,7 @@ import {
   selectScreen,
 } from "@/lib/redux/slices/screenSlice";
 import { ScreenSlice } from "@/lib/types";
-import { ElementTable } from "./elementTable";
+import { ElementTable } from "./elementCard";
 import { Button } from "./ui/button";
 
 export const TableDnd = ({ screenKey }: Props) => {
